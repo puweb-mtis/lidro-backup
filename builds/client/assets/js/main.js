@@ -53,6 +53,11 @@ const introSwiper = new Swiper('.intro-swiper', {
     }
 });
 
+introSwiper.on('slideChange', e => {
+    introSwiper.slides[introSwiper.activeIndex].querySelector('.intro-swiper__title').classList.add('animate__fadeInUp');
+    introSwiper.slides[introSwiper.previousIndex].querySelector('.intro-swiper__title').classList.remove('animate__fadeInUp');
+});
+
 /* TECH */
 const techSwiper = new Swiper('.tech-swiper', {
     autoplay: {
