@@ -32,7 +32,11 @@ $(document).ready(function() {
 });
 
 const introSwiper = new Swiper('.intro-swiper', {
-    speed: 700,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    speed: 1000,
     spaceBetween: 0,
     autoplay: {
         delay: 4000,
@@ -43,7 +47,7 @@ const introSwiper = new Swiper('.intro-swiper', {
         nextEl: '.intro-swiper .swiper-button--next',
     },
     pagination: {
-        el: '.intro-swiper .swiper-pagination',
+        el: '.intro-swiper .swiper-pagination--custom',
         type: 'bullets',
         clickable: true
     }
@@ -63,7 +67,7 @@ const techSwiper = new Swiper('.tech-swiper', {
         nextEl: '.tech .swiper-button--arrow-right',
     },
     pagination: {
-        el: '.tech .swiper-pagination',
+        el: '.tech .swiper-pagination--custom',
         clickable: true
     }
 });
@@ -85,7 +89,7 @@ for (let i = 0; i < promoSwiperElements.length; i++) {
         slidesPerView: 4,
         spaceBetween: 60,
         pagination: {
-            el: promoSwiperElements[i].querySelector('.swiper-pagination'),
+            el: promoSwiperElements[i].querySelector('.swiper-pagination--custom'),
             clickable: true
         },
         navigation: {
@@ -100,7 +104,7 @@ for (let i = 0; i < promoSwiperElements.length; i++) {
 /* R&D */
 const rndSwiperTop = new Swiper('.rnd-top', {
     pagination: {
-        el: '.rnd-title-box .swiper-pagination--bullet .swiper-pagination',
+        el: '.rnd-title-box .swiper-pagination--bullet .swiper-pagination--custom',
         clickable: true
     },
     navigation: {

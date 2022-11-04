@@ -5,8 +5,9 @@
   &.swiper-pagination--white {
     color: #ffffff;
     
-    .swiper-pagination {
+    .swiper-pagination--custom {
       display: flex;
+      width: auto;
       padding: 0 em(5);
   
       .swiper-pagination-bullet {
@@ -16,6 +17,7 @@
         border-radius: 100%;
         cursor: pointer;
         margin: 0 em(6);
+        background: none;
     
         &::before {
           content: '';
@@ -54,8 +56,8 @@
   
   &.swiper-pagination--black {
     color: rgba(#333, 0.3);
-    
-    .swiper-pagination {
+  
+    .swiper-pagination--custom {
       display: flex;
       padding: 0 em(5);
   
@@ -66,6 +68,7 @@
         border-radius: 100%;
         cursor: pointer;
         margin: 0 em(6);
+        background: none;
     
         &::before {
           content: '';
