@@ -1,0 +1,543 @@
+{ #layout_lidro_header }
+
+<link rel="stylesheet" type="text/css" href="/builds/client/assets/css/jquery.fullpage.min.css" />
+
+<main class="main">
+  <ul id="fullpage_menu">
+    <li data-menuanchor="intro"><a href="#intro">인트로</a></li>
+    <li data-menuanchor="technology"><a href="#technology">사업영역</a></li>
+    <li data-menuanchor="promotion"><a href="#promotion">홍보센터</a></li>
+    <li data-menuanchor="rnd"><a href="#rnd">사업장안내</a></li>
+  </ul>
+  
+  <div id="fullpage">
+    <!-- INTRO -->
+    <div class="section">
+      <div class="swiper intro-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="intro-swiper__bg">
+              <video autoplay loop playsinline muted>
+                <source src="/builds/client/assets/videos/intro3.mp4" type="video/mp4">
+              </video>
+            </div>
+        
+            <div class="intro-swiper__text-box">
+              <div class="intro-swiper__text">Innovative LiDAR Corporation, LIDRO</div>
+              <div class="intro-swiper__title">
+                더 나은 방식으로<br>
+                더 좋은 제품을 만듭니다.
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="intro-swiper__bg">
+              <video loop playsinline muted>
+                <source src="/builds/client/assets/videos/intro2.mp4" type="video/mp4">
+              </video>
+            </div>
+        
+            <div class="intro-swiper__text-box">
+              <div class="intro-swiper__text">Innovative LiDAR Corporation, LIDRO</div>
+              <div class="intro-swiper__title">
+                혁신과 도전정신으로<br>
+                새로운 무대를 개척합니다.
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="intro-swiper__bg">
+              <video loop playsinline muted>
+                <source src="/builds/client/assets/videos/intro1.mp4" type="video/mp4">
+              </video>
+            </div>
+        
+            <div class="intro-swiper__text-box">
+              <div class="intro-swiper__text">Innovative LiDAR Corporation, LIDRO</div>
+              <div class="intro-swiper__title">
+                기술의 장벽을 넘어<br>
+                새로운 세계로 나아갑니다.
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="intro-swiper__controls">
+          <div class="swiper-pagination--bullet swiper-pagination--white">
+            <button type="button" class="swiper-button--prev" title="이전으로"></button>
+            <div class="swiper-pagination__number-first"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination__number-last"></div>
+            <button type="button" class="swiper-button--next" title="다음으로"></button>
+          </div>
+        </div>
+    
+        <div class="intro-swiper__progressbar">
+          <div class="swiper-button--play active">
+            <button type="button" class="play">자동재생</button>
+            <button type="button" class="pause">일시멈춤 <img src="/builds/client/assets/images/icons/swiper_pause.svg" alt=""></button>
+          </div>
+          <div class="swiper-progressbar"></div>
+        </div>
+      </div>
+    </div>
+    <!-- // INTRO -->
+    
+    <!-- TECH -->
+    <div class="section">
+      <div class="tech">
+        <div class="container">
+          <h2 class="tech-title">
+            라이드로의 핵심 기술로<br>
+            첨단 대한민국을 준비합니다.
+          </h2>
+      
+          <div class="swiper tech-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="tech-bg">
+                  <img src="/builds/client/assets/images/main/tech1.png" alt="">
+                </div>
+                <div class="tech-box">
+                  <div class="tech-name">라이다 센서</div>
+                  <div class="swiper-progressbar"></div>
+                  <div class="tech-name--eng">LiDAR Sensor</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="tech-bg">
+                  <img src="/builds/client/assets/images/main/tech2.png" alt="">
+                </div>
+                <div class="tech-box">
+                  <div class="tech-name">드로이드 개발</div>
+                  <div class="swiper-progressbar"></div>
+                  <div class="tech-name--eng">Droid Development</div>
+                </div>
+              </div>
+            </div>
+        
+            <button type="button" class="swiper-button--arrow-left" title="이전 슬라이드"></button>
+            <button type="button" class="swiper-button--arrow-right" title="다음 슬라이드"></button>
+          </div>
+      
+          <div class="swiper-pagination--bullet swiper-pagination--black">
+            <button type="button" class="swiper-button--prev" title="이전으로"></button>
+            <div class="swiper-pagination__number-first"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination__number-last"></div>
+            <button type="button" class="swiper-button--next" title="다음으로"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // TECH -->
+    
+    
+    <!-- 홍보센터 -->
+    <div class="section">
+      <div class="promo">
+        <div class="container">
+          <div class="tab" data-tab>
+            <div class="promo-title-box">
+              <h2 class="promo-title">홍보센터</h2>
+              
+              <div class="tab-header">
+                <div class="tab-item active">전체보기</div>
+                <div class="tab-item">회사소식</div>
+                <div class="tab-item">언론보도</div>
+              </div>
+            </div>
+            
+            <div class="tab-body">
+              <div class="tab-content active">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo1.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo2.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo3.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo4.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo5.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="swiper-pagination--bullet swiper-pagination--black">
+                    <button type="button" class="swiper-button--prev" title="이전으로"></button>
+                    <div class="swiper-pagination__number-first"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination__number-last"></div>
+                    <button type="button" class="swiper-button--next" title="다음으로"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-content">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo1.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo2.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo3.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo4.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo5.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">회사소식</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="swiper-pagination--bullet swiper-pagination--black">
+                    <button type="button" class="swiper-button--prev" title="이전으로"></button>
+                    <div class="swiper-pagination__number-first"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination__number-last"></div>
+                    <button type="button" class="swiper-button--next" title="다음으로"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-content">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo1.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">언론보도</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo2.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">언론보도</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo3.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">언론보도</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo4.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">언론보도</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="promo-box">
+                        <div class="promo-thumb">
+                          <img src="/builds/client/assets/images/main/promo5.png" alt="">
+                        </div>
+                        <div class="promo-desc">
+                          <div class="promo-desc__cate">언론보도</div>
+                          <div class="promo-desc__title">
+                            자율주행 기술 로봇청소기에 이식, 라이더로 3차원 공간 파악
+                          </div>
+                          <div class="promo-desc__date">2022. 02. 11</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="swiper-pagination--bullet swiper-pagination--black">
+                    <button type="button" class="swiper-button--prev" title="이전으로"></button>
+                    <div class="swiper-pagination__number-first"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination__number-last"></div>
+                    <button type="button" class="swiper-button--next" title="다음으로"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // 홍보센터 -->
+  
+    
+    <!-- R&D -->
+    <div class="section">
+      <div class="rnd">
+        <div class="rnd-title-box">
+          <div class="rnd-title-inner">
+            <h2 class="rnd-title">라이드로<br>R&D 센터</h2>
+            <span class="bar"></span>
+            <div class="address-box">
+              <div class="address">경기도 안양시 동안구 흥안대로 439번길 8</div>
+              <div class="tel-box">
+                <p class="tel"><span class="tel-title">T</span> 031.425.7779</p>
+                <p class="tel"><span class="tel-title">F</span> 031.425.7779</p>
+              </div>
+            </div>
+  
+            <div class="swiper-pagination--bullet swiper-pagination--black">
+              <button type="button" class="swiper-button--prev" title="이전으로"></button>
+              <div class="swiper-pagination__number-first"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-pagination__number-last"></div>
+              <button type="button" class="swiper-button--next" title="다음으로"></button>
+            </div>
+          </div>
+        </div>
+        <div class="rnd-swiper-box">
+          <div class="rnd-swiper">
+            <button type="button" class="swiper-button--arrow-left" title="이전 슬라이드"></button>
+            
+            <div class="swiper rnd-top">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="rnd-top-thumb">
+                    <img src="/builds/client/assets/images/main/rnd_top1.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="rnd-top-thumb">
+                    <img src="/builds/client/assets/images/main/rnd_top2.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper rnd-bottom">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="rnd-bottom-thumb">
+                    <img src="/builds/client/assets/images/main/rnd_bottom1.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="rnd-bottom-thumb">
+                    <img src="/builds/client/assets/images/main/rnd_bottom2.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <button type="button" class="swiper-button--arrow-right" title="다음 슬라이드"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // R&D -->
+    
+    
+    <!-- MAIN FOOTER -->
+    <div class="section fp-auto-height">
+      <footer class="footer">
+        <div class="container">
+          <div class="logo">
+            <img src="/builds/client/assets/images/footer_logo.svg" alt="">
+          </div>
+          <div class="content">
+            <div class="info-box">
+              <div class="link-box">
+                <a href="" class="link">개인정보처리방침</a>
+                <span class="dot"></span>
+                <a href="" class="link">이메일주소무단수집거부</a>
+                <span class="dot"></span>
+                <a href="" class="link">법적고지</a>
+              </div>
+              
+              <div class="copyright">
+                Copyrights 2022 LIDRO All Rights Reserved.
+              </div>
+            </div>
+            
+            <div class="bottom-box">
+              <div class="address-box">
+                <div class="address">
+                  <div class="address__title">본사</div>
+                  <div class="address__text">
+                    경기도 성남시 분당구 판교로 255번길 9-22 W-City B동 8층
+                  </div>
+                  <div class="address__tel">
+                    <div class="tel"><span class="tel__title">T</span>  02.2039.9770</div>
+                    <div class="tel"><span class="tel__title">T</span>  031.8023.9770</div>
+                  </div>
+                </div>
+                <div class="address">
+                  <div class="address__title">R&D센터</div>
+                  <div class="address__text">
+                    경기도 안양시 동안구 흥안대로 439번길 8
+                  </div>
+                  <div class="address__tel">
+                    <div class="tel"><span class="tel__title">T</span>  031.425.7779</div>
+                    <div class="tel"><span class="tel__title">F</span>  031.424.7779</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="sns-box">
+                <a href="">
+                  <img src="/builds/client/assets/images/icons/twitter.svg" alt="">
+                </a>
+                <a href="">
+                  <img src="/builds/client/assets/images/icons/facebook.svg" alt="">
+                </a>
+                <a href="">
+                  <img src="/builds/client/assets/images/icons/youtube.svg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- // MAIN FOOTER -->
+  </div>
+</main>
+
+{ #layout_lidro_footer }

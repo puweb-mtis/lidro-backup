@@ -1,0 +1,114 @@
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: em(800);
+  height: 100vh;
+  background-color: #35363c;
+  z-index: 2;
+  padding: em(60) em(100);
+  transform: translateX(100%);
+  transition: all .3s ease-in-out;
+  
+  &.active {
+    transform: translateX(0);
+  }
+  
+  .symbol {
+    width: em(28);
+    height: em(30);
+  }
+  
+  .nav-list {
+    &.depth-1 {
+      padding-top: em(112);
+      
+      > .nav-list__item {
+        position: relative;
+        
+        > .link {
+          display: inline-flex;
+          align-items: center;
+          color: #565863;
+          font-size: em(36);
+          font-weight: 800;
+  
+          &::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 4px;
+            background-color: #fff;
+            margin-left: em(40, 36);
+            margin-right: em(40, 36);
+            transition: all .2s ease-in-out;
+          }
+        }
+        
+        &.active,
+        &:hover {
+          > .link {
+            color: #ffffff;
+            
+            &::after {
+              width: em(40, 36);
+            }
+          }
+          
+          .nav-list.depth-2 {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+        }
+        
+        & + .nav-list__item {
+          margin-top: em(74);
+        }
+      }
+    }
+  
+    &.depth-2 {
+      position: absolute;
+      top: 0;
+      left: em(246);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all .2s ease-in-out;
+      
+      > .nav-list__item {
+        > .link {
+          color: #fff;
+          font-weight: 900;
+          font-size: em(18);
+          line-height: em(40, 18);
+        }
+      }
+    }
+    
+    &.foot {
+      position: absolute;
+      bottom: em(82);
+      left: em(100);
+      
+      .nav-list__item {
+        & + .nav-list__item {
+          margin-top: em(24);
+        }
+        
+        .link {
+          color: #565863;
+          font-weight: 900;
+        }
+        
+        &.active,
+        &:hover {
+          .link {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
