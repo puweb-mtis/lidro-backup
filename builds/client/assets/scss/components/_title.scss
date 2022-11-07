@@ -1,0 +1,78 @@
+.page-title {
+  &--normal {
+    margin-bottom: em(100);
+    
+    .title {
+      font-size: em(78);
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+  }
+  
+  &--line {
+    .title {
+      color: #333333;
+      font-size: em(48);
+      font-weight: 900;
+    }
+    
+    .title--lg {
+      font-size: em(78);
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+    
+    .line {
+      display: block;
+      width: 2px;
+      height: em(40);
+      margin: em(20) 0;
+      background-color: #333;
+    }
+    
+    .sub-title {
+      color: #333333;
+      font-size: em(20);
+      font-weight: 600;
+      line-height: (26/20);
+    }
+    
+    .sub-title--lg {
+      font-size: em(48);
+      font-weight: 600;
+    }
+    
+    .address-box {
+      font-size: em(20);
+      font-weight: 900;
+      line-height: (24/20);
+    }
+    
+    .address {
+      margin-bottom: em(10, 20);
+    }
+    
+    .tel-box {
+      display: flex;
+      
+      .tel {
+        display: flex;
+        
+        & + .tel {
+          padding-left: em(40, 20);
+        }
+        
+        &__title {
+          padding-right: em(17, 20);
+        }
+      }
+    }
+    
+    &.text-end {
+      .line {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
+}

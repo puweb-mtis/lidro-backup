@@ -1,0 +1,151 @@
+.intro-profile {
+  &-row {
+    display: flex;
+  }
+  
+  &-col {
+    &:nth-child(1) {
+      flex: 1 1 auto;
+      width: 1%;
+    }
+    
+    &:nth-child(2) {
+      flex: 0 0 auto;
+      width: auto;
+      padding-right: em(120);
+    }
+    
+    &:nth-child(3) {
+      flex: 0 0 auto;
+      width: auto;
+    }
+  }
+}
+
+.profile-list {
+  &__item {
+    & + .profile-list__item {
+      margin-top: em(80);
+    }
+  }
+  
+  &__title {
+    color: #cccccc;
+    font-size: em(16);
+    font-weight: 900;
+    margin-bottom: em(20);
+    
+    .profile-list__inner {
+      &__title {
+        flex: 0 0 em(120, 16);
+        width: em(120, 16);
+        padding-right: em(10, 16);
+      }
+    }
+  }
+  
+  &__text {
+    color: #333333;
+    font-size: em(20);
+    font-weight: 900;
+    line-height: (24/20);
+  
+    .profile-list__inner {
+      &__title {
+        margin-bottom: em(16, 20);
+      }
+      
+      &__text {
+        margin-bottom: em(16, 20);
+      }
+    }
+  }
+  
+  &__inner {
+    display: flex;
+    
+    &__title {
+      color: #999999;
+      flex: 0 0 em(120, 20);
+      width: em(120, 20);
+      padding-right: em(10, 20);
+    }
+    
+    &__text {
+      flex: 1 1 auto;
+      width: 1%;
+    }
+  }
+}
+
+.intro-video-wrap {
+  display: flex;
+  
+  .video {
+    flex: 1 0 percentage(1040/1400);
+    max-width: percentage(1040/1400);
+    
+    video {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  .page-title--line {
+    flex: 1 1 auto;
+    width: 1%;
+    padding-left: em(150);
+  }
+}
+
+.intro-location {
+  display: flex;
+  
+  &__title-box {
+    flex: 1 1 auto;
+    width: 1%;
+    
+    .swiper-pagination--bullet {
+      margin-top: em(120);
+    }
+  }
+  
+  &__swiper {
+    flex: 0 0 em(880);
+    width: em(880);
+    
+    .swiper {
+      overflow: visible;
+    }
+    
+    .swiper-button {
+      &--arrow-left {
+        top: em(60);
+      }
+  
+      &--arrow-right {
+        top: inherit;
+        bottom: em(60);
+      }
+    }
+  }
+  
+  &__title-slider.initialized {
+    .intro-location__title-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      //transform: translateY(10%);
+      transition: all .7s ease-in-out;
+      
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        //transform: translateY(0);
+        transition: all .7s ease-in-out;
+      }
+    }
+  }
+}

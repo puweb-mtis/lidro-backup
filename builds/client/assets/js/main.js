@@ -1,21 +1,3 @@
-// const mainSwiper = new Swiper('.main-swiper', {
-//     speed: 1000,
-//     direction: 'vertical',
-//     autoHeight: true,
-//     mousewheel: true,
-//     allowTouchMove: false
-// });
-//
-//
-// const $header = document.querySelector('.header');
-// mainSwiper.on('slideChange', e => {
-//     if ( mainSwiper.activeIndex !== 0 ) {
-//         $header.classList.remove('header--white');
-//     } else {
-//         $header.classList.add('header--white');
-//     }
-// });
-
 $(document).ready(function () {
     $('#fullpage').fullpage({
         menu: '#fullpage_menu',
@@ -114,6 +96,7 @@ const rndTitleSlides = document.querySelectorAll('.rnd-title-slider .rnd-title-s
 const slideWidth = rndTitleSlides[0].clientWidth;
 const slideHeight = rndTitleSlides[0].clientHeight;
 const rndSwiperTop = new Swiper('.rnd-top', {
+    allowTouchMove: false,
     pagination: {
         el: '.rnd-title-box .swiper-pagination--bullet .swiper-pagination--custom',
         clickable: true
@@ -134,7 +117,9 @@ rndSwiperTop.on('slideChange', swiper => {
     rndTitleSlides[swiper.previousIndex].classList.remove('active');
 });
 
-const rndSwiperBottom = new Swiper('.rnd-bottom', {});
+const rndSwiperBottom = new Swiper('.rnd-bottom', {
+    allowTouchMove: false
+});
 
 rndSwiperTop.on('slideNextTransitionEnd', swiper => {
     rndSwiperBottom.slideNext();
@@ -174,99 +159,6 @@ function tabInit() {
             });
         });
     }
-}
-
-function swiperAnimatedActive(swiper) {
-    swiper.on('slideChange', e => {
-        const activeAnimatedItems = swiper.slides[swiper.activeIndex].querySelectorAll('.animate__animated:not(.fullpage__animated)');
-        const prevAnimatedItems = swiper.slides[swiper.previousIndex].querySelectorAll('.animate__animated:not(.fullpage__animated)');
-        
-        for (let i = 0; i < activeAnimatedItems.length; i++) {
-            activeAnimatedItems[i].classList.add('animate__fadeInUp')
-        }
-        
-        for (let i = 0; i < prevAnimatedItems.length; i++) {
-            prevAnimatedItems[i].classList.remove('animate__fadeInUp');
-        }
-    });
-}
-
-function swiperPaginationNumber(swiper, parent = undefined) {
-    if (parent !== undefined) {
-        const length = swiper.slides.length;
-        const $first = swiper.el.closest(parent).querySelector('.swiper-pagination__number-first');
-        const $last = swiper.el.closest(parent).querySelector('.swiper-pagination__number-last');
-        
-        $first.innerHTML = 1;
-        $last.innerHTML = length;
-    } else {
-        const length = swiper.slides.length;
-        const $first = swiper.el.querySelector('.swiper-pagination__number-first');
-        const $last = swiper.el.querySelector('.swiper-pagination__number-last');
-        
-        $first.innerHTML = 1;
-        $last.innerHTML = length;
-    }
-}
-
-function swiperVideoPlaying(swiper) {
-    swiper.on('slideChange', (e) => {
-        const activeSlideVideo = swiper.slides[swiper.activeIndex].querySelector('video');
-        
-        if (activeSlideVideo) {
-            activeSlideVideo.play();
-        }
-    });
-    
-    swiper.on('slideChangeTransitionEnd', (e) => {
-        const prevSlideVideo = swiper.slides[swiper.previousIndex].querySelector('video');
-        
-        if (prevSlideVideo) {
-            prevSlideVideo.pause();
-            prevSlideVideo.currentTime = 0;
-        }
-    });
-}
-
-function swiperAutoplayControl(swiper) {
-    const $swiperPlayButton = swiper.el.querySelector('.swiper-button--play');
-    const $swiperProgress = swiper.el.querySelector('.swiper-progressbar');
-    
-    $swiperProgress.classList.add('active');
-    
-    swiper.on('slideChange', (e) => {
-        if (swiper.autoplay.running) {
-            $swiperProgress.classList.remove('active');
-        }
-    });
-    
-    swiper.on('slideChangeTransitionEnd', (e) => {
-        if (swiper.autoplay.running) {
-            $swiperProgress.classList.add('active');
-        }
-    });
-    
-    $swiperPlayButton.addEventListener('click', e => {
-        $swiperPlayButton.classList.toggle('active');
-        
-        if ($swiperPlayButton.classList.contains('active')) {
-            swiper.autoplay.start();
-            $swiperProgress.classList.add('active');
-        } else {
-            swiper.autoplay.stop();
-            $swiperProgress.classList.remove('active');
-        }
-    });
-}
-
-function swiperEachProgressbar(swiper) {
-    swiper.on('slideChangeTransitionEnd', e => {
-        const $prevProgressbar = swiper.slides[swiper.previousIndex].querySelector('.swiper-progressbar');
-        const $currentProgressbar = swiper.slides[swiper.activeIndex].querySelector('.swiper-progressbar');
-        
-        $prevProgressbar.classList.remove('active');
-        $currentProgressbar.classList.add('active');
-    });
 }
 
 window.onload = function () {
