@@ -1,0 +1,64 @@
+@use "sass:map";
+
+.partner {
+  &-box {
+    display: flex;
+    padding-top: em(66);
+    padding-bottom: em(139);
+    border-top: 2px solid #333;
+    
+    &:last-child {
+      border-bottom: 2px solid #333;
+    }
+  }
+  
+  &-title-box {
+    flex: 1 1 auto;
+    width: 1%;
+    padding-right: em(10);
+    
+    .title {
+      color: #333333;
+      font-size: em(40);
+      font-weight: 800;
+    }
+    
+    .sub-title {
+      color: #cccccc;
+      font-family: 'Poppins', sans-serif;
+      font-size: em(20);
+      font-weight: 600;
+      line-height: (26/20);
+      margin-top: em(20, 20);
+    }
+  }
+  
+  &-content {
+    flex: 0 0 em(960);
+    width: em(960);
+  }
+  
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: em(-20);
+    
+    &__item {
+      flex: 1 0 25%;
+      max-width: 25%;
+      padding: em(20);
+      
+      .desc {
+        text-align: center;
+        padding: em(24) em(8);
+      }
+      
+      .text {
+        color: #333333;
+        font-size: em(20);
+        font-weight: 800;
+        line-height: 1;
+      }
+    }
+  }
+}

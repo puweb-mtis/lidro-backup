@@ -14,6 +14,8 @@ function swiperAnimatedActive(swiper) {
 }
 
 function swiperPaginationNumber(swiper, parent = undefined) {
+    if ( !swiper ) return false;
+    
     if (parent !== undefined) {
         const length = (swiper.loopedSlides) ? swiper.slides.length - 2 : swiper.slides.length;
         const $first = swiper.el.closest(parent).querySelector('.swiper-pagination__number-first');
