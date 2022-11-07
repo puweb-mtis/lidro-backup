@@ -34,6 +34,24 @@ body {
   padding-right: em(20);
 }
 
+.page-row {
+  display: flex;
+  
+  .page-col {
+    flex: 1 0 auto;
+    
+    &.page-col--title {
+      flex: 1 0 percentage(590/1400);
+      max-width: percentage(590/1400);
+    }
+  
+    &.page-col--content {
+      flex: 1 0 percentage(810/1400);
+      max-width: percentage(810/1400);
+    }
+  }
+}
+
 .line-banner {
   img {
     width: 90%;

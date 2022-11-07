@@ -1,0 +1,27 @@
+.ci-list {
+  &__item {
+    & + .ci-list__item {
+      margin-top: em(120);
+    }
+  }
+  
+  &__title {
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+    font-size: em(26);
+    font-weight: 600;
+    margin-bottom: em(20, 26);
+  }
+  
+  &__content {
+    color: #333333;
+    font-size: em(14);
+    font-weight: 500;
+    line-height: (26/14);
+    
+    img {
+      display: block;
+      margin-top: em(78);
+    }
+  }
+}
