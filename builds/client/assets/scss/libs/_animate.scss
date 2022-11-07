@@ -18,6 +18,8 @@
   animation-duration: var(--animate-duration);
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  visibility: hidden;
+  opacity: 0;
 }
 .animate__animated.animate__infinite {
   -webkit-animation-iteration-count: infinite;
@@ -2021,8 +2023,8 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
   }
   
   to {
@@ -2034,6 +2036,7 @@
 .animate__fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+  visibility: visible;
 }
 @-webkit-keyframes fadeInUpBig {
   from {
