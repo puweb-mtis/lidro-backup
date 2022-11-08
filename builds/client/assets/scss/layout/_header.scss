@@ -130,6 +130,8 @@
   }
   
   &.nav-open {
+    border-bottom: 0;
+    
     .lang-box {
       a {
         color: #fff;
