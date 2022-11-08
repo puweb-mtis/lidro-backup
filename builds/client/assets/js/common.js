@@ -217,6 +217,30 @@ function lettersAnime(target, effect = 'letter') {
     }
 }
 
+const $topButton = document.querySelector('.btn-top');
+$topButton.addEventListener('click', e => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+window.addEventListener('scroll', e => {
+    const endPoint = document.body.scrollHeight - 305;
+    const middlePoint =  (document.body.scrollHeight/2);
+    const scrollBottom = window.scrollY + window.innerHeight;
+    const scrollMiddle = window.scrollY + (window.innerHeight/2);
+    
+    if ( scrollMiddle > middlePoint ) {
+        $topButton.classList.add('active');
+    } else {
+        $topButton.classList.remove('active');
+    }
+    
+    if ( scrollBottom > endPoint ) {
+        $topButton.classList.add('bottom');
+    } else {
+        $topButton.classList.remove('bottom');
+    }
+});
+
 window.onload = e => {
     AOS.init();
     swiperPaginationNumber(introLocationSwiper, '.intro-location');
