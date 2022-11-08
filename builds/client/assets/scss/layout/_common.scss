@@ -44,11 +44,31 @@ body {
     &.page-col--title {
       flex: 1 0 percentage(590/1400);
       max-width: percentage(590/1400);
+      padding-right: em(10);
     }
   
     &.page-col--content {
       flex: 1 0 percentage(810/1400);
       max-width: percentage(810/1400);
+    }
+  }
+  
+  &--2 {
+    display: flex;
+    
+    .page-col {
+      flex: 1 0 auto;
+  
+      &.page-col--title {
+        flex: 1 0 percentage(360/1400);
+        max-width: percentage(360/1400);
+        padding-right: em(10);
+      }
+  
+      &.page-col--content {
+        flex: 1 0 percentage(1040/1400);
+        max-width: percentage(1040/1400);
+      }
     }
   }
 }

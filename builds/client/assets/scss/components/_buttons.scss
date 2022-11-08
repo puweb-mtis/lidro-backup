@@ -1,3 +1,8 @@
+.btn-group {
+  display: flex;
+  gap: em(14)
+}
+
 .btn-top {
   position: fixed;
   right: em(100);
@@ -35,8 +40,49 @@
   font-size: em(16);
   line-height: 1;
   font-weight: 700;
-  color: #000000;
+  color: #000;
   border: 1px solid #eee;
   background: none;
   cursor: pointer;
+}
+
+[class^="btn-download"] {
+  display: inline-flex;
+  align-items: center;
+  padding: em(18) em(34);
+  font-weight: 700;
+  
+  &::before {
+    content: '';
+    display: block;
+    width: em(24);
+    height: em(24);
+    margin-right: em(8);
+    background: {
+      repeat: no-repeat;
+      position: center;
+      size: 100% auto;
+    };
+  }
+}
+
+.btn-download {
+  &--white {
+    color: #333;
+    border: 2px solid #333;
+    
+    &::before {
+      background-image: url(/builds/client/assets/images/icons/file_download_b.svg);
+    }
+  }
+  
+  &--black {
+    color: #fff;
+    background-color: #333;
+    border: 2px solid #333;
+    
+    &::before {
+      background-image: url(/builds/client/assets/images/icons/file_download_w.svg);
+    }
+  }
 }

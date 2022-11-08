@@ -1,0 +1,38 @@
+.brochure-section {
+  background: {
+    image: url(/builds/client/assets/images/promote/brochure_bg.png);
+    repeat: no-repeat;
+    position: center;
+    size: auto;
+  };
+}
+
+.brochure {
+  display: flex;
+  
+  &-title {
+    flex: 1 1 auto;
+    
+    .btn-group {
+      margin-top: em(230);
+    }
+    
+    [class^="btn-download"] {
+      transition: all .2s ease-in-out;
+      
+      &:hover {
+        box-shadow: 2px 2px 4px rgba(#000, 0.5);
+      }
+    }
+  }
+  
+  &-content {
+    flex: 1 0 percentage(1000/1400);
+    max-width: percentage(1000/1400);
+    
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

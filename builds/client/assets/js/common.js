@@ -287,4 +287,6 @@ window.onload = e => {
     swiperPaginationNumber(introLocationSwiper, '.intro-location');
     swiperPaginationNumber(prdViewSwiper, '.prd-swiper');
     lettersAnime('.page-title--normal', 'word');
+    lettersAnime('.page-title--line', 'word');
+    lettersAnime('.page-title--banner');
 }

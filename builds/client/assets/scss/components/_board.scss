@@ -1,0 +1,234 @@
+.board-list {
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  
+  &__item {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: em(33) 0;
+  
+    .title {
+      color: #000;
+      font-size: em(22);
+      font-weight: 600;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  
+    .date {
+      color: #000;
+      font-size: 1em;
+      font-weight: 700;
+      padding-left: em(20);
+    }
+    
+    &:hover {
+      .title,
+      .date {
+        color: #666;
+      }
+    }
+  }
+}
+
+.board-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: em(40);
+  
+  &__item {
+    .promo-box {
+      transition: transform .2s ease-in-out;
+    }
+    
+    &:hover {
+      .promo-box {
+        transform: translateY(-10px);
+      }
+    }
+  }
+}
+
+.board-paging {
+  display: flex;
+  align-items: center;
+  gap: em(24);
+  margin-top: em(50);
+  
+  &-prev {
+    display: block;
+    width: em(13);
+    height: em(23);
+    background: {
+      image: url(/builds/client/assets/images/icons/paging_angle_left.svg);
+      repeat: no-repeat;
+      position: center;
+      size: auto 100%;
+    };
+  }
+  
+  &-next {
+    display: block;
+    width: em(13);
+    height: em(23);
+    background: {
+      image: url(/builds/client/assets/images/icons/paging_angle_right.svg);
+      repeat: no-repeat;
+      position: center;
+      size: auto 100%;
+    };
+  }
+  
+  .link-box {
+    display: flex;
+    gap: em(13);
+    
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #333333;
+      font-size: em(14);
+      width: em(28, 14);
+      height: em(28, 14);
+      border-radius: 100%;
+      
+      &.active {
+        border: 2px solid #333;
+      }
+    }
+  }
+}
+
+.board-view {
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  
+  &__title {
+    display: flex;
+    padding: em(33) 0;
+    border-bottom: 1px solid #ddd;
+    gap: em(40);
+    
+    .title {
+      flex: 1 1 auto;
+      font-size: em(22);
+      font-weight: 600;
+      color: #000000;
+    }
+    
+    .date {
+      flex: 0 0 auto;
+      font-weight: 700;
+      color: #000000;
+    }
+  }
+  
+  &__content {
+    padding: em(33) 0;
+    line-height: 1.5;
+  }
+  
+  &__image {
+    margin-bottom: em(40);
+  }
+}
+
+.board-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: em(20);
+  margin-top: em(50);
+  
+  &-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 em(160);
+    height: em(60);
+    border: 2px solid #333;
+    color: #000000;
+    
+    &::before {
+      content: '';
+      display: block;
+      flex: 0 0 em(16);
+      width: em(16);
+      height: em(14);
+      margin-right: em(8);
+      background: {
+        image: url(/builds/client/assets/images/icons/board_navigation_list.svg);
+        repeat: no-repeat;
+        position: center;
+        size: auto 100%;
+      };
+    }
+  }
+  
+  &-prev {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    gap: em(20);
+  
+    .title {
+      color: #000000;
+      flex: 0 0 em(240);
+      width: em(240);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    &::before {
+      content: '';
+      display: block;
+      width: em(13);
+      height: em(23);
+      background: {
+        image: url(/builds/client/assets/images/icons/paging_angle_left.svg);
+        repeat: no-repeat;
+        position: center;
+        size: auto 100%;
+      };
+    }
+  }
+  
+  &-next {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 0 auto;
+    gap: em(20);
+  
+    .title {
+      color: #000000;
+      flex: 0 0 em(240);
+      width: em(240);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    &::after {
+      content: '';
+      display: block;
+      width: em(13);
+      height: em(23);
+      background: {
+        image: url(/builds/client/assets/images/icons/paging_angle_right.svg);
+        repeat: no-repeat;
+        position: center;
+        size: auto 100%;
+      };
+    }
+  }
+}

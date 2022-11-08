@@ -29,7 +29,7 @@ class Promote extends CI_Controller
         return;
     }
     
-    public function notice_view1()
+    public function notice_view()
     {
         $data = [];
         
@@ -59,7 +59,7 @@ class Promote extends CI_Controller
         return;
     }
     
-    public function press_view1()
+    public function press_view()
     {
         $data = [];
         
