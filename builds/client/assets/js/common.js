@@ -171,49 +171,52 @@ if (introLocationSlider && introLocationSlides.length > 0) {
 }
 
 function lettersAnime(target, effect = 'letter') {
-    const $target = document.querySelector(target);
+    const $target = document.querySelectorAll(target);
     if (!$target) return false;
-    const letterWrappers = $target.querySelectorAll('[data-letters-wrapper]');
     
-    switch (effect) {
-        case 'letter':
-            for (let i = 0; i < letterWrappers.length; i++) {
-                const lettersWrapper = letterWrappers[i];
-                lettersWrapper.innerHTML = lettersWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    for (let i = 0; i < $target.length; i++) {
+        const letterWrappers = $target[i].querySelectorAll('[data-letters-wrapper]');
+    
+        switch (effect) {
+            case 'letter':
+                for (let i = 0; i < letterWrappers.length; i++) {
+                    const lettersWrapper = letterWrappers[i];
+                    lettersWrapper.innerHTML = lettersWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
                 
-                anime.timeline({loop: false})
-                    .add({
-                        targets: '[data-letters-wrapper] .letter',
-                        translateY: ["1.5em", 0],
-                        duration: 700,
-                        easing: "easeOutCubic",
-                        delay: (el, i) => 200 * i
-                    });
-            }
-            break;
-        case 'word':
-            for (let i = 0; i < letterWrappers.length; i++) {
-                const lettersWrapper = letterWrappers[i];
-                const letterArray = lettersWrapper.textContent.split(/\s/g);
-                
-                lettersWrapper.innerHTML = '';
-                
-                for (let j = 0; j < letterArray.length; j++) {
-                    lettersWrapper.innerHTML += `<span class="letter">${letterArray[j]}</span>&nbsp;`;
+                    anime.timeline({loop: false})
+                        .add({
+                            targets: '[data-letters-wrapper] .letter',
+                            translateY: ["1.5em", 0],
+                            duration: 700,
+                            easing: "easeOutCubic",
+                            delay: (el, i) => 200 * i
+                        });
                 }
+                break;
+            case 'word':
+                for (let i = 0; i < letterWrappers.length; i++) {
+                    const lettersWrapper = letterWrappers[i];
+                    const letterArray = lettersWrapper.textContent.split(/\s/g);
                 
-                anime.timeline({loop: false})
-                    .add({
-                        targets: '[data-letters-wrapper] .letter',
-                        translateY: ["1.5em", 0],
-                        duration: 1000,
-                        easing: "easeOutCubic",
-                        delay: (el, i) => 200 * i
-                    });
-            }
-            break;
-        default:
-            break;
+                    lettersWrapper.innerHTML = '';
+                
+                    for (let j = 0; j < letterArray.length; j++) {
+                        lettersWrapper.innerHTML += `<span class="letter">${letterArray[j]}</span>&nbsp;`;
+                    }
+                
+                    anime.timeline({loop: false})
+                        .add({
+                            targets: '[data-letters-wrapper] .letter',
+                            translateY: ["1.5em", 0],
+                            duration: 1000,
+                            easing: "easeOutCubic",
+                            delay: (el, i) => 200 * i
+                        });
+                }
+                break;
+            default:
+                break;
+        }
     }
 }
 
