@@ -27,3 +27,16 @@
     bottom: em(420);
   }
 }
+
+.btn-list {
+  margin-top: em(64);
+  display: inline-block;
+  padding: em(22) em(52);
+  font-size: em(16);
+  line-height: 1;
+  font-weight: 700;
+  color: #000000;
+  border: 1px solid #eee;
+  background: none;
+  cursor: pointer;
+}

@@ -241,8 +241,21 @@ window.addEventListener('scroll', e => {
     }
 });
 
+const prdViewSwiper = new Swiper('.prd-swiper .swiper', {
+    pagination: {
+        el: '.prd-swiper .swiper-pagination--custom',
+        clickable: true
+    },
+    navigation: {
+        prevEl: '.prd-swiper .swiper-button--prev',
+        nextEl: '.prd-swiper .swiper-button--next'
+    }
+});
+
+
 window.onload = e => {
     AOS.init();
     swiperPaginationNumber(introLocationSwiper, '.intro-location');
+    swiperPaginationNumber(prdViewSwiper, '.prd-swiper');
     lettersAnime('.page-title--normal', 'word');
 }
