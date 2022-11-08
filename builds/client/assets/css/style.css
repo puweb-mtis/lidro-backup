@@ -4838,6 +4838,64 @@ body {
   transition: all 0.7s ease-in-out;
 }
 
+.location-box {
+  display: flex;
+  padding-top: 5em;
+  padding-bottom: 5.625em;
+  border-top: 2px solid #333;
+}
+.location-box:last-child {
+  border-bottom: 2px solid #333;
+}
+.location-title-box {
+  position: relative;
+  flex: 1 1 auto;
+  color: #333333;
+  font-size: 1.25em;
+  font-weight: 800;
+  line-height: 1.2;
+  padding-right: 0.5em;
+}
+.location-title-box .symbol {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.location-title-box .title {
+  font-size: 2.5em;
+  font-weight: 800;
+}
+.location-title-box .address {
+  margin-top: 1.25em;
+}
+.location-title-box .tel-box {
+  margin-top: 2.875em;
+}
+.location-title-box .tel {
+  display: flex;
+  gap: 0.8em;
+}
+.location-title-box .tel + .tel {
+  margin-top: 0.5em;
+}
+.location-map {
+  position: relative;
+  flex: 0 0 56.25em;
+  width: 56.25em;
+}
+.location-map::after {
+  content: "";
+  display: block;
+  padding-bottom: 71.1111111111%;
+}
+.location-map .map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .partner-box {
   display: flex;
   padding-top: 4.125em;
