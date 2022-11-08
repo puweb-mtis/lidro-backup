@@ -4832,6 +4832,59 @@ body {
   justify-content: center;
 }
 
+.prd-row {
+  display: flex;
+}
+.prd-row .prd-col {
+  flex: 1 0 auto;
+}
+.prd-row .prd-col.prd-col--title {
+  flex: 1 1 auto;
+  width: 1%;
+  padding-right: 0.625em;
+}
+.prd-row .prd-col.prd-col--content {
+  flex: 0 0 65em;
+  width: 65em;
+}
+
+.droid-swiper-box + .droid-swiper-box {
+  margin-top: 10.625em;
+}
+.droid-swiper-box .swiper-pagination--black {
+  margin-top: 5.875em;
+}
+
+.droid-desc {
+  display: flex;
+  align-items: center;
+  margin-top: 3.125em;
+}
+.droid-desc .title {
+  font-family: "Poppins", sans-serif;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1;
+  color: #333333;
+}
+.droid-desc .line {
+  flex: 1 1 auto;
+  width: 1%;
+  height: 2px;
+  background-color: #333;
+  margin-left: 3.25em;
+  margin-right: 3.25em;
+}
+.droid-desc .text {
+  flex: 0 0 auto;
+  font-size: 1em;
+  line-height: 2;
+  font-weight: 700;
+  text-align: right;
+}
+
 .ci-list__item + .ci-list__item {
   margin-top: 7.5em;
 }

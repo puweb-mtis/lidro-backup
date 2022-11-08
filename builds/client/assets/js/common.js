@@ -14,7 +14,7 @@ function swiperAnimatedActive(swiper) {
 }
 
 function swiperPaginationNumber(swiper, parent = undefined) {
-    if ( !swiper ) return false;
+    if (!swiper) return false;
     
     if (parent !== undefined) {
         const length = (swiper.loopedSlides) ? swiper.slides.length - 2 : swiper.slides.length;
@@ -224,34 +224,63 @@ $topButton.addEventListener('click', e => {
 
 window.addEventListener('scroll', e => {
     const endPoint = document.body.scrollHeight - 305;
-    const middlePoint =  (document.body.scrollHeight/2);
+    const middlePoint = (document.body.scrollHeight / 2);
     const scrollBottom = window.scrollY + window.innerHeight;
-    const scrollMiddle = window.scrollY + (window.innerHeight/2);
+    const scrollMiddle = window.scrollY + (window.innerHeight / 2);
     
-    if ( scrollMiddle > middlePoint ) {
+    if (scrollMiddle > middlePoint) {
         $topButton.classList.add('active');
     } else {
         $topButton.classList.remove('active');
     }
     
-    if ( scrollBottom > endPoint ) {
+    if (scrollBottom > endPoint) {
         $topButton.classList.add('bottom');
     } else {
         $topButton.classList.remove('bottom');
     }
 });
 
-const prdViewSwiper = new Swiper('.prd-swiper .swiper', {
-    pagination: {
-        el: '.prd-swiper .swiper-pagination--custom',
-        clickable: true
-    },
-    navigation: {
-        prevEl: '.prd-swiper .swiper-button--prev',
-        nextEl: '.prd-swiper .swiper-button--next'
-    }
-});
+let prdViewSwiper;
+if ( document.querySelector('.prd-swiper .swiper') ) {
+    prdViewSwiper = new Swiper('.prd-swiper .swiper', {
+        pagination: {
+            el: '.prd-swiper .swiper-pagination--custom',
+            clickable: true
+        },
+        navigation: {
+            prevEl: '.prd-swiper .swiper-button--prev',
+            nextEl: '.prd-swiper .swiper-button--next'
+        }
+    });
+}
 
+const $droidSwipers = document.querySelectorAll('.droid-swiper');
+let droidSwipers = [];
+
+if ($droidSwipers.length > 0) {
+    for (let i = 0; i < $droidSwipers.length; i++) {
+        const $swiperBox = $droidSwipers[i];
+        const $swiper = $swiperBox.querySelector('.swiper');
+        
+        droidSwipers[i] = new Swiper($swiper, {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: $swiperBox.querySelector('.swiper-pagination--custom'),
+                clickable: true
+            },
+            navigation: {
+                prevEl: $swiperBox.querySelector('.swiper-button--prev'),
+                nextEl: $swiperBox.querySelector('.swiper-button--next')
+            }
+        });
+    
+        swiperPaginationNumber(droidSwipers[i], '.droid-swiper');
+    }
+}
 
 window.onload = e => {
     AOS.init();

@@ -183,3 +183,65 @@
     }
   }
 }
+
+.prd-row {
+  display: flex;
+  
+  .prd-col {
+    flex: 1 0 auto;
+    
+    &.prd-col--title {
+      flex: 1 1 auto;
+      width: 1%;
+      padding-right: em(10);
+    }
+  
+    &.prd-col--content {
+      flex: 0 0 em(1040);
+      width: em(1040);
+    }
+  }
+}
+
+.droid-swiper-box {
+  & + .droid-swiper-box {
+    margin-top: em(170);
+  }
+  
+  .swiper-pagination--black {
+    margin-top: em(94);
+  }
+}
+
+.droid-desc {
+  display: flex;
+  align-items: center;
+  margin-top: em(50);
+  
+  .title {
+    font-family: 'Poppins', sans-serif;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: em(32);
+    font-weight: 600;
+    line-height: 1;
+    color: #333333;
+  }
+  
+  .line {
+    flex: 1 1 auto;
+    width: 1%;
+    height: 2px;
+    background-color: #333;
+    margin-left: em(52);
+    margin-right: em(52);
+  }
+  
+  .text {
+    flex: 0 0 auto;
+    font-size: 1em;
+    line-height: 2;
+    font-weight: 700;
+    text-align: right;
+  }
+}
