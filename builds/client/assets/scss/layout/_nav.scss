@@ -18,6 +18,7 @@
     background-color: rgba(#35363C, 0.7);
     z-index: 11;
     transform: translateX(100%);
+    background-blend-mode: multiply;
   }
   
   &.active {

@@ -96,7 +96,8 @@ function swiperEachProgressbar(swiper) {
 const $header = document.querySelector('.header');
 const $menuOpenButton = document.querySelector('.header .btn-menu');
 const $menuCloseButton = document.querySelector('.nav .btn-menu');
-const $nav = document.querySelector('nav');
+const $nav = document.querySelector('.nav');
+const $navBg = document.querySelector('.nav-bg');
 const $headerNavSelects = $header.querySelectorAll('.nav-select');
 
 $headerNavSelects.forEach(($select, index, array) => {
@@ -122,15 +123,15 @@ window.addEventListener('scroll', e => {
 $menuOpenButton.addEventListener('click', e => {
     $header.classList.add('nav-open');
     $nav.classList.add('active');
-    
-    // if (e.target.tagName === 'SPAN') {
-    //     e.target.parentElement.classList.toggle('active');
-    // } else {
-    //     e.target.classList.toggle('active');
-    // }
 });
 
 $menuCloseButton.addEventListener('click', e => {
+    $header.classList.remove('nav-open');
+    $nav.classList.remove('active');
+});
+
+/* 네비게이션 배경 클릭시 닫기 */
+$navBg.addEventListener('click', e => {
     $header.classList.remove('nav-open');
     $nav.classList.remove('active');
 });

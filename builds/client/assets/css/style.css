@@ -4423,6 +4423,7 @@ html:not(.fp-enabled) .footer {
   background-color: rgba(53, 54, 60, 0.7);
   z-index: 11;
   transform: translateX(100%);
+  background-blend-mode: multiply;
 }
 .nav.active {
   transition: transform 0.3s ease-in-out;
