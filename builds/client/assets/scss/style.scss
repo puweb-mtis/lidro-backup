@@ -1,6 +1,9 @@
 // functions
 @import "functions";
 
+// reset
+@import "reset";
+
 // fonts
 @import "./fonts";
 
@@ -11,6 +14,8 @@
 @import "./utils/spacer";
 @import "./utils/text";
 
+@import "./mixins/image";
+
 @import "./layout/common";
 @import "./layout/header";
 @import "./layout/footer";
@@ -18,6 +23,7 @@
 
 @import "./components/board";
 @import "./components/buttons";
+@import "./components/hash";
 @import "./components/title";
 @import "./components/swiper";
 
@@ -28,6 +34,7 @@
 @import "./pages/location";
 @import "./pages/partners";
 @import "./pages/promote";
+@import "./pages/recruit";
 
 // [[ MAIN ]]
 .main-swiper {

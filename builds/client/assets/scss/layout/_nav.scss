@@ -5,10 +5,9 @@
   width: em(800);
   height: 100vh;
   background-color: #35363c;
-  z-index: 3;
+  z-index: 12;
   padding: em(60) em(100);
   transform: translateX(100%);
-  transition: all .3s ease-in-out;
   
   &-bg {
     position: fixed;
@@ -17,15 +16,16 @@
     width: 100%;
     height: 100%;
     background-color: rgba(#35363C, 0.7);
-    z-index: 2;
+    z-index: 11;
     transform: translateX(100%);
-    transition: transform .5s ease-in-out;
   }
   
   &.active {
+    transition: transform .3s ease-in-out;
     transform: translateX(0);
     
     & + .nav-bg {
+      transition: transform .5s ease-in-out;
       transform: translateX(0);
     }
   }
@@ -33,6 +33,24 @@
   .symbol {
     width: em(28);
     height: em(30);
+  }
+  
+  &-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    .lang-box {
+      a {
+        color: #fff;
+      }
+    }
+    
+    .btn-menu {
+      span {
+        background-color: #fff;
+      }
+    }
   }
   
   .nav-list {

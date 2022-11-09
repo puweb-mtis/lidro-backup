@@ -29,7 +29,7 @@
   
   &--line {
     .title {
-      color: #333333;
+      color: #333;
       font-size: em(48);
       font-weight: 900;
     }
@@ -55,7 +55,7 @@
       font-weight: 600;
       line-height: (26/20);
     }
-  
+    
     .sub-title--2 {
       font-family: 'Poppins', sans-serif;
       color: #ccc;
@@ -101,6 +101,26 @@
         margin-left: auto;
         margin-right: 0;
       }
+    }
+  }
+  
+  &--vertical {
+    .symbol {
+      height: em(40);
+    }
+    
+    .title {
+      font-size: em(48);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-top: em(40, 48);
+    }
+    
+    .title--2 {
+      font-size: em(36);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: (48/36);
     }
   }
 }

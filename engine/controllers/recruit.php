@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Intro extends CI_Controller
+class Recruit extends CI_Controller
 {
     
     /**
@@ -29,7 +29,10 @@ class Intro extends CI_Controller
         return;
     }
     
-    public function history()
+    /*
+     * 채용공고 리스트
+     * */
+    public function announce_list()
     {
         $data = [];
         
@@ -44,37 +47,10 @@ class Intro extends CI_Controller
         return;
     }
     
-    public function ci()
-    {
-        $data = [];
-        
-        $data['controll_var'] = "클라이언트 컨트롤 변수 확인";
-        
-        // 화면 뷰
-        if ($this->siteinit->_is_template_) {
-            $this->load->view(null, $data);
-        } else {
-            $this->load->view('client/' . $this->uri->ruri_string(), $data);
-        }
-        return;
-    }
-    
-    public function partners()
-    {
-        $data = [];
-        
-        $data['controll_var'] = "클라이언트 컨트롤 변수 확인";
-        
-        // 화면 뷰
-        if ($this->siteinit->_is_template_) {
-            $this->load->view(null, $data);
-        } else {
-            $this->load->view('client/' . $this->uri->ruri_string(), $data);
-        }
-        return;
-    }
-    
-    public function location()
+    /*
+     * 채용공고 뷰
+     * */
+    public function announce_view()
     {
         $data = [];
         

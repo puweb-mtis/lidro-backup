@@ -1,0 +1,31 @@
+.hash-box {
+  margin-top: em(60);
+  margin-left: em(-10);
+  margin-right: em(-10);
+  
+  .hash-item {
+    display: inline-block;
+    color: #999;
+    font-size: em(18);
+    font-weight: 800;
+    line-height: 1;
+    padding: em(10, 18);
+    
+    &.active {
+      color: #333;
+    }
+  }
+  
+  &.hash--sm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: em(10);
+    margin: 0;
+    
+    .hash-item {
+      padding: 0;
+      font-size: em(14);
+      color: #333;
+    }
+  }
+}

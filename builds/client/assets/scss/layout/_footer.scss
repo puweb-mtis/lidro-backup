@@ -3,6 +3,12 @@
   padding-top: em(70);
   padding-bottom: em(62);
   
+  @at-root {
+    html:not(.fp-enabled) .footer {
+      margin-top: em(117);
+    }
+  }
+  
   .container {
     display: flex;
   }

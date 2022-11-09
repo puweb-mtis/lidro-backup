@@ -36,6 +36,54 @@
   }
 }
 
+.board-list--2 {
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  
+  .board-list__item {
+    padding-top: em(33);
+    padding-bottom: em(26);
+    border-bottom: 1px solid #ddd;
+    
+    &:last-child {
+      border-bottom: 0;
+    }
+    
+    .title {
+      display: block;
+      color: #333;
+      font-size: em(22);
+      font-weight: 600;
+      line-height: 1;
+    }
+    
+    .info-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: em(32);
+    }
+    
+    .date {
+      color: #999;
+      font-size: em(14);
+      line-height: 1;
+    }
+    
+    .cate {
+      color: #999;
+      font-size: em(14);
+      line-height: 1;
+    }
+    
+    &:hover {
+      .title {
+        color: #666;
+      }
+    }
+  }
+}
+
 .board-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
