@@ -1,8 +1,11 @@
 $(document).ready(function () {
+    let fullpagePrevIndex;
     $('#fullpage').fullpage({
         menu: '#fullpage_menu',
         anchors: ['intro', 'technology', 'promotion', 'rnd', 'footer'],
         onLeave: function (index, nextIndex, direction) {
+            fullpagePrevIndex = index - 1;
+            
             const $animateItems = $(this).find('.animate__animated.fullpage__animated');
     
             $animateItems.removeClass('animate__fadeInUp');
@@ -16,6 +19,41 @@ $(document).ready(function () {
         afterLoad: function (anchorLink, index) {
             const $animateItems = $(this).find('.animate__animated.fullpage__animated');
             $animateItems.addClass('animate__fadeInUp');
+    
+            techSwiper.autoplay.stop();
+            
+            if ( fullpagePrevIndex !== undefined ) {
+                switch ((index - 1)) {
+                    case 0:
+                        introSwiper.autoplay.start();
+                        introSwiper.slideTo(0);
+                        introSwiper.el.querySelector('.swiper-progressbar').classList.add('active');
+                        break;
+                    case 1:
+                        console.log('tech');
+                        techSwiper.autoplay.start();
+                        techSwiper.slideTo(0);
+                        techSwiper.slides[0].querySelector('.swiper-progressbar').classList.add('active');
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+            switch (fullpagePrevIndex) {
+                case 0:
+                    introSwiper.autoplay.stop();
+                    introSwiper.slideTo(0);
+                    introSwiper.el.querySelector('.swiper-progressbar').classList.remove('active');
+                    break;
+                case 1:
+                    techSwiper.autoplay.stop();
+                    techSwiper.slideTo(0);
+                    techSwiper.slides[0].querySelector('.swiper-progressbar').classList.remove('active');
+                    break;
+                default:
+                    break;
+            }
         }
     });
 });

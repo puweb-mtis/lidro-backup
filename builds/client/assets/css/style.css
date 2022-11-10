@@ -6273,6 +6273,7 @@ html:not(.fp-enabled) .footer {
 .intro-swiper__title {
   font-size: 4.875em;
   font-weight: 800;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 .intro-swiper__title [data-letters-wrapper] .letter {
   line-height: 1;

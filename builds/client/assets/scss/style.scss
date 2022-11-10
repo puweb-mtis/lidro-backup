@@ -109,6 +109,7 @@
   &__title {
     font-size: em(78);
     font-weight: 800;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     
     [data-letters-wrapper] {
       .letter {
