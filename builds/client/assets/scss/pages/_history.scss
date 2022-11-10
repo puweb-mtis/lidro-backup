@@ -17,8 +17,12 @@
   bottom: 0;
   left: 0;
   width: em(580);
+  max-width: 35%;
   background: {
     image: url(../images/history/bg.png);
+    repeat: no-repat;
+    position: center;
+    size: cover;
   };
   
   &::after {

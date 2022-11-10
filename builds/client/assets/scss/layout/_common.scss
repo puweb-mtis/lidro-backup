@@ -35,14 +35,18 @@ html:not(.fp-enabled) .main {
     flex: 1 0 auto;
     
     &.page-col--title {
-      flex: 1 0 percentage(590/1400);
-      max-width: percentage(590/1400);
+      flex: 1 1 auto;
+      width: 1%;
       padding-right: em(10);
     }
   
     &.page-col--content {
-      flex: 1 0 percentage(810/1400);
-      max-width: percentage(810/1400);
+      flex: 1 0 percentage(1000/1400);
+      max-width: percentage(1000/1400);
+      
+      @include mdq-min(lg) {
+        flex: 1 0 percentage(810/1400);
+        max-width: percentage(810/1400);}
     }
   }
   

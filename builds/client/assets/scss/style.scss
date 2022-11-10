@@ -28,6 +28,7 @@
 @import "./components/board";
 @import "./components/buttons";
 @import "./components/hash";
+@import "./components/responsive";
 @import "./components/title";
 @import "./components/swiper";
 
@@ -511,8 +512,6 @@
   }
   
   .address-box {
-    display: flex;
-    justify-content: space-between;
     font-size: em(20);
     font-weight: 800;
     
@@ -522,13 +521,13 @@
   }
   
   .tel-box {
+    display: flex;
+    gap: em(20);
+    margin-top: em(10);
+    
     .tel {
       .tel-title {
         margin-right: em(12);
-      }
-      
-      & + .tel {
-        margin-top: em(10);
       }
     }
   }
