@@ -228,9 +228,9 @@ class CI_Siteinit
         global $URI;
         $this->_service_mode = (preg_match('/\b' . ADMINURL . '\b/', $URI->uri_string())) ? 'admin' : 'client';
 
-        if ($this->_service_mode === 'client' && $this->isMobileChk()) {
+        /*if ($this->_service_mode === 'client' && $this->isMobileChk()) {
             $this->_service_mode = 'mobile_client';
-        }
+        }*/
         return;
     }
 
