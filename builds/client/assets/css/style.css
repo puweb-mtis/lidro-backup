@@ -18,6 +18,7 @@ html,
 body {
   position: relative;
   font-family: "SUIT", sans-serif;
+  min-width: 1920px;
 }
 
 @font-face {
@@ -4401,6 +4402,10 @@ html:not(.fp-enabled) .footer {
 }
 .fp-viewing-intro #fullpage_menu li.active a::after, .fp-viewing-intro #fullpage_menu li:hover a::after {
   background-color: white;
+}
+
+.history-main ~ .footer {
+  margin-top: 0;
 }
 
 .nav {
