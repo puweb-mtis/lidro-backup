@@ -6412,6 +6412,9 @@ html:not(.fp-enabled) .footer {
   color: #ffffff;
 }
 
+.promo {
+  position: relative;
+}
 .promo .swiper {
   overflow: visible;
 }
@@ -6530,7 +6533,7 @@ html:not(.fp-enabled) .footer {
 .rnd-title-box .bar {
   display: block;
   width: 2px;
-  height: 15em;
+  height: 6.25em;
   background-color: #333;
   margin: 3.75em auto 3.75em 0;
 }
@@ -6555,7 +6558,7 @@ html:not(.fp-enabled) .footer {
 }
 .rnd .swiper-pagination--bullet {
   position: absolute;
-  bottom: -8.25em;
+  bottom: -6.25em;
   left: 0;
 }
 .rnd-title {
@@ -6638,6 +6641,29 @@ html:not(.fp-enabled) .footer {
 .rnd .rnd-swiper .swiper-button--arrow-right {
   top: inherit;
   bottom: 3.75em;
+}
+
+.fp-enabled .promo-box {
+  filter: blur(5px);
+}
+
+.preparing-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 105%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.preparing-cover .text {
+  margin-top: 0.5555555556em;
+  font-size: 1.125em;
+  font-weight: 800;
+  color: #333;
 }
 
 /*# sourceMappingURL=style.css.map */
