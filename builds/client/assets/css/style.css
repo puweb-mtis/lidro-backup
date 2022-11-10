@@ -4799,32 +4799,23 @@ html:not(.fp-enabled) .footer {
   align-items: center;
   padding: 1.125em 2.125em;
   font-weight: 700;
-}
-[class^=btn-download]::before {
-  content: "";
-  display: block;
-  width: 1.5em;
-  height: 1.5em;
-  margin-right: 0.5em;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
-}
-
-.btn-download--white {
   color: #333;
   border: 2px solid #333;
+  transition: all 0.3s ease-in-out;
 }
-.btn-download--white::before {
-  background-image: url(/builds/client/assets/images/icons/file_download_b.svg);
+[class^=btn-download] svg {
+  margin-right: 0.5em;
 }
-.btn-download--black {
+[class^=btn-download] svg path {
+  transition: all 0.3s ease-in-out;
+}
+[class^=btn-download]:hover {
   color: #fff;
   background-color: #333;
   border: 2px solid #333;
 }
-.btn-download--black::before {
-  background-image: url(/builds/client/assets/images/icons/file_download_w.svg);
+[class^=btn-download]:hover svg path {
+  fill: #fff;
 }
 
 .hash-box {
@@ -5726,12 +5717,6 @@ html:not(.fp-enabled) .footer {
 }
 .brochure-title .btn-group {
   margin-top: 14.375em;
-}
-.brochure-title [class^=btn-download] {
-  transition: all 0.2s ease-in-out;
-}
-.brochure-title [class^=btn-download]:hover {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .brochure-content {
   flex: 1 0 71.4285714286%;

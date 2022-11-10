@@ -51,38 +51,38 @@
   align-items: center;
   padding: em(18) em(34);
   font-weight: 700;
+  color: #333;
+  border: 2px solid #333;
+  transition: all .3s ease-in-out;
   
-  &::before {
-    content: '';
-    display: block;
-    width: em(24);
-    height: em(24);
+  svg {
     margin-right: em(8);
-    background: {
-      repeat: no-repeat;
-      position: center;
-      size: 100% auto;
-    };
-  }
-}
-
-.btn-download {
-  &--white {
-    color: #333;
-    border: 2px solid #333;
     
-    &::before {
-      background-image: url(/builds/client/assets/images/icons/file_download_b.svg);
+    path {
+      transition: all .3s ease-in-out;
     }
   }
   
-  &--black {
+  &:hover {
     color: #fff;
     background-color: #333;
     border: 2px solid #333;
     
-    &::before {
-      background-image: url(/builds/client/assets/images/icons/file_download_w.svg);
+    svg path {
+      fill: #fff;
     }
   }
+  
+  //&::before {
+  //  content: '';
+  //  display: block;
+  //  width: em(24);
+  //  height: em(24);
+  //  margin-right: em(8);
+  //  background: {
+  //    repeat: no-repeat;
+  //    position: center;
+  //    size: 100% auto;
+  //  };
+  //}
 }

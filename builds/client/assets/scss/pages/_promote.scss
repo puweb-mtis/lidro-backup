@@ -16,14 +16,6 @@
     .btn-group {
       margin-top: em(230);
     }
-    
-    [class^="btn-download"] {
-      transition: all .2s ease-in-out;
-      
-      &:hover {
-        box-shadow: 2px 2px 4px rgba(#000, 0.5);
-      }
-    }
   }
   
   &-content {
