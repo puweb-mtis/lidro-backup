@@ -6274,6 +6274,9 @@ html:not(.fp-enabled) .footer {
   font-size: 4.875em;
   font-weight: 800;
 }
+.intro-swiper__title [data-letters-wrapper] .letter {
+  line-height: 1;
+}
 .intro-swiper__progressbar {
   position: absolute;
   bottom: 9em;
@@ -6309,7 +6312,7 @@ html:not(.fp-enabled) .footer {
 }
 .intro-swiper__progressbar .swiper-progressbar {
   position: relative;
-  width: 42.2857142857%;
+  width: 39.2857142857%;
   height: 2px;
   margin-left: auto;
 }

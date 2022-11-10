@@ -42,6 +42,69 @@ const introSwiper = new Swiper('.intro-swiper', {
     }
 });
 
+introSwiper.on('slideChange', swiper => {
+    const $slides = swiper.slides;
+    const activeIndex = swiper.activeIndex;
+    
+    const promise = new Promise((resolve, reject) => {
+        for (let i = 0; i < $slides.length; i++) {
+            const $title = $slides[i].querySelector('.intro-swiper__title');
+            $title.classList.remove('active');
+        }
+        
+        resolve();
+    });
+    
+    promise.then(() => {
+        const letterWrappers = $slides[activeIndex].querySelectorAll('[data-letters-wrapper]');
+    
+        for (let i = 0; i < letterWrappers.length; i++) {
+            const lettersWrapper = letterWrappers[i];
+            lettersWrapper.innerHTML = lettersWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            const letters = lettersWrapper.querySelectorAll('.letter');
+        
+            anime.timeline({loop: false})
+                .add({
+                    targets: letters,
+                    translateY: ["1.5em", 0],
+                    duration: 700,
+                    easing: "easeOutCubic",
+                    delay: (el, i) => 50 * i
+                });
+        }
+    });
+    
+    /*
+    const promise = new Promise((resolve, reject) => {
+        for (let i = 0; i < introLocationSlides.length; i++) {
+            introLocationSlides[i].classList.remove('active');
+        }
+        
+        resolve();
+    });
+    
+    promise.then(() => {
+        introLocationSlides[swiper.realIndex].classList.add('active');
+        const letterWrappers = introLocationSlides[swiper.realIndex].querySelectorAll('[data-letters-wrapper]');
+        
+        for (let i = 0; i < letterWrappers.length; i++) {
+            const lettersWrapper = letterWrappers[i];
+            lettersWrapper.innerHTML = lettersWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            const letters = lettersWrapper.querySelectorAll('.letter');
+            
+            anime.timeline({loop: false})
+                .add({
+                    targets: letters,
+                    translateY: ["1.5em", 0],
+                    duration: 700,
+                    easing: "easeOutCubic",
+                    delay: (el, i) => 50 * i
+                });
+        }
+    });
+    */
+});
+
 /* TECH */
 const techSwiper = new Swiper('.tech-swiper', {
     autoplay: {
@@ -166,7 +229,6 @@ window.onload = function () {
     swiperPaginationNumber(introSwiper);
     swiperVideoPlaying(introSwiper);
     swiperAutoplayControl(introSwiper);
-    swiperAnimatedActive(introSwiper);
     swiperEachProgressbar(techSwiper);
     swiperAnimatedActive(techSwiper);
     swiperPaginationNumber(techSwiper, '.tech');

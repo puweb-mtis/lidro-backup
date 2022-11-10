@@ -109,6 +109,12 @@
   &__title {
     font-size: em(78);
     font-weight: 800;
+    
+    [data-letters-wrapper] {
+      .letter {
+        line-height: 1;
+      }
+    }
   }
   
   &__progressbar {
@@ -153,7 +159,7 @@
     
     .swiper-progressbar {
       position: relative;
-      width: percentage(592/1400);
+      width: percentage(550/1400);
       height: 2px;
       margin-left: auto;
       
