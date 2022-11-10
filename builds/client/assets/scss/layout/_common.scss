@@ -7,7 +7,11 @@ html:not(.fp-enabled) .main {
 }
 
 .section:not(.fp-section) {
-  padding: em(120) 0;
+  padding: em(80) 0;
+  
+  @include mdq-min(lg) {
+    padding: em(120) 0;
+  }
 }
 
 .container {
@@ -15,8 +19,13 @@ html:not(.fp-enabled) .main {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: em(20);
-  padding-right: em(20);
+  padding-left: em(32);
+  padding-right: em(32);
+  
+  @include mdq-min(lg) {
+    padding-left: em(20);
+    padding-right: em(20);
+  }
 }
 
 .page-row {

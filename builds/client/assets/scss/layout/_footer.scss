@@ -5,7 +5,11 @@
   
   @at-root {
     html:not(.fp-enabled) .footer {
-      margin-top: em(117);
+      margin-top: em(160);
+      
+      @include mdq-min(lg) {
+        margin-top: em(117);
+      }
     }
   }
   
@@ -182,5 +186,5 @@
 }
 
 .history-main ~ .footer {
-  margin-top: 0;
+  margin-top: 0 !important;
 }

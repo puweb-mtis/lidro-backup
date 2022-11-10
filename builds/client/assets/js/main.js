@@ -150,7 +150,7 @@ const techSwiper = new Swiper('.tech-swiper', {
         disableOnInteraction: false
     },
     speed: 500,
-    slidesPerView: 1,
+    slidesPerView: 1.5,
     spaceBetween: 100,
     navigation: {
         prevEl: '.tech .swiper-button--arrow-left',
@@ -159,6 +159,11 @@ const techSwiper = new Swiper('.tech-swiper', {
     pagination: {
         el: '.tech .swiper-pagination--custom',
         clickable: true
+    },
+    breakpoints: {
+        1400: {
+            slidesPerView: 1,
+        }
     }
 });
 

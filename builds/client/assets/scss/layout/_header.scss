@@ -119,7 +119,11 @@
       border-bottom: 0;
       
       .container {
-        padding: em(60) em(80) 0 em(80);
+        padding: em(40) em(32) 0 em(32);
+  
+        @include mdq-min(lg) {
+          padding: em(60) em(80) 0 em(80);
+        }
       }
       
       &.header--white {
@@ -170,8 +174,12 @@ html:not(.fp-enabled) {
     
     &.scrolled {
       .container {
-        padding: 0;
+        padding: 0 em(32);
         max-width: 1400px;
+        
+        @include mdq-min(lg) {
+          padding: 0 em(20);
+        }
       }
       
       .logo {

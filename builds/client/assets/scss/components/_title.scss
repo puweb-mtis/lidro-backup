@@ -3,9 +3,13 @@
     margin-bottom: em(100);
     
     .title {
-      font-size: em(78);
+      font-size: em(60);
       font-weight: 900;
       letter-spacing: -1px;
+      
+      @include mdq-min(lg) {
+        font-size: em(78);
+      }
     }
   }
   
@@ -21,23 +25,35 @@
     };
     
     .title {
-      font-size: em(78);
+      font-size: em(60);
       font-weight: 800;
       letter-spacing: -1px;
+  
+      @include mdq-min(lg) {
+        font-size: em(78);
+      }
     }
   }
   
   &--line {
     .title {
       color: #333;
-      font-size: em(48);
+      font-size: em(40);
       font-weight: 900;
+      
+      @include mdq-min(lg) {
+        font-size: em(48);
+      }
     }
     
     .title--lg {
-      font-size: em(78);
+      font-size: em(60);
       font-weight: 900;
       letter-spacing: -2px;
+  
+      @include mdq-min(lg) {
+        font-size: em(78);
+      }
     }
     
     .line {
@@ -65,9 +81,13 @@
     }
     
     .sub-title--lg {
-      font-size: em(48);
+      font-size: em(40);
       line-height: 1.5;
       font-weight: 600;
+  
+      @include mdq-min(lg) {
+        font-size: em(48);
+      }
     }
     
     .address-box {
@@ -110,17 +130,25 @@
     }
     
     .title {
-      font-size: em(48);
+      font-size: em(40);
       font-weight: 800;
       letter-spacing: -1px;
       margin-top: em(40, 48);
+  
+      @include mdq-min(lg) {
+        font-size: em(48);
+      }
     }
     
     .title--2 {
-      font-size: em(36);
+      font-size: em(32);
       font-weight: 800;
       letter-spacing: -1px;
       line-height: (48/36);
+  
+      @include mdq-min(lg) {
+        font-size: em(36);
+      }
     }
   }
 }
