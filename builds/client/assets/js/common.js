@@ -448,5 +448,10 @@ window.onload = e => {
         headerNavDepth2.innerHTML = currentNavDepth2.innerHTML;
         headerNavDepth1Select.innerHTML = currentNavDepth1Link.innerHTML;
         headerNavDepth2Select.innerHTML = currentNavDepth2Link.innerHTML;
+        
+        const headerNavCurrentDepth1Link = headerNavDepth1.querySelector(`a[href*="${currentDepth1}"]`);
+        const headerNavCurrentDepth2Link = headerNavDepth2.querySelector(`a[href*="${currentDepth1}/${currentDepth2.substring(0, 5)}"]`);
+        headerNavCurrentDepth1Link.classList.add('active');
+        headerNavCurrentDepth2Link.classList.add('active');
     }
 }
