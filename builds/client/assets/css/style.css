@@ -6328,7 +6328,7 @@ html:not(.fp-enabled) .footer {
 }
 .intro-swiper__progressbar .swiper-progressbar.active::before {
   width: 100%;
-  transition: width 4s linear;
+  transition: width 6s linear;
 }
 
 .tech {

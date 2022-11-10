@@ -28,7 +28,7 @@ const introSwiper = new Swiper('.intro-swiper', {
     speed: 1000,
     spaceBetween: 0,
     autoplay: {
-        delay: 4000,
+        delay: 6000,
         disableOnInteraction: false
     },
     navigation: {
