@@ -6222,17 +6222,25 @@ html.nav-open {
   }
 }
 
-.droid-swiper {
+.droid-swiper .swiper {
   margin-left: -30px;
   margin-right: -30px;
 }
-@media all and (min-width: 1024.02px) {
-  .droid-swiper {
+@media all and (min-width: 576.02px) {
+  .droid-swiper .swiper {
     margin-left: 0;
     margin-right: 0;
   }
 }
 
+.droid-swiper-box {
+  margin-top: 1.25em;
+}
+@media all and (min-width: 1024.02px) {
+  .droid-swiper-box {
+    margin-top: 0;
+  }
+}
 .droid-swiper-box + .droid-swiper-box {
   margin-top: 3.75em;
 }
@@ -6251,18 +6259,25 @@ html.nav-open {
   }
 }
 
+.droid-thumb {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+@media all and (min-width: 576.02px) {
+  .droid-thumb {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .droid-desc {
   margin-top: 1.5em;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 @media all and (min-width: 1024.02px) {
   .droid-desc {
     display: flex;
     align-items: center;
     margin-top: 3.125em;
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 .droid-desc .title {
