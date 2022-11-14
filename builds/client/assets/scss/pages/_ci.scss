@@ -1,27 +1,55 @@
 .ci-list {
   &__item {
+    margin-top: em(40);
+    
+    @include mdq-min(tab) {
+      margin-top: 0;
+    }
+    
     & + .ci-list__item {
-      margin-top: em(120);
+      margin-top: em(100);
+      
+      @include mdq-min(tab ){
+        margin-top: em(120);
+      }
     }
   }
   
   &__title {
     color: #333333;
     font-family: 'Poppins', sans-serif;
-    font-size: em(26);
+    font-size: vw(20);
     font-weight: 600;
-    margin-bottom: em(20, 26);
+    margin-bottom: em(16, 20);
+    
+    @include mdq-min(sm) {
+      font-size: em(24);
+    }
+    
+    @include mdq-min(tab) {
+      font-size: em(26);
+      margin-bottom: em(20, 26);
+    }
   }
   
   &__content {
     color: #333333;
-    font-size: em(14);
-    font-weight: 500;
     line-height: (26/14);
+    font-size: vw(14);
+    font-weight: 700;
+    
+    @include mdq-min(sm) {
+      font-size: em(14);
+      font-weight: 500;
+    }
     
     img {
       display: block;
-      margin-top: em(78);
+      margin-top: em(40);
+      
+      @include mdq-min(tab) {
+        margin-top: em(78);
+      }
     }
   }
 }

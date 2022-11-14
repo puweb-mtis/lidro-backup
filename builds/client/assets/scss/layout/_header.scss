@@ -1,17 +1,26 @@
+// Header
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
-  border-bottom: 1px solid #f0f0f0;
+  transition: background-color .3s ease-in-out;
   
   .container {
-    padding: em(32) em(80);
+    padding: em(40) 30px;
     max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: padding-top .5s ease-in-out, padding-bottom .5s ease-in-out;
+    
+    @include mdq-min(tab) {
+      padding: em(32) em(80);
+    }
   }
   
+  // LOGO
   .logo {
     display: block;
     
@@ -19,22 +28,33 @@
       display: block;
       width: em(116);
       height: em(24);
-      background: url(../images/logo.svg) no-repeat center/cover;
+      background: {
+        image: url(/builds/client/assets/images/logo.svg);
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+      };
     }
     
     .symbol {
       display: none;
       width: em(19);
       height: em(20);
-      background: url(../images/symbol_b.svg) no-repeat center/cover;
+      background: {
+        image: url(/builds/client/assets/images/symbol_b.svg);
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+      };
     }
   }
   
+  // Sub navigation IN header
   .sub-nav {
     display: flex;
     align-items: center;
     gap: em(90);
-  
+    
     .nav-select {
       display: flex;
       align-items: center;
@@ -43,7 +63,7 @@
       line-height: (24/18);
       user-select: none;
       cursor: pointer;
-    
+      
       &::after {
         content: '';
         display: block;
@@ -70,8 +90,12 @@
     }
     
     .nav-box {
-      display: flex;
+      display: none;
       gap: em(40);
+  
+      @include mdq-min(tab) {
+        display: flex;
+      }
       
       .nav-item {
         position: relative;
@@ -98,7 +122,7 @@
             color: #ccc;
             font-size: em(18);
             font-weight: 800;
-           
+            
             &.active,
             &:hover {
               color: #333;
@@ -109,26 +133,84 @@
     }
   }
   
-  @at-root {
-    .fp-enabled .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 3;
-      border-bottom: 0;
+  // Main Header
+  &.header--main {
+    .container {
+      padding: em(40) 30px;
       
-      .container {
-        padding: em(40) em(32) 0 em(32);
+      @include mdq-min(lg) {
+        padding: em(60) em(80) 0;
+      }
+    }
+    
+    .logo {
+      .img {
+        background-image: url(/builds/client/assets/images/logo_w.svg);
+        
+        @include mdq-min(tab) {
+          background-image: url(/builds/client/assets/images/logo.svg);
+        }
+      }
+    }
+    
+    .lang-box {
+      a {
+        color: #fff;
+        
+        @include mdq-min(tab) {
+          color: #333;
+        }
+      }
+    }
+    
+    .btn-menu {
+      span {
+        background-color: #fff;
   
-        @include mdq-min(lg) {
-          padding: em(60) em(80) 0 em(80);
+        @include mdq-min(tab) {
+          background-color: #333;
+        }
+      }
+    }
+  
+    // Main scrolled header
+    &.scrolled {
+      background-color: rgba(#fff, 0.9);
+    
+      .container {
+        padding: em(20) 30px;
+      }
+      
+      .logo {
+        .img {
+          background-image: url(/builds/client/assets/images/logo.svg);
         }
       }
       
+      .lang-box {
+        a {
+          color: #333;
+        }
+      }
+      
+      .btn-menu {
+        span {
+          background-color: #333;
+        }
+      }
+    }
+    
+    @include mdq-min(tab) {
       &.header--white {
-        .logo .img {
-          background: url(../images/logo_w.svg) no-repeat center/cover;
+        .logo {
+          .img {
+            background: {
+              image: url(/builds/client/assets/images/logo_w.svg);
+              repeat: no-repeat;
+              position: center;
+              size: cover;
+            };
+          }
         }
         
         .lang-box {
@@ -141,6 +223,38 @@
           span {
             background-color: #fff;
           }
+        }
+      }
+    }
+  }
+  
+  // Sub Header
+  &:not(.header--main) {
+    background-color: #fff;
+    
+    @include mdq-min(tab) {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    &.scrolled {
+      background-color: rgba(#fff, 0.9);
+      
+      .container {
+        padding: em(20) 30px;
+        max-width: 1400px;
+      
+        @include mdq-min(lg) {
+          padding: 0 em(20);
+        }
+      }
+    
+      .logo {
+        .img {
+          display: none;
+        }
+      
+        .symbol {
+          display: block;
         }
       }
     }
@@ -164,43 +278,14 @@
   }
 }
 
-html:not(.fp-enabled) {
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    
-    &.scrolled {
-      .container {
-        padding: 0 em(32);
-        max-width: 1400px;
-        
-        @include mdq-min(lg) {
-          padding: 0 em(20);
-        }
-      }
-      
-      .logo {
-        .img {
-          display: none;
-        }
-        
-        .symbol {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
+// Utility
 .util-box {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
+// Language
 .lang-box {
   display: flex;
   align-items: center;
@@ -215,6 +300,7 @@ html:not(.fp-enabled) {
   }
 }
 
+// Menu Button
 .btn-menu {
   position: relative;
   display: block;

@@ -216,8 +216,8 @@
   &--arrow-right {
     cursor: pointer;
     display: block;
-    width: em(102);
-    height: em(42);
+    width: em(55);
+    height: em(24);
     border: 0;
     background: {
       color: transparent;
@@ -225,6 +225,11 @@
       position: center;
       size: auto 100%;
     };
+    
+    @include mdq-min(md){
+      width: em(102);
+      height: em(42);
+    }
   }
   
   &--arrow-left {

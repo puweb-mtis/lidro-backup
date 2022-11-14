@@ -121,11 +121,13 @@ window.addEventListener('scroll', e => {
 });
 
 $menuOpenButton.addEventListener('click', e => {
+    document.querySelector('html').classList.add('nav-open');
     $header.classList.add('nav-open');
     $nav.classList.add('active');
 });
 
 $menuCloseButton.addEventListener('click', e => {
+    document.querySelector('html').classList.remove('nav-open');
     $header.classList.remove('nav-open');
     $nav.classList.remove('active');
 });
@@ -249,30 +251,33 @@ function lettersAnime(target, effect = 'letter') {
 }
 
 const $topButton = document.querySelector('.btn-top');
-if ( $topButton ) {
+if ($topButton) {
     $topButton.addEventListener('click', e => {
         window.scrollTo({top: 0, behavior: 'smooth'});
     });
+    
+    window.addEventListener('scroll', e => {
+        const footerHeight = document.querySelector('.footer').clientHeight;
+        const endPoint = document.body.scrollHeight - footerHeight;
+        const middlePoint = (document.body.scrollHeight / 2);
+        const scrollBottom = window.scrollY + window.innerHeight;
+        const scrollMiddle = window.scrollY + (window.innerHeight / 2);
+        
+        if (scrollMiddle > middlePoint) {
+            $topButton.classList.add('active');
+        } else {
+            $topButton.classList.remove('active');
+        }
+        
+        if (scrollBottom > endPoint) {
+            $topButton.classList.add('bottom');
+            $topButton.style.bottom = footerHeight + 30 + 'px';
+        } else {
+            $topButton.classList.remove('bottom');
+            $topButton.style.bottom = null;
+        }
+    });
 }
-
-window.addEventListener('scroll', e => {
-    const endPoint = document.body.scrollHeight - 305;
-    const middlePoint = (document.body.scrollHeight / 2);
-    const scrollBottom = window.scrollY + window.innerHeight;
-    const scrollMiddle = window.scrollY + (window.innerHeight / 2);
-    
-    if (scrollMiddle > middlePoint) {
-        $topButton.classList.add('active');
-    } else {
-        $topButton.classList.remove('active');
-    }
-    
-    if (scrollBottom > endPoint) {
-        $topButton.classList.add('bottom');
-    } else {
-        $topButton.classList.remove('bottom');
-    }
-});
 
 let prdViewSwiper;
 if (document.querySelector('.prd-swiper .swiper')) {
@@ -424,24 +429,18 @@ if (recruitIndex) {
     }
 }
 
-window.onload = e => {
-    AOS.init();
-    swiperPaginationNumber(introLocationSwiper, '.intro-location');
-    swiperPaginationNumber(prdViewSwiper, '.prd-swiper');
-    lettersAnime('.page-title--normal', 'word');
-    lettersAnime('.page-title--line', 'word');
-    lettersAnime('.page-title--banner');
-    
-    if (!document.querySelector('html').classList.contains('fp-enabled')) {
+
+document.addEventListener('DOMContentLoaded', e => {
+    if (!document.querySelector('.header').classList.contains('header--main')) {
         const currentPathname = window.location.pathname;
-        const currentDepth1 = window.location.pathname.split('/')[1];
-        const currentDepth2 = window.location.pathname.split('/')[2];
+        const currentDepth1 = currentPathname.split('/')[1];
+        const currentDepth2 = currentPathname.split('/')[2];
         const currentNavDepth1Link = document.querySelector(`.nav .nav-list.depth-1 > .nav-list__item > a[href*="${currentDepth1}"]`);
         const currentNavDepth2 = currentNavDepth1Link.nextElementSibling;
         const currentNavDepth2Link = currentNavDepth2.querySelector(`a[href*="${currentDepth1}/${currentDepth2.substring(0, 5)}"]`);
         const headerNavDepth1 = document.querySelector('.header .nav-box .nav-list.depth-1');
         const headerNavDepth1Select = headerNavDepth1.closest('.nav-item').querySelector('.nav-select');
-        const headerNavDepth1Link = headerNavDepth1.querySelectorAll('.nav-list__item a');
+        // const headerNavDepth1Link = headerNavDepth1.querySelectorAll('.nav-list__item a');
         const headerNavDepth2 = document.querySelector('.header .nav-box .nav-list.depth-2');
         const headerNavDepth2Select = headerNavDepth2.closest('.nav-item').querySelector('.nav-select');
         
@@ -454,4 +453,29 @@ window.onload = e => {
         headerNavCurrentDepth1Link.classList.add('active');
         headerNavCurrentDepth2Link.classList.add('active');
     }
+    
+    const headerNavDepth1Link = document.querySelectorAll('.nav-list.depth-1 > .nav-list__item > a');
+    
+    headerNavDepth1Link.forEach(link => {
+        link.addEventListener('click', e => {
+            if ( window.outerWidth < 1025 ) {
+                e.preventDefault();
+    
+                for (let i = 0; i < headerNavDepth1Link.length; i++) {
+                    headerNavDepth1Link[i].closest('.nav-list__item').classList.remove('active');
+                }
+                
+                link.closest('.nav-list__item').classList.toggle('active');
+            }
+        });
+    });
+});
+
+window.onload = e => {
+    AOS.init();
+    swiperPaginationNumber(introLocationSwiper, '.intro-location');
+    swiperPaginationNumber(prdViewSwiper, '.prd-swiper');
+    lettersAnime('.page-title--normal', 'word');
+    lettersAnime('.page-title--line', 'word');
+    lettersAnime('.page-title--banner');
 }

@@ -1,6 +1,11 @@
 $breakpoints: (
+  xs: 0,
+  sm: 576.02px,
+  md: 768.02px,
+  tab: 1024.02px,
   lg: 1440.02px,
-  xl: 1660.02px
+  xl: 1660.02px,
+  xxl: 1920.02px
 );
 
 @mixin mdq-min($breakpoint) {

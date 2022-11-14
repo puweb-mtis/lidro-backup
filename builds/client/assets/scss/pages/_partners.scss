@@ -2,62 +2,108 @@
 
 .partner {
   &-box {
-    display: flex;
-    padding-top: em(66);
-    padding-bottom: em(139);
-    border-top: 2px solid #333;
+    display: block;
+    padding: em(40) 0;
     
-    &:last-child {
-      border-bottom: 2px solid #333;
+    @include mdq-min(tab) {
+      padding-top: em(66);
+      padding-bottom: em(139);
+      border-top: 2px solid #333;
+  
+      &:last-child {
+        border-bottom: 2px solid #333;
+      }
+    }
+  
+    @include mdq-min(xl) {
+      display: flex;
     }
   }
   
   &-title-box {
     flex: 1 1 auto;
-    width: 1%;
     padding-right: em(10);
     
     .title {
       color: #333333;
-      font-size: em(40);
+      font-size: vw(24);
       font-weight: 800;
+      
+      @include mdq-min(tab) {
+        font-size: em(40);
+      }
     }
     
     .sub-title {
       color: #cccccc;
       font-family: 'Poppins', sans-serif;
-      font-size: em(20);
       font-weight: 600;
       line-height: (26/20);
-      margin-top: em(20, 20);
+      font-size: vw(12);
+      margin-top: em(10, 12);
+      
+      br {
+        display: none;
+      }
+      
+      @include mdq-min(tab) {
+        font-size: em(20);
+        margin-top: em(20, 20);
+        
+        br {
+          display: block;
+        }
+      }
     }
   }
   
   &-content {
-    flex: 0 0 em(960);
-    width: em(960);
+    margin-top: em(30);
+    
+    @include mdq-min(xl) {
+      flex: 0 0 em(960);
+      width: em(960);
+    }
   }
   
   &-list {
     display: flex;
     flex-wrap: wrap;
-    margin: em(-20);
+    margin: em(-10);
+    
+    @include mdq-min(tag) {
+      margin: em(-20);
+    }
     
     &__item {
-      flex: 1 0 25%;
-      max-width: 25%;
-      padding: em(20);
+      flex: 1 0 50%;
+      max-width: 50%;
+      padding: em(10);
+      
+      @include mdq-min(tab) {
+        flex: 1 0 25%;
+        max-width: 25%;
+        padding: em(20);
+      }
       
       .desc {
         text-align: center;
-        padding: em(24) em(8);
+        padding: em(10) em(4);
+        
+        @include mdq-min(tab) {
+          padding: em(24) em(8);
+        }
       }
       
       .text {
         color: #333333;
-        font-size: em(20);
+        font-size: vw(12);
         font-weight: 800;
         line-height: 1;
+        
+        @include mdq-min(tab) {
+          font-size: em(20);
+        }
       }
     }
   }

@@ -1,9 +1,13 @@
 .location {
   &-box {
-    display: flex;
-    padding-top: em(80);
-    padding-bottom: em(90);
+    padding: em(50) 0;
     border-top: 2px solid #333;
+    
+    @include mdq-min(tab) {
+      display: flex;
+      padding-top: em(80);
+      padding-bottom: em(90);
+    }
     
     &:last-child {
       border-bottom: 2px solid #333;
@@ -13,45 +17,77 @@
   &-title-box {
     position: relative;
     flex: 1 1 auto;
-    color: #333333;
-    font-size: em(20);
+    color: #333;
     font-weight: 800;
     line-height: (24/20);
-    padding-right: em(10, 20);
+    font-size: vw(14);
+    
+    @include mdq-min(tab) {
+      font-size: em(20);
+      padding-right: em(10, 20);
+    }
     
     .symbol {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      display: none;
+      
+      @include mdq-min(tab) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
     }
     
     .title {
-      font-size: em(40);
+      font-size: vw(24);
       font-weight: 800;
+      
+      @include mdq-min(tab) {
+        font-size: em(40);
+      }
     }
     
     .address {
-      margin-top: em(20);
+      margin-top: em(20, 14);
+      
+      @include mdq-min(tab) {
+        margin-top: em(20);
+      }
     }
     
     .tel-box {
-      margin-top: em(46);
+      display: flex;
+      gap: em(20, 14);
+      margin-top: em(8, 14);
+      
+      @include mdq-min(tab) {
+        margin-top: em(46);
+      }
     }
     
     .tel {
       display: flex;
-      gap: em(16, 20);
+      gap: em(4, 14);
+      
+      @include mdq-min(tab) {
+        gap: em(16, 20);
+      }
       
       & + .tel {
-        margin-top: em(10, 20);
+        @include mdq-min(tab) {
+          margin-top: em(10, 20);
+        }
       }
     }
   }
   
   &-map {
     position: relative;
-    flex: 0 0 em(900);
-    width: em(900);
+    margin-top: em(28);
+    
+    @include mdq-min(tab) {
+      flex: 0 0 percentage(900/1400);
+      width: percentage(900/1400);
+    }
     
     &::after {
       content: '';

@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" type="text/css" href="/builds/client/assets/css/jquery.fullpage.min.css" />
 
-<main class="main">
+<main class="main home">
   <ul id="fullpage_menu">
     <li data-menuanchor="intro"><a href="#intro">인트로</a></li>
     <li data-menuanchor="technology"><a href="#technology">사업영역</a></li>
@@ -96,7 +96,8 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="tech-bg">
-                  <img src="/builds/client/assets/images/main/tech1.png" alt="">
+                  <img src="/builds/client/assets/images/main/tech1.png" alt="" class="tech-bg--pc">
+                  <img src="/builds/client/assets/images/main/m_tech1.png" alt="" class="tech-bg--mobile">
                 </div>
                 <div class="tech-box">
                   <div class="tech-name animate__animated animate__fadeInUp">라이다 센서</div>
@@ -106,7 +107,8 @@
               </div>
               <div class="swiper-slide">
                 <div class="tech-bg">
-                  <img src="/builds/client/assets/images/main/tech2.png" alt="">
+                  <img src="/builds/client/assets/images/main/tech2.png" alt="" class="tech-bg--pc">
+                  <img src="/builds/client/assets/images/main/m_tech2.png" alt="" class="tech-bg--mobile">
                 </div>
                 <div class="tech-box">
                   <div class="tech-name animate__animated">드로이드 개발</div>
@@ -441,7 +443,7 @@
           <div class="rnd-title-inner">
             <div class="rnd-title-slider">
               <div class="rnd-title-slide active">
-                <h2 class="rnd-title">라이드로<br>본사</h2>
+                <h2 class="rnd-title">라이드로 <br>본사</h2>
                 <span class="bar"></span>
                 <div class="address-box">
                   <div class="address">경기도 성남시 분당구 판교로 255번길 9-22 W-City B동 8층</div>
@@ -452,7 +454,7 @@
                 </div>
               </div>
               <div class="rnd-title-slide">
-                <h2 class="rnd-title">라이드로<br>R&amp;D 센터</h2>
+                <h2 class="rnd-title">라이드로 <br>R&amp;D 센터</h2>
                 <span class="bar"></span>
                 <div class="address-box">
                   <div class="address">경기도 안양시 동안구 흥안대로 439번길 8</div>
@@ -475,18 +477,18 @@
         </div>
         <div class="rnd-swiper-box">
           <div class="rnd-swiper">
-            <button type="button" class="swiper-button--arrow-left" title="이전 슬라이드"></button>
-            
             <div class="swiper rnd-top">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="rnd-top-thumb">
-                    <img src="/builds/client/assets/images/main/rnd_top1.png" alt="">
+                    <img src="/builds/client/assets/images/main/rnd_top1.png" class="d-none d-tab-block" alt="">
+                    <img src="/builds/client/assets/images/main/m_rnd_top1.png" class="d-tab-none" alt="">
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="rnd-top-thumb">
-                    <img src="/builds/client/assets/images/main/rnd_top2.png" alt="">
+                    <img src="/builds/client/assets/images/main/rnd_top2.png" class="d-none d-tab-block" alt="">
+                    <img src="/builds/client/assets/images/main/m_rnd_top2.png" class="d-tab-none" alt="">
                   </div>
                 </div>
               </div>
@@ -506,7 +508,10 @@
               </div>
             </div>
   
-            <button type="button" class="swiper-button--arrow-right" title="다음 슬라이드"></button>
+            <div class="swiper-navigation">
+              <button type="button" class="swiper-button--arrow-left" title="이전 슬라이드"></button>
+              <button type="button" class="swiper-button--arrow-right" title="다음 슬라이드"></button>
+            </div>
           </div>
         </div>
       </div>
@@ -516,7 +521,7 @@
     
     <!-- MAIN FOOTER -->
     <div class="section fp-auto-height">
-      <footer class="footer">
+      <footer class="footer footer--main">
         <div class="container">
           <div class="logo">
             <img src="/builds/client/assets/images/footer_logo.svg" alt="">

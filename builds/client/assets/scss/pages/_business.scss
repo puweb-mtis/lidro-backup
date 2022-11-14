@@ -1,31 +1,74 @@
+// 제품상세 상단
+.prd-top-section {
+  padding-bottom: 0 !important;
+  
+  @include mdq-min(tab) {
+    padding-bottom: em(80) !important;
+  }
+  
+  @include mdq-min(lg) {
+    padding-bottom: em(120) !important;
+  }
+}
+
 .prd-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: em(100);
+  margin-bottom: em(20);
+  
+  @include mdq-min(tab) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: em(100);
+  }
   
   .prd-title-box {
-    display: flex;
-    align-items: flex-end;
+    display: block;
+    
+    @include mdq-min(tab) {
+      display: flex;
+      align-items: flex-end;
+    }
     
     .title {
       color: #333333;
-      font-size: em(78);
+      font-size: vw(24);
       font-weight: 800;
       letter-spacing: -1px;
+      
+      @include mdq-min(sm) {
+        font-size: em(28);
+      }
+      
+      @include mdq-min(tab) {
+        font-size: em(78);
+      }
     }
     
     .cate {
-      font-size: em(20);
+      margin-top: em(10, 12);
+      font-size: vw(12);
       font-weight: 800;
-      line-height: 3;
       color: #cccccc;
-      margin-left: em(20, 20);
+      
+      @include mdq-min(sm) {
+        font-size: em(16);
+      }
+      
+      @include mdq-min(tab) {
+        font-size: em(20);
+        line-height: 3;
+        margin-left: em(20, 20);
+      }
     }
   }
   
   .btn-back {
+    display: none;
     color: #333333;
+    
+    @include mdq-min(tab) {
+      display: block;
+    }
     
     .text {
       color: #333333;
@@ -53,17 +96,19 @@
 .prd-list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: em(-45);
-  margin-right: em(-45);
+  margin: em(20) em(-10) em(-10) em(-10);
+  
+  @include mdq-min(tab) {
+    margin: em(-45);
+  }
   
   &__item {
     flex: 1 0 50%;
     max-width: 50%;
-    padding: em(45);
+    padding: em(10);
     
-    &:nth-child(1),
-    &:nth-child(2) {
-      padding-top: 0;
+    @include mdq-min(tab) {
+      padding: em(45);
     }
   
     &:hover {
@@ -99,40 +144,73 @@
     }
     
     .desc {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: em(30, 20) 0;
-      font-size: em(20);
+      padding: em(10, 14) 0;
+      font-size: vw(14);
       font-weight: 800;
       
+      @include mdq-min(sm) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: em(18);
+      }
+      
+      @include mdq-min(tab) {
+        padding: em(30, 20) 0;
+        font-size: em(20);
+      }
+      
       .title {
+        display: block;
         color: #333;
       }
       
       .cate {
+        display: block;
         color: #ccc;
+        margin-top: 4px;
+        
+        @include mdq-min(sm) {
+          margin-top: 0;
+        }
       }
     }
   }
 }
 
+// 제품상세정보
 .prd-view {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  
+  @include mdq-min(tab) {
+    flex-direction: row;
+  }
   
   .prd-info {
-    flex: 1 0 percentage(740/1400);
-    max-width: percentage(740/1400);
-    border-top: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
+    flex: 1 0 100%;
+    max-width: 100%;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    
+    @include mdq-min(tab) {
+      flex: 1 0 percentage(740/1400);
+      max-width: percentage(740/1400);
+    }
     
     &__item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: em(36);
-      padding-bottom: em(32);
+      padding-top: em(20);
+      padding-bottom: em(20);
       border-bottom: 1px solid #ddd;
+      
+      @include mdq-min(tab) {
+        padding-top: em(36);
+        padding-bottom: em(32);
+      }
       
       &:last-child {
         border: 0;
@@ -141,16 +219,28 @@
     
     .title {
       flex: 1 1 auto;
-      font-size: em(22);
       font-weight: 600;
+      font-size: vw(14);
+  
+      @include mdq-min(sm) {
+        font-size: em(18);
+      }
+      
+      @include mdq-min(tab) {
+        font-size: em(22);
+      }
       
       .sub-title {
         display: flex;
         align-items: center;
         font-size: em(12, 22);
         font-weight: 700;
-        color: #cccccc;
+        color: #999;
         margin-top: 9px;
+        
+        @include mdq-min(tab) {
+          color: #ccc;
+        }
         
         &::before {
           content: '';
@@ -171,24 +261,47 @@
     
     .text {
       flex: 0 0 auto;
-      font-size: 1em;
       font-weight: 700;
+      font-size: vw(12);
+      
+      @include mdq-min(sm) {
+        font-size: em(14);
+      }
+  
+      @include mdq-min(tab) {
+        font-size: em(16);
+      }
     }
   }
   
   .prd-swiper {
-    flex: 1 1 auto;
-    width: 1%;
-    padding-left: em(10);
-    padding-right: em(10);
+    flex: 1 0 100%;
+    max-width: 100%;
+    margin-bottom: em(20);
+    
+    @include mdq-min(tab) {
+      flex: 1 1 auto;
+      padding-left: em(10);
+      padding-right: em(10);
+    }
     
     .swiper {
-      flex: 0 0 em(400);
-      width: em(400);
+      flex: 0 0 100%;
+      width: 100%;
+      
+      @include mdq-min(sm) {
+        flex: 0 0 em(400);
+        width: em(400);
+      }
     }
   
     .desc {
+      display: none;
       text-align: center;
+      
+      @include mdq-min(tab) {
+        display: block;
+      }
     
       .title {
         font-size: em(32);
@@ -205,8 +318,13 @@
     }
   
     .swiper-pagination--black {
-      margin-top: em(70);
+      display: none;
       justify-content: center;
+      margin-top: em(70);
+      
+      @include mdq-min(tab) {
+        display: flex;
+      }
     }
   }
 }

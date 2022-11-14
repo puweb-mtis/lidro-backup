@@ -10,11 +10,15 @@
 .brochure {
   display: flex;
   
+  [data-letters-wrapper] .letter {
+    line-height: 1;
+  }
+  
   &-title {
     flex: 1 1 auto;
     
     .btn-group {
-      margin-top: em(230);
+      margin-top: em(80);
     }
   }
   

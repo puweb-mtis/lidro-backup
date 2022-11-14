@@ -1,14 +1,15 @@
 // functions
 @import "functions";
 
-// utils
-@import "./utils/font";
-@import "./utils/spacer";
-@import "./utils/text";
-
 // mixins
 @import "./mixins/breakpoints";
 @import "./mixins/image";
+
+// utils
+@import "./utils/display";
+@import "./utils/font";
+@import "./utils/spacer";
+@import "./utils/text";
 
 // fonts
 @import "./fonts";
@@ -18,6 +19,7 @@
 
 // library
 @import "./libs/animate";
+@import "./libs/fullpage";
 @import "./libs/letters";
 
 @import "./layout/common";
@@ -62,6 +64,30 @@
     height: 100%;
   }
   
+  &__controls {
+    position: absolute;
+    bottom: em(50);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1400px;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    
+    @include mdq-min(tab) {
+      display: block;
+      bottom: em(400);
+      padding-left: em(32);
+    }
+    
+    @include mdq-min(lg) {
+      bottom: em(440);
+      padding-left: 0;
+    }
+  }
+  
   &__bg {
     position: absolute;
     top: 0;
@@ -82,40 +108,44 @@
       width: auto;
       height: auto;
     }
-  }
-  
-  .swiper-pagination--bullet {
-    position: absolute;
-    bottom: em(400);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1400px;
-    z-index: 1;
-    color: #ffffff;
-    padding-left: em(32);
     
-    @include mdq-min(lg) {
-      padding-left: 0;
-      bottom: em(440);
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(#000, 0.5) 0%, rgba(#000, 0) 100%);
     }
   }
   
   &__text-box {
     position: absolute;
-    bottom: em(126);
+    bottom: em(138);
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     max-width: 1400px;
-    color: #ffffff;
-    padding-left: em(32);
-    padding-right: em(32);
+    color: #fff;
+    padding: 0 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    
+    @include mdq-min(sm) {
+      display: block;
+      text-align: left;
+      bottom: em(126);
+    }
     
     @include mdq-min(lg) {
       padding-left: 0;
       padding-right: 0;
-  
+      
       @include mdq-min(lg) {
         padding-left: 0;
       }
@@ -123,14 +153,30 @@
   }
   
   &__text {
+    order: 2;
+    font-size: vw(12);
     font-weight: 700;
-    margin-bottom: em(18, 22);
+    margin-top: em(10, 12);
+    
+    @include mdq-min(sm) {
+      order: 1;
+      font-size: em(22);
+      margin-top: 0;
+      margin-bottom: em(18, 22);
+    }
   }
   
   &__title {
-    font-size: em(78);
+    order: 1;
+    font-size: vw(28);
     font-weight: 800;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    letter-spacing: -2px;
+    
+    @include mdq-min(sm) {
+      order: 2;
+      font-size: em(78);
+    }
     
     [data-letters-wrapper] {
       .letter {
@@ -140,6 +186,7 @@
   }
   
   &__progressbar {
+    display: none;
     position: absolute;
     bottom: em(144);
     left: 0;
@@ -149,6 +196,10 @@
     text-align: right;
     padding-left: em(32);
     padding-right: em(32);
+    
+    @include mdq-min(tab) {
+      display: block;
+    }
     
     @include mdq-min(lg) {
       max-width: 1400px;
@@ -168,7 +219,7 @@
         font-family: 'SUIT', sans-serif;
         font-size: em(14);
         font-weight: 900;
-        color: #ffffff;
+        color: #fff;
         background: none;
         border: 0;
         cursor: pointer;
@@ -224,35 +275,71 @@
 
 // TECHNOLOGY
 .tech {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background: url(../images/main/tech_bg.png) no-repeat center/cover;
+  padding: em(40) 0;
+  background: {
+    image: url(/builds/client/assets/images/main/m_tech_bg.png);
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  };
+  
+  @include mdq-min(tab) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: {
+      image: url(/builds/client/assets/images/main/tech_bg.png);
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    };
+  }
   
   .container {
-    padding-right: em(320);
-    padding-left: em(70);
+    @include mdq-min(tab) {
+      padding-left: em(70);
+    }
     
     @include mdq-min(lg) {
       padding-left: 0;
+      padding-right: em(340);
     }
   }
   
   &-title {
-    color: #333333;
-    font-size: em(52);
+    font-size: vw(28);
+    color: #333;
     font-weight: 800;
+    letter-spacing: -2px;
+    
+    @include mdq-min(sm) {
+      font-size: em(52);
+    }
   }
   
   &-swiper {
     position: relative;
-    overflow: visible;
-    margin-top: em(44);
+    margin-top: em(30);
+    
+    @include mdq-min(tab) {
+      overflow: visible;
+      margin-top: em(44);
+    }
   }
   
   .swiper-pagination--bullet {
-    margin-top: em(88);
+    display: none;
+    margin-top: em(40);
+    
+    @include mdq-min(tab) {
+      display: flex;
+    }
+    
+    @include mdq-min(xl) {
+      margin-top: em(148);
+    }
   }
   
   &-bg {
@@ -262,7 +349,11 @@
     &::after {
       content: '';
       display: block;
-      padding-bottom: percentage(500/1100);
+      padding-bottom: percentage(440/360);
+      
+      @include mdq-min(sm) {
+        padding-bottom: percentage(440/1100);
+      }
     }
     
     img {
@@ -277,12 +368,37 @@
       max-height: none;
       transform: translate(-50%, -50%) scale(0.1);
     }
+    
+    &--pc {
+      display: none;
+    }
+    
+    @include mdq-min(tab) {
+      &--pc {
+        display: block;
+      }
+      
+      &--mobile {
+        display: none;
+      }
+    }
   }
   
   &-box {
     position: absolute;
-    left: em(60);
-    bottom: em(60);
+    width: 100%;
+    bottom: em(30);
+    left: 0;
+    padding-right: em(40);
+    padding-left: em(40);
+    
+    @include mdq-min(tab) {
+      width: auto;
+      bottom: em(60);
+      left: em(60);
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
   
   .swiper-progressbar {
@@ -312,25 +428,33 @@
   &-name {
     font-size: em(32);
     font-weight: 800;
-    color: #ffffff;
+    color: #fff;
   }
   
   &-name--eng {
     font-weight: 800;
-    color: #ffffff;
+    color: #fff;
   }
 }
 
 // [[ PROMO ]]
 .promo {
   position: relative;
+  padding-top: em(40);
+  padding-bottom: em(40);
+  overflow: hidden;
   
   .swiper {
     overflow: visible;
     
     .swiper-pagination--bullet {
+      display: none;
       margin-top: em(80);
       padding-left: em(40);
+      
+      @include mdq-min(tab) {
+        display: flex;
+      }
       
       @include mdq-min(lg) {
         margin-top: em(195);
@@ -342,13 +466,21 @@
 .promo-title-box {
   display: flex;
   align-items: center;
-  padding-left: em(40);
+  
+  @include mdq-min(tab) {
+    padding-left: em(40);
+  }
   
   .promo-title {
+    display: none;
     margin-right: em(20, 52);
     font-size: em(52);
     font-weight: 800;
     letter-spacing: -1px;
+    
+    @include mdq-min(tab) {
+      display: block;
+    }
   }
 }
 
@@ -391,14 +523,14 @@
     }
     
     &__title {
-      color: #333333;
+      color: #333;
       font-size: em(20);
       font-weight: 800;
       margin-top: em(9, 20);
     }
     
     &__date {
-      color: #cccccc;
+      color: #ccc;
       font-size: em(12);
       font-weight: 700;
       margin-top: em(25, 12);
@@ -407,29 +539,45 @@
 }
 
 .tab-header {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   border-radius: em(50);
   background-color: #f2f2f2;
+  width: 100%;
+  
+  @include mdq-min(tab) {
+    display: inline-flex;
+    width: auto;
+  }
   
   .tab-item {
-    display: inline-block;
     font-weight: 800;
-    color: #333333;
+    color: #333;
     padding: em(15) em(22);
     border-radius: em(50);
     user-select: none;
     cursor: pointer;
+    flex: 1 0 auto;
+    text-align: center;
+    
+    @include mdq-min(tab) {
+      display: inline-block;
+      flex: 0 0 auto;
+    }
     
     &.active {
-      color: #ffffff;
+      color: #fff;
       background-color: #333;
     }
   }
 }
 
 .tab-body {
-  margin-top: em(40);
+  margin-top: em(20);
+  
+  @include mdq-min(sm) {
+    margin-top: em(40);
+  }
   
   @include mdq-min(lg) {
     margin-top: em(92);
@@ -452,25 +600,42 @@
 
 // [[ R & D ]]
 .rnd {
-  display: flex;
-  align-items: stretch;
-  height: 100%;
+  padding-top: em(40);
+  padding-bottom: em(136);
+  
+  @include mdq-min(tab) {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   
   &-title-box {
     position: relative;
-    flex: 1 0 50%;
-    max-width: 50%;
-    display: flex;
+    display: block;
     align-items: flex-start;
     justify-content: flex-end;
-    padding-top: em(239);
+    
+    @include mdq-min(tab) {
+      display: flex;
+      flex: 1 0 50%;
+      max-width: 50%;
+      padding-top: em(239);
+    }
+    
     
     .bar {
       display: block;
       width: 2px;
-      height: em(100);
+      height: em(30);
       background-color: #333;
-      margin: em(60) auto em(60) 0;
+      margin: em(20) auto em(20) 0;
+      
+      @include mdq-min(tab) {
+        height: em(100);
+        margin: em(60) auto em(60) 0;
+      }
     }
   }
   
@@ -495,28 +660,73 @@
   
   &-title-inner {
     position: relative;
-    padding-right: em(136);
+    padding-left: 30px;
+    padding-right: 30px;
+    
+    @include mdq-min(tab) {
+      padding-right: em(136);
+    }
+    
+    @include mdq-min(xl) {
+      padding-left: 0;
+    }
   }
   
   .swiper-pagination--bullet {
-    position: absolute;
-    // bottom: em(-132);
-    bottom: em(-100);
-    left: 0;
+    display: none;
+    
+    @include mdq-min(tab) {
+      display: flex;
+      margin-top: em(32);
+    }
+    
+    @include mdq-min(xl) {
+      position: absolute;
+      bottom: em(-100);
+      left: 0;
+      margin-top: 0;
+    }
   }
   
   &-title {
-    font-size: em(78);
+    font-size: vw(36);
     font-weight: 800;
     letter-spacing: -2px;
+    
+    br {
+      display: none;
+    }
+    
+    @include mdq-min(md) {
+      font-size: em(36);
+    }
+    
+    @include mdq-min(tab) {
+      display: block;
+      font-size: em(78);
+    }
   }
   
   .address-box {
-    font-size: em(20);
-    font-weight: 800;
+    font-size: vw(14);
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #999;
+    
+    @include mdq-min(md) {
+      font-size: em(14);
+    }
+  
+    @include mdq-min(tab) {
+      color: #333;
+      font-size: em(20);
+      font-weight: 800;
+    }
     
     .address {
-      margin-right: em(40);
+      @include mdq-min(tab) {
+        margin-right: em(40);
+      }
     }
   }
   
@@ -527,35 +737,99 @@
     
     .tel {
       .tel-title {
-        margin-right: em(12);
+        margin-right: em(4);
+        
+        @include mdq-min(md) {
+          margin-right: em(12);
+        }
       }
     }
   }
   
   &-swiper-box {
-    flex: 1 0 50%;
-    max-width: 50%;
-    background: url(../images/main/rnd_bg.png) no-repeat center/cover;
+    margin-top: em(30);
+    
+    @include mdq-min(tab) {
+      margin-top: 0;
+    }
+    
+    @include mdq-min(tab) {
+      flex: 1 0 50%;
+      max-width: 50%;
+      background: url(../images/main/rnd_bg.png) no-repeat center/cover;
+    }
   }
   
   .rnd-swiper {
     position: relative;
-    width: em(880);
-    padding-top: em(200);
-    margin-left: em(-148);
+    max-width: 100%;
+    
+    @include mdq-min(tab) {
+      padding-top: em(200);
+      margin-left: em(-148);
+      width: em(880);
+    }
+
+    .swiper-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: em(30);
+      padding-left: em(40);
+      padding-right: em(40);
+  
+      @include mdq-min(tab) {
+        display: block;
+        margin-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+  
+      .swiper-button--arrow-left,
+      .swiper-button--arrow-right {
+        position: static;
+        transform: none;
+      }
+  
+      @include mdq-min(tab) {
+        display: block;
+    
+        .swiper-button--arrow-left,
+        .swiper-button--arrow-right {
+          position: absolute;
+        }
+    
+        .swiper-button--arrow-left {
+          top: em(320);
+          transform: translate(em(-62), -50%);
+        }
+    
+        .swiper-button--arrow-right {
+          top: inherit;
+          bottom: em(60);
+          transform: translate(em(62), -50%);
+        }
+      }
+    }
     
     .rnd-top {
-      width: em(800);
       margin-left: 0;
+      
+      @include mdq-min(tab) {
+        width: em(800);
+      }
       
       &-thumb {
         position: relative;
-        width: em(800);
         
         &::after {
           content: '';
           display: block;
-          padding-bottom: percentage(450/800);
+          padding-bottom: percentage(300/360);
+          
+          @include mdq-min(md) {
+            padding-bottom: percentage(450/800);
+          }
         }
         
         img {
@@ -570,13 +844,22 @@
     }
     
     .rnd-bottom {
+      display: none;
       width: em(450);
       margin-top: em(-290);
       margin-right: 0;
       
+      @include mdq-min(tab) {
+        display: block;
+      }
+      
       &-thumb {
         position: relative;
-        width: em(450);
+        max-width: 100%;
+        
+        @include mdq-min(tab) {
+          width: em(450);
+        }
         
         &::after {
           content: '';
@@ -593,15 +876,6 @@
           height: 100%;
         }
       }
-    }
-    
-    .swiper-button--arrow-left {
-      top: em(320);
-    }
-    
-    .swiper-button--arrow-right {
-      top: inherit;
-      bottom: em(60);
     }
   }
 }
@@ -622,7 +896,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: rgba(#fff, 0.4);
+  background-color: rgba(#fff, 0.8);
+  
+  @include mdq-min(tab) {
+    background-color: rgba(#fff, 0.4);
+  }
   
   .text {
     margin-top: em(10, 18);
