@@ -15,3 +15,11 @@ $breakpoints: (
     @content
   }
 }
+
+@mixin mdq-max($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  
+  @media all and (max-width: #{$value}) {
+    @content
+  }
+}

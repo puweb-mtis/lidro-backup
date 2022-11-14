@@ -257,9 +257,17 @@ const rndSwiperTop = new Swiper('.rnd-top', {
 });
 
 rndTitleSlider.style.position = 'relative';
+rndTitleSlider.classList.add('initialized');
 rndTitleSlider.style.width = slideWidth + 'px';
 rndTitleSlider.style.height = slideHeight + 'px';
-rndTitleSlider.classList.add('initialized');
+
+window.addEventListener('resize', e => {
+    const slideWidth = rndTitleSlides[0].clientWidth;
+    const slideHeight = rndTitleSlides[0].clientHeight;
+    
+    rndTitleSlider.style.width = slideWidth + 'px';
+    rndTitleSlider.style.height = slideHeight + 'px';
+});
 
 rndSwiperTop.on('slideChange', swiper => {
     rndTitleSlides[swiper.activeIndex].classList.add('active');

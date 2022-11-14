@@ -28,6 +28,7 @@
 @import "./layout/nav";
 
 @import "./components/board";
+@import "./components/bullet";
 @import "./components/buttons";
 @import "./components/hash";
 @import "./components/responsive";
@@ -322,10 +323,31 @@
   &-swiper {
     position: relative;
     margin-top: em(30);
+    margin-left: -30px;
+    margin-right: -30px;
     
     @include mdq-min(tab) {
       overflow: visible;
       margin-top: em(44);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  
+  .swiper-navigation {
+    @include mdq-max(tab) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-top: em(20);
+  
+      .swiper-button--arrow-left,
+      .swiper-button--arrow-right {
+        position: static;
+        transform: none;
+      }
     }
   }
   
@@ -600,6 +622,7 @@
 
 // [[ R & D ]]
 .rnd {
+  position: relative;
   padding-top: em(40);
   padding-bottom: em(136);
   
@@ -611,11 +634,33 @@
     padding-bottom: 0;
   }
   
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 84%;
+    background: {
+      image: url(/builds/client/assets/images/main/m_rnd_bg.png);
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    };
+    z-index: 0;
+  
+    @include mdq-min(tab) {
+      display: none;
+    }
+  }
+  
   &-title-box {
     position: relative;
     display: block;
     align-items: flex-start;
     justify-content: flex-end;
+    z-index: 1;
     
     @include mdq-min(tab) {
       display: flex;
