@@ -22,7 +22,7 @@ function initFull() {
             
             techSwiper.autoplay.stop();
             
-            if ( fullpagePrevIndex !== undefined ) {
+            if (fullpagePrevIndex !== undefined) {
                 switch ((index - 1)) {
                     case 0:
                         introSwiper.autoplay.start();
@@ -59,8 +59,8 @@ function initFull() {
 }
 
 $(document).ready(function () {
-    if ( $(window).outerWidth() < 1025 ) {
-        if ( $('html').hasClass('fp-enabled') ) {
+    if ($(window).outerWidth() < 1025) {
+        if ($('html').hasClass('fp-enabled')) {
             $.fn.fullpage.destroy('all');
         }
     } else {
@@ -69,12 +69,12 @@ $(document).ready(function () {
 });
 
 var resizeTimer;
-$(window).on('resize', function(e){
+$(window).on('resize', function (e) {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function(e){
+    resizeTimer = setTimeout(function (e) {
         const width = $(this).outerWidth();
-    
-        if ( width < 1025 ) {
+        
+        if (width < 1025) {
             $.fn.fullpage.destroy('all');
         } else {
             initFull();
@@ -107,64 +107,26 @@ const introSwiper = new Swiper('.intro-swiper', {
 introSwiper.on('slideChange', swiper => {
     const $slides = swiper.slides;
     const activeIndex = swiper.activeIndex;
+    const letterWrappers = $slides[activeIndex].querySelectorAll('[data-letters-wrapper]');
     
-    const promise = new Promise((resolve, reject) => {
-        for (let i = 0; i < $slides.length; i++) {
-            const $title = $slides[i].querySelector('.intro-swiper__title');
-            $title.classList.remove('active');
+    for (let i = 0; i < letterWrappers.length; i++) {
+        const lettersWrapper = letterWrappers[i];
+        const letterArray = lettersWrapper.textContent.split(/\s/g);
+        
+        lettersWrapper.innerHTML = '';
+        
+        for (let j = 0; j < letterArray.length; j++) {
+            lettersWrapper.innerHTML += `<span class="letter">${letterArray[j]}</span>&nbsp;`;
         }
         
-        resolve();
-    });
-    
-    promise.then(() => {
-        const letterWrappers = $slides[activeIndex].querySelectorAll('[data-letters-wrapper]');
-    
-        for (let i = 0; i < letterWrappers.length; i++) {
-            const lettersWrapper = letterWrappers[i];
-            lettersWrapper.innerHTML = lettersWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-            const letters = lettersWrapper.querySelectorAll('.letter');
-        
-            anime.timeline({loop: false})
-                .add({
-                    targets: letters,
-                    translateY: ["1.5em", 0],
-                    duration: 700,
-                    easing: "easeOutCubic",
-                    delay: (el, i) => 50 * i
-                });
-        }
-    });
-    
-    /*
-    const promise = new Promise((resolve, reject) => {
-        for (let i = 0; i < introLocationSlides.length; i++) {
-            introLocationSlides[i].classList.remove('active');
-        }
-        
-        resolve();
-    });
-    
-    promise.then(() => {
-        introLocationSlides[swiper.realIndex].classList.add('active');
-        const letterWrappers = introLocationSlides[swiper.realIndex].querySelectorAll('[data-letters-wrapper]');
-        
-        for (let i = 0; i < letterWrappers.length; i++) {
-            const lettersWrapper = letterWrappers[i];
-            lettersWrapper.innerHTML = lettersWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-            const letters = lettersWrapper.querySelectorAll('.letter');
-            
-            anime.timeline({loop: false})
-                .add({
-                    targets: letters,
-                    translateY: ["1.5em", 0],
-                    duration: 700,
-                    easing: "easeOutCubic",
-                    delay: (el, i) => 50 * i
-                });
-        }
-    });
-    */
+        anime.timeline({loop: false}).add({
+            targets: lettersWrapper.querySelectorAll('.letter'),
+            translateY: ["1.5em", 0],
+            duration: 1000,
+            easing: "easeOutCubic",
+            delay: (el, i) => 200 * i
+        });
+    }
 });
 
 /* TECH */
@@ -323,21 +285,21 @@ function mobileScrollAnimation() {
     const animationItems = document.querySelectorAll('.animate__animated');
     const itemActive = (animationItems) => {
         const threshold = window.scrollY + window.innerHeight;
-    
+        
         for (let i = 0; i < animationItems.length; i++) {
             const item = animationItems[i];
-        
-            if ( !item.closest('.swiper') ) {
-                const itemTop = this.scrollY + item.getBoundingClientRect().top;
             
+            if (!item.closest('.swiper')) {
+                const itemTop = this.scrollY + item.getBoundingClientRect().top;
+                
                 if (threshold > itemTop) {
                     item.classList.add('animate__fadeInUp');
                 }
             }
-        
-            if ( item.classList.contains('swiper') ) {
-                const itemTop = this.scrollY + item.getBoundingClientRect().top;
             
+            if (item.classList.contains('swiper')) {
+                const itemTop = this.scrollY + item.getBoundingClientRect().top;
+                
                 if (threshold > itemTop) {
                     item.classList.add('animate__fadeInUp');
                 }
@@ -347,7 +309,7 @@ function mobileScrollAnimation() {
     
     itemActive(animationItems);
     
-    if ( window.innerWidth < 1025 ) {
+    if (window.innerWidth < 1025) {
         window.addEventListener('scroll', e => {
             itemActive(animationItems);
         });

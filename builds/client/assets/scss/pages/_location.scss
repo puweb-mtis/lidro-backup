@@ -25,6 +25,22 @@
     @include mdq-min(tab) {
       font-size: em(20);
       padding-right: em(10, 20);
+      
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        display: block;
+        width: em(26);
+        height: em(26);
+        background: {
+          image: url(/builds/client/assets/images/symbol_b.svg);
+          repeat: no-repeat;
+          position: center;
+          size: auto 100%;
+        };
+      }
     }
     
     .symbol {
@@ -60,6 +76,7 @@
       margin-top: em(8, 14);
       
       @include mdq-min(tab) {
+        display: block;
         margin-top: em(46);
       }
     }

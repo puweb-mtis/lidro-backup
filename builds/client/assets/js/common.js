@@ -169,7 +169,18 @@ if (introLocationSlider && introLocationSlides.length > 0) {
         }
     });
     
+    document.querySelector('.intro-location .swiper-button--prev').addEventListener('click', e => {
+        introLocationSwiper.slidePrev();
+    });
+    
+    document.querySelector('.intro-location .swiper-button--next').addEventListener('click', e => {
+        introLocationSwiper.slideNext();
+    });
+    
     introLocationSwiper.on('slideChange', swiper => {
+        const $slides = swiper.slides;
+        const letterWrappers = introLocationSlides[swiper.realIndex].querySelectorAll('[data-letters-wrapper]');
+        
         const promise = new Promise((resolve, reject) => {
             for (let i = 0; i < introLocationSlides.length; i++) {
                 introLocationSlides[i].classList.remove('active');
@@ -177,24 +188,27 @@ if (introLocationSlider && introLocationSlides.length > 0) {
             
             resolve();
         });
-        
+    
         promise.then(() => {
             introLocationSlides[swiper.realIndex].classList.add('active');
-            const letterWrappers = introLocationSlides[swiper.realIndex].querySelectorAll('[data-letters-wrapper]');
-            
+    
             for (let i = 0; i < letterWrappers.length; i++) {
                 const lettersWrapper = letterWrappers[i];
-                lettersWrapper.innerHTML = lettersWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-                const letters = lettersWrapper.querySelectorAll('.letter');
-                
-                anime.timeline({loop: false})
-                    .add({
-                        targets: letters,
-                        translateY: ["1.5em", 0],
-                        duration: 700,
-                        easing: "easeOutCubic",
-                        delay: (el, i) => 50 * i
-                    });
+                const letterArray = lettersWrapper.textContent.split(/\s/g);
+        
+                lettersWrapper.innerHTML = '';
+        
+                for (let j = 0; j < letterArray.length; j++) {
+                    lettersWrapper.innerHTML += `<span class="letter">${letterArray[j]}</span>&nbsp;`;
+                }
+    
+                anime.timeline({loop: false}).add({
+                    targets: lettersWrapper.querySelectorAll('.letter'),
+                    translateY: ["1.5em", 0],
+                    duration: 1000,
+                    easing: "easeOutCubic",
+                    delay: (el, i) => 200 * i
+                });
             }
         });
     });
@@ -458,9 +472,9 @@ document.addEventListener('DOMContentLoaded', e => {
     
     headerNavDepth1Link.forEach(link => {
         link.addEventListener('click', e => {
-            if ( window.outerWidth < 1025 ) {
+            if (window.outerWidth < 1025) {
                 e.preventDefault();
-    
+                
                 for (let i = 0; i < headerNavDepth1Link.length; i++) {
                     headerNavDepth1Link[i].closest('.nav-list__item').classList.remove('active');
                 }

@@ -193,10 +193,12 @@
     max-width: 100%;
     border-top: 2px solid #333;
     border-bottom: 2px solid #333;
+    margin-top: em(30);
     
     @include mdq-min(tab) {
       flex: 1 0 percentage(740/1400);
       max-width: percentage(740/1400);
+      margin-top: 0;
     }
     
     &__item {
@@ -314,6 +316,23 @@
         font-weight: 800;
         color: #cccccc;
         margin-top: em(20);
+      }
+    }
+    
+    .swiper-navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: em(20);
+      
+      .swiper-button--arrow-left,
+      .swiper-button--arrow-right {
+        position: static;
+        transform: none;
+      }
+      
+      @include mdq-min(tab) {
+        display: none;
       }
     }
   

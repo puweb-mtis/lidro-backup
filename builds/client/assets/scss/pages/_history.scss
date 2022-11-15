@@ -3,6 +3,7 @@
   
   @include mdq-min(tab) {
     display: flex;
+    padding-bottom: em(240);
   }
   
   .history-title {
