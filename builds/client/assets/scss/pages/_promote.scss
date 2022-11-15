@@ -1,14 +1,28 @@
 .brochure-section {
   background: {
-    image: url(/builds/client/assets/images/promote/brochure_bg.png);
+    image: url(/builds/client/assets/images/promote/m_brochure_bg.png);
     repeat: no-repeat;
-    position: center;
-    size: auto;
+    position: top em(100) left -30px;
+    size: 100% auto;
   };
+  
+  @include mdq-min(tab) {
+    background: {
+      image: url(/builds/client/assets/images/promote/brochure_bg.png);
+      repeat: no-repeat;
+      position: center;
+      size: auto;
+    };
+  }
 }
 
 .brochure {
-  display: flex;
+  position: relative;
+  padding-bottom: em(80);
+  
+  @include mdq-min(tab) {
+    display: flex;
+  }
   
   [data-letters-wrapper] .letter {
     line-height: 1;
@@ -18,13 +32,30 @@
     flex: 1 1 auto;
     
     .btn-group {
-      margin-top: em(80);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      
+      @include mdq-min(tab) {
+        position: static;
+        display: block;
+        margin-top: em(80);
+      }
     }
   }
   
   &-content {
-    flex: 1 0 percentage(1000/1400);
-    max-width: percentage(1000/1400);
+    width: 140%;
+    margin-top: em(40);
+    
+    @include mdq-min(tab) {
+      flex: 1 0 percentage(1000/1400);
+      max-width: percentage(1000/1400);
+      margin-top: 0;
+    }
     
     img {
       display: block;

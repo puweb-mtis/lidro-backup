@@ -176,6 +176,7 @@
           font-weight: 900;
           font-size: vw(16);
           line-height: 1.4;
+          word-break: keep-all;
           
           @include mdq-min(md) {
             font-size: em(18);

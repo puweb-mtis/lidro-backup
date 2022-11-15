@@ -65,11 +65,21 @@
 [class^="btn-download"] {
   display: inline-flex;
   align-items: center;
-  padding: em(18) em(34);
+  font-size: vw(14);
   font-weight: 700;
   color: #333;
   border: 2px solid #333;
   transition: all .3s ease-in-out;
+  padding: em(14, 14) em(22, 14);
+  
+  @include mdq-min(sm) {
+    font-size: em(14);
+  }
+  
+  @include mdq-min(tab) {
+    font-size: 1em;
+    padding: em(18) em(34);
+  }
   
   svg {
     margin-right: em(8);

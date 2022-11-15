@@ -1,7 +1,6 @@
 .bullet-list--number {
   .bullet-list__item {
     display: flex;
-    align-items: center;
     font-size: vw(14);
     font-weight: 700;
     color: #999;
@@ -24,9 +23,11 @@
       color: #fff;
       border-radius: 100%;
       background-color: #999;
+      flex: 0 0 em(14, 10);
       width: em(14, 10);
       height: em(14, 10);
-      margin-right: 6px;
+      margin-right: em(6, 10);
+      margin-top: em(7, 10);
     }
     
     @for $i from 1 through 10 {
