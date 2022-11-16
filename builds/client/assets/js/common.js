@@ -296,6 +296,7 @@ if ($topButton) {
 let prdViewSwiper;
 if (document.querySelector('.prd-swiper .swiper')) {
     prdViewSwiper = new Swiper('.prd-swiper .swiper', {
+        loop: true,
         pagination: {
             el: '.prd-swiper .swiper-pagination--custom',
             clickable: true
@@ -304,6 +305,14 @@ if (document.querySelector('.prd-swiper .swiper')) {
             prevEl: '.prd-swiper .swiper-button--prev',
             nextEl: '.prd-swiper .swiper-button--next'
         }
+    });
+    
+    document.querySelector('.prd-swiper .swiper-button--arrow-left').addEventListener('click', e => {
+        prdViewSwiper.slidePrev();
+    });
+    
+    document.querySelector('.prd-swiper .swiper-button--arrow-right').addEventListener('click', e => {
+        prdViewSwiper.slideNext();
     });
 }
 

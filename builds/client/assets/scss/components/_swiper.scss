@@ -216,17 +216,17 @@
   &--arrow-right {
     cursor: pointer;
     display: block;
-    width: em(55);
-    height: em(24);
+    width: 56px;
+    height: 24px;
     border: 0;
     background: {
       color: transparent;
       repeat: no-repeat;
       position: center;
-      size: auto 100%;
+      size: 100% auto;
     };
     
-    @include mdq-min(md){
+    @include mdq-min(tab){
       width: em(102);
       height: em(42);
     }

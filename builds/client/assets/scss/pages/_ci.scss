@@ -62,5 +62,9 @@
         margin-top: em(78);
       }
     }
+    
+    .bullet-list--number .bullet-list__item::before {
+      margin-top: calc(1em * 0.5);
+    }
   }
 }

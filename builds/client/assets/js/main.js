@@ -194,6 +194,14 @@ for (let i = 0; i < promoSwiperElements.length; i++) {
     });
     
     swiperPaginationNumber(promoSwipers[i]);
+    
+    promoSwiperElements[i].querySelector('.swiper-button--arrow-left').addEventListener('click', e => {
+        promoSwipers[i].slidePrev();
+    });
+    
+    promoSwiperElements[i].querySelector('.swiper-button--arrow-right').addEventListener('click', e => {
+        promoSwipers[i].slideNext();
+    });
 }
 
 /* R&D */

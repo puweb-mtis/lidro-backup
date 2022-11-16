@@ -85,6 +85,11 @@
         flex: 0 0 em(120, 16);
         width: em(120, 16);
         padding-right: em(10, 16);
+        margin-bottom: em(12, 16);
+        
+        @include mdq-min(tab) {
+          margin-bottom: 0;
+        }
       }
       
       &__text {

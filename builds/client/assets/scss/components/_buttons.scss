@@ -47,6 +47,12 @@
       bottom: em(420);
     }
   }
+  
+  &.btn-top--main {
+    @include mdq-min(tab) {
+      display: none !important;
+    }
+  }
 }
 
 .btn-list {
@@ -70,7 +76,7 @@
   color: #333;
   border: 2px solid #333;
   transition: all .3s ease-in-out;
-  padding: em(14, 14) em(22, 14);
+  padding: em(12, 14) em(22, 14);
   
   @include mdq-min(sm) {
     font-size: em(14);

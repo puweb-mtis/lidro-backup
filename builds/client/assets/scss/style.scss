@@ -168,6 +168,7 @@
   }
   
   &__title {
+    text-align: center;
     order: 1;
     font-size: vw(28);
     font-weight: 800;
@@ -175,8 +176,13 @@
     letter-spacing: -2px;
     
     @include mdq-min(sm) {
+      font-size: em(28);
+    }
+    
+    @include mdq-min(tab) {
       order: 2;
       font-size: em(78);
+      text-align: left;
     }
     
     [data-letters-wrapper] {
@@ -276,7 +282,7 @@
 
 // TECHNOLOGY
 .tech {
-  padding: em(40) 0;
+  padding: em(120) 0 em(68);
   background: {
     image: url(/builds/client/assets/images/main/m_tech_bg.png);
     repeat: no-repeat;
@@ -341,7 +347,7 @@
       justify-content: space-between;
       padding-left: 30px;
       padding-right: 30px;
-      margin-top: em(20);
+      margin-top: em(30);
   
       .swiper-button--arrow-left,
       .swiper-button--arrow-right {
@@ -425,10 +431,14 @@
   
   .swiper-progressbar {
     position: relative;
-    width: em(300);
+    width: 100%;
     height: 2px;
     background-color: rgba(#fff, 0.2);
     margin: em(18) 0;
+    
+    @include mdq-min(sm) {
+      width: em(300);
+    }
     
     &::before {
       content: '';
@@ -462,8 +472,7 @@
 // [[ PROMO ]]
 .promo {
   position: relative;
-  padding-top: em(40);
-  padding-bottom: em(40);
+  padding: em(100) 0 em(100);
   overflow: hidden;
   
   .swiper {
@@ -481,6 +490,24 @@
       @include mdq-min(lg) {
         margin-top: em(195);
       }
+    }
+  }
+  
+  .swiper-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: em(40);
+    
+    @include mdq-min(tab) {
+      display: none;
+      margin-top: 0;
+    }
+  
+    .swiper-button--arrow-left,
+    .swiper-button--arrow-right {
+      position: static;
+      transform: none;
     }
   }
 }
@@ -623,8 +650,8 @@
 // [[ R & D ]]
 .rnd {
   position: relative;
-  padding-top: em(40);
-  padding-bottom: em(136);
+  padding-top: em(20);
+  padding-bottom: em(120);
   
   @include mdq-min(tab) {
     display: flex;

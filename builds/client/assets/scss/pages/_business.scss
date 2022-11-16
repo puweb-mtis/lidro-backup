@@ -93,6 +93,32 @@
   }
 }
 
+.prd-list-section + .prd-list-section {
+  position: relative;
+  padding-top: em(80) !important;
+  
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: calc(100% - 60px);
+    height: 2px;
+    background-color: #333;
+  }
+  
+  @include mdq-min(tab) {
+    padding-top: 0 !important;
+    
+    &::before {
+      display: none;
+    }
+  }
+}
+
 .prd-list {
   display: flex;
   flex-wrap: wrap;
@@ -169,9 +195,15 @@
         display: block;
         color: #ccc;
         margin-top: 4px;
+        font-size: vw(12);
         
         @include mdq-min(sm) {
+          font-size: em(14, 18);
           margin-top: 0;
+        }
+        
+        @include mdq-min(tab) {
+          font-size: em(20, 20);
         }
       }
     }
@@ -235,13 +267,19 @@
       .sub-title {
         display: flex;
         align-items: center;
-        font-size: em(12, 22);
+        font-size: vw(11);
         font-weight: 700;
         color: #999;
-        margin-top: 9px;
+        margin-top: 2px;
+        
+        @include mdq-min(sm) {
+          font-size: em(11, 18);
+        }
         
         @include mdq-min(tab) {
           color: #ccc;
+          font-size: em(12, 22);
+          margin-top: 9px;
         }
         
         &::before {
@@ -392,7 +430,7 @@
   }
   
   & + .droid-swiper-box {
-    margin-top: em(60);
+    margin-top: em(80);
     
     @include mdq-min(tab) {
       margin-top: em(170);

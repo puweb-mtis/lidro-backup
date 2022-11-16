@@ -18,7 +18,6 @@
 
 .brochure {
   position: relative;
-  padding-bottom: em(80);
   
   @include mdq-min(tab) {
     display: flex;
@@ -33,9 +32,8 @@
     
     .btn-group {
       position: absolute;
-      bottom: 0;
+      bottom: 20px;
       left: 0;
-      width: 100%;
       display: flex;
       justify-content: center;
       
@@ -48,13 +46,15 @@
   }
   
   &-content {
-    width: 140%;
-    margin-top: em(40);
+    width: 160%;
+    margin-top: em(70);
+    margin-left: -30px;
     
     @include mdq-min(tab) {
       flex: 1 0 percentage(1000/1400);
       max-width: percentage(1000/1400);
       margin-top: 0;
+      margin-left: 0;
     }
     
     img {

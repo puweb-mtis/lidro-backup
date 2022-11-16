@@ -10,9 +10,9 @@
   }
   
   &:not(.footer--main) {
-    margin-top: em(160);
+    margin-top: em(80);
     
-    @include mdq-min(lg) {
+    @include mdq-min(tab) {
       margin-top: em(117);
     }
   }
