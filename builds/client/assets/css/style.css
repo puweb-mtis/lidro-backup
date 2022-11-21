@@ -8691,6 +8691,7 @@ html.nav-open {
 }
 .intro-swiper__progressbar .swiper-button--play .play,
 .intro-swiper__progressbar .swiper-button--play .pause {
+  align-items: center;
   font-family: "SUIT", sans-serif;
   font-size: 0.875em;
   font-weight: 900;
