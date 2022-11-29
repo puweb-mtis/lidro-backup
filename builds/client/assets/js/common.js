@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', e => {
         const currentPathname = window.location.pathname;
         const currentDepth1 = currentPathname.split('/')[1];
         const currentDepth2 = currentPathname.split('/')[2];
-        const currentNavDepth1Link = document.querySelector(`.nav .nav-list.depth-1 > .nav-list__item > a[href*="${currentDepth1}"]`);
+        const currentNavDepth1Link = document.querySelector(`.nav .nav-list.depth-1 > .nav-list__item > .nav-list__item__inner > a[href*="${currentDepth1}"]`);
         const currentNavDepth2 = currentNavDepth1Link.nextElementSibling;
         const currentNavDepth2Link = currentNavDepth2.querySelector(`a[href*="${currentDepth1}/${currentDepth2.substring(0, 5)}"]`);
         const headerNavDepth1 = document.querySelector('.header .nav-box .nav-list.depth-1');
@@ -477,7 +477,7 @@ document.addEventListener('DOMContentLoaded', e => {
         headerNavCurrentDepth2Link.classList.add('active');
     }
     
-    const headerNavDepth1Link = document.querySelectorAll('.nav-list.depth-1 > .nav-list__item > a');
+    const headerNavDepth1Link = document.querySelectorAll('.nav-list.depth-1 > .nav-list__item > .nav-list__item__inner > a');
     
     headerNavDepth1Link.forEach(link => {
         link.addEventListener('click', e => {

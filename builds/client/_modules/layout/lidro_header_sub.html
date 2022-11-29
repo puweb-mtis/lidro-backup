@@ -4,7 +4,7 @@
 <header class="header header--white">
   <div class="container">
     <div class="sub-nav">
-      <a href="/" class="logo">
+      <a href="/{ ? isset(_GET.lang) && _GET.lang == 'en' }?lang=en{ / }" class="logo">
         <span class="img"></span>
         <span class="symbol"></span>
       </a>
@@ -36,8 +36,12 @@
     
     <div class="util-box">
       <div class="lang-box">
-        <a href="javascript:alert('준비중입니다.');" class="">EN</a>
-        <a href="javascript:alert('준비중입니다.');" class="">中語</a>
+        { ? isset(_GET.lang) && _GET.lang == 'en' }
+        <a href="/" class="">KO</a>
+        { : }
+        <a href="/?lang=en" class="">EN</a>
+        { / }
+        <!--<a href="javascript:alert('준비중입니다.');" class="">中語</a>-->
       </div>
       
       <button type="button" class="btn btn-menu">
