@@ -5007,6 +5007,7 @@ html.nav-open {
   font-size: 4.4444444444vw;
   line-height: 1.4;
   word-break: keep-all;
+  white-space: nowrap;
 }
 @media all and (min-width: 768.22px) {
   .nav .nav-list.depth-2 > .nav-list__item > .link {

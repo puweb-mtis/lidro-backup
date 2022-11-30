@@ -184,6 +184,7 @@
           font-size: vw(16);
           line-height: 1.4;
           word-break: keep-all;
+          white-space: nowrap;
           
           @include mdq-min(md) {
             font-size: em(18);
