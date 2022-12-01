@@ -1,4 +1,6 @@
 .intro-profile {
+  word-break: break-all;
+  
   &-row {
     @include mdq-min(tab) {
       display: flex;
@@ -8,7 +10,7 @@
   &-col {
     &:nth-child(1) {
       @include mdq-min(tab) {
-        flex: 1 1 auto;
+        flex: 0 0 percentage(500/1400);
       }
     }
     
@@ -16,10 +18,15 @@
       margin-top: em(30);
       
       @include mdq-min(tab) {
-        flex: 0 0 auto;
+        flex: 1 1 auto;
         width: auto;
         padding-right: em(120);
         margin-top: 0;
+        
+        &.eng {
+          flex: 0 0 em(320);
+          width: em(320);
+        }
       }
     }
     
@@ -27,7 +34,7 @@
       margin-top: em(30);
       
       @include mdq-min(tab) {
-        flex: 0 0 auto;
+        flex: 1 1 auto;
         width: auto;
         margin-top: 0;
       }
@@ -95,6 +102,8 @@
       &__text {
         display: flex;
         align-items: center;
+        justify-content: flex-start;
+        text-align: left;
         gap: em(6);
         font-weight: 700;
         
@@ -129,6 +138,10 @@
   &__inner {
     @include mdq-min(tab) {
       display: flex;
+  
+      &.eng {
+        display: block;
+      }
       
       & + .profile-list__inner {
         margin-top: em(16);
@@ -231,6 +244,27 @@
             padding-left: 0;
             padding-right: 0;
           }
+        }
+      }
+    }
+  }
+  
+  // eng
+  &.eng {
+    .profile-list {
+      &__inner {
+        flex-wrap: wrap;
+        
+        &__title {
+          flex: 1 0 100%;
+          width: 100%;
+          padding-right: 0;
+        }
+  
+        &__text {
+          flex: 1 0 100%;
+          width: 100%;
+          margin-top: em(8, 20);
         }
       }
     }
@@ -429,9 +463,11 @@
       font-size: vw(14);
       font-weight: 900;
       line-height: (24/20);
+      padding-right: em(20, 14);
       
       @include mdq-min(tab) {
         font-size: em(20);
+        padding-right: em(20, 20);
       }
     }
     

@@ -483,7 +483,8 @@ document.addEventListener('DOMContentLoaded', e => {
         link.addEventListener('click', e => {
             if (window.outerWidth < 1025) {
                 e.preventDefault();
-                
+                e.stopPropagation();
+    
                 for (let i = 0; i < headerNavDepth1Link.length; i++) {
                     headerNavDepth1Link[i].closest('.nav-list__item').classList.remove('active');
                 }

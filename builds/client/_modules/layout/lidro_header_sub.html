@@ -14,16 +14,16 @@
           <div class="nav-select"></div>
           <ul class="nav-list depth-1">
             <li class="nav-list__item">
-              <a href="/intro/index" class="link">기업소개</a>
+              <a href="/intro/index{ ? isset(_GET.lang) && _GET.lang == 'en' }?lang=en{ / }" class="link">{ ? isset(_GET.lang) && _GET.lang == 'en' }Company{ : }기업소개{ / }</a>
             </li>
             <li class="nav-list__item">
-              <a href="/business/lidar" class="link">사업영역</a>
+              <a href="/business/lidar{ ? isset(_GET.lang) && _GET.lang == 'en' }?lang=en{ / }" class="link">{ ? isset(_GET.lang) && _GET.lang == 'en' }Business{ : }사업영역{ / }</a>
             </li>
             <li class="nav-list__item">
-              <a href="/promote/brochure" class="link">홍보센터</a>
+              <a href="/promote/brochure{ ? isset(_GET.lang) && _GET.lang == 'en' }?lang=en{ / }" class="link">{ ? isset(_GET.lang) && _GET.lang == 'en' }PR Center{ : }홍보센터{ / }</a>
             </li>
             <li class="nav-list__item">
-              <a href="/recruit/index" class="link">인재채용</a>
+              <a href="/recruit/index{ ? isset(_GET.lang) && _GET.lang == 'en' }?lang=en{ / }" class="link">{ ? isset(_GET.lang) && _GET.lang == 'en' }Recruit{ : }인재채용{ / }</a>
             </li>
           </ul>
         </div>

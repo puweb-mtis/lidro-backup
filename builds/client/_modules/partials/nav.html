@@ -1,4 +1,4 @@
-<nav class="nav">
+<nav class="nav { ? isset(_GET.lang) && _GET.lang == 'en' }eng{ / }">
   <div class="nav-top">
     <img src="/builds/client/assets/images/symbol.svg" class="symbol" alt="LIDRO">
     
@@ -82,7 +82,7 @@
         
         <ul class="nav-list depth-2">
           <li class="nav-list__item">
-            <a href="/recruit/index?lang=en" class="link">Ideal Talent and Personner System</a>
+            <a href="/recruit/index?lang=en" class="link">Ideal Talent</a>
           </li>
           <li class="nav-list__item">
             <a href="javascript:alert('We apologize for the inconvenience.\nWe are preparing a page.');" class="link">Recruitment Guide</a>
@@ -97,7 +97,7 @@
       <a href="javascript:alert('We apologize for the inconvenience.\nWe are preparing a page.');" class="link">Privacy Statement</a>
     </li>
     <li class="nav-list__item">
-      <a href="javascript:alert('We apologize for the inconvenience.\nWe are preparing a page.');" class="link">Rejection of unauthorized collection of e-mail address)</a>
+      <a href="javascript:alert('We apologize for the inconvenience.\nWe are preparing a page.');" class="link">Rejection of unauthorized collection of e-mail address</a>
     </li>
     <li class="nav-list__item">
       <a href="javascript:alert('We apologize for the inconvenience.\nWe are preparing a page.');" class="link">Legal Notice</a>

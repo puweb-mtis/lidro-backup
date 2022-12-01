@@ -50,6 +50,14 @@
   &__title-box {
     position: relative;
     padding-bottom: em(327);
+    
+    @at-root {
+      @include mdq-min(xl) {
+        .recruit-index.eng .recruit-index__title-box .title {
+          width: 70%;
+        }
+      }
+    }
   
     .btn-link {
       display: inline-flex;
@@ -334,6 +342,14 @@
         line-height: (18/12);
         letter-spacing: 0.5px;
         color: rgba(#fff, 0.7);
+        
+        @at-root {
+          @include mdq-min(tab) {
+            .recruit-index [class^=index-swiper].eng .desc .text {
+              width: 60%;
+            }
+          }
+        }
       }
       
       .text--2 {
@@ -342,6 +358,14 @@
         font-weight: 800;
         letter-spacing: -1px;
         margin-top: em(2, 24);
+  
+        @at-root {
+          @include mdq-min(tab) {
+            .recruit-index [class^=index-swiper].eng .desc .text--2 {
+              padding-right: em(20, 24);
+            }
+          }
+        }
       }
       
       .controls {
