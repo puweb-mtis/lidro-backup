@@ -384,6 +384,7 @@
         @at-root {
           body.eng .intro-location-title--line .title--lg {
             font-size: em(72);
+            line-height: 1;
           }
         }
       }
@@ -401,7 +402,7 @@
         
         @at-root {
           .intro-location-title--line .line {
-            margin: em(8) 0 em(32);
+            margin: em(16) 0 em(40);
           }
         }
       }
@@ -487,22 +488,40 @@
       font-weight: 900;
       line-height: (24/20);
       padding-right: em(20, 14);
+  
+      @at-root {
+        body.eng .intro-location-title--line .address-box {
+          [data-letters-wrapper] {
+            line-height: 1.6;
+            
+            .letter {
+              line-height: 1.6;
+            }
+          }
+        }
+      }
       
       @include mdq-min(tab) {
         font-size: em(20);
         padding-right: em(20, 20);
         
         @at-root {
-          .intro-location-title--line .address-box {
+          body.eng .intro-location-title--line .address-box {
             font-size: em(18);
+            letter-spacing: 0;
           }
         }
       }
     }
     
     .address {
-      letter-spacing: -1px;
       margin-bottom: em(10, 20);
+      
+      @at-root {
+        body.eng .intro-location-title--line .address {
+          margin-bottom: em(20, 20);
+        }
+      }
     }
     
     .tel-box {

@@ -7460,6 +7460,7 @@ html.nav-open {
   }
   body.eng .intro-location-title--line .title--lg {
     font-size: 4.5em;
+    line-height: 1;
   }
 }
 .intro-location-title--line .line {
@@ -7474,7 +7475,7 @@ html.nav-open {
     height: 2.5em;
   }
   .intro-location-title--line .line {
-    margin: 0.5em 0 2em;
+    margin: 1em 0 2.5em;
   }
 }
 .intro-location-title--line .sub-title {
@@ -7557,19 +7558,30 @@ html.nav-open {
   line-height: 1.2;
   padding-right: 1.4285714286em;
 }
+body.eng .intro-location-title--line .address-box [data-letters-wrapper] {
+  line-height: 1.6;
+}
+body.eng .intro-location-title--line .address-box [data-letters-wrapper] .letter {
+  line-height: 1.6;
+}
+
 @media all and (min-width: 1024.22px) {
   .intro-location-title--line .address-box {
     font-size: 1.25em;
     padding-right: 1em;
   }
-  .intro-location-title--line .address-box {
+  body.eng .intro-location-title--line .address-box {
     font-size: 1.125em;
+    letter-spacing: 0;
   }
 }
 .intro-location-title--line .address {
-  letter-spacing: -1px;
   margin-bottom: 0.5em;
 }
+body.eng .intro-location-title--line .address {
+  margin-bottom: 1em;
+}
+
 .intro-location-title--line .tel-box {
   display: flex;
 }
@@ -7905,10 +7917,10 @@ html.nav-open {
 }
 @media all and (min-width: 1024.22px) {
   .partner-list__item .text {
-    font-size: 1.25em;
+    font-size: 1em;
   }
   body.eng .partner-list__item .text {
-    font-size: 1.125em;
+    font-size: 1em;
     line-height: 1.3;
   }
 }
@@ -8023,7 +8035,7 @@ html.nav-open {
 @media all and (min-width: 1660.22px) {
   .recruit-index.eng .recruit-index__title-box .title {
     width: 70%;
-    font-size: 2.25em;
+    font-size: 2.75em;
   }
 }
 .recruit-index__title-box .btn-link {
@@ -8921,6 +8933,9 @@ body.eng .recruit-index [class^=index-swiper] .desc .title {
     padding-left: 0;
     padding-right: 0;
   }
+  body.eng .intro-swiper__progressbar {
+    bottom: 10.5em;
+  }
 }
 .intro-swiper__progressbar .swiper-button--play {
   display: inline-flex;
@@ -8960,6 +8975,9 @@ body.eng .recruit-index [class^=index-swiper] .desc .title {
 @media all and (min-width: 1440.22px) {
   .intro-swiper__progressbar .swiper-progressbar {
     width: 39.2857142857%;
+  }
+  body.eng .intro-swiper__progressbar .swiper-progressbar {
+    width: 28.5714285714%;
   }
 }
 .intro-swiper__progressbar .swiper-progressbar::before {
@@ -9062,12 +9080,18 @@ body.eng .recruit-index [class^=index-swiper] .desc .title {
 }
 @media all and (min-width: 1660.22px) {
   .tech .swiper-pagination--bullet {
+    margin-top: 2.5em;
+  }
+}
+@media all and (min-width: 1920.22px) {
+  .tech .swiper-pagination--bullet {
     margin-top: 9.25em;
   }
 }
 .tech-bg {
   position: relative;
   overflow: hidden;
+  box-shadow: 1.875em 1.875em 3.125em rgba(0, 0, 0, 0.2);
 }
 .tech-bg::after {
   content: "";
@@ -9462,6 +9486,10 @@ body.eng .recruit-index [class^=index-swiper] .desc .title {
   letter-spacing: -1px;
   color: #999;
 }
+body.eng .rnd .address-box {
+  letter-spacing: 0;
+}
+
 @media all and (min-width: 768.22px) {
   .rnd .address-box {
     font-size: 0.875em;
@@ -9470,17 +9498,20 @@ body.eng .recruit-index [class^=index-swiper] .desc .title {
 @media all and (min-width: 1024.22px) {
   .rnd .address-box {
     color: #333;
-    font-size: 1.25em;
+    font-size: 1.125em;
     font-weight: 800;
   }
   body.eng .rnd .address-box {
-    font-size: 1.125em;
-    line-height: 1.4;
+    font-size: 1em;
+    line-height: 1.5;
   }
 }
 @media all and (min-width: 1024.22px) {
   .rnd .address-box .address {
     margin-right: 2.5em;
+  }
+  body.eng .rnd .address {
+    margin-right: 5em;
   }
 }
 .rnd .tel-box {

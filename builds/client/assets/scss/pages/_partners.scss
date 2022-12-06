@@ -118,11 +118,11 @@
         line-height: 1;
         
         @include mdq-min(tab) {
-          font-size: em(20);
+          font-size: em(16);
           
           @at-root {
             body.eng .partner-list__item .text {
-              font-size: em(18);
+              font-size: em(16);
               line-height: 1.3;
             }
           }
