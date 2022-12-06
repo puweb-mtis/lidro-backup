@@ -324,6 +324,12 @@
     
     @include mdq-min(sm) {
       font-size: em(52);
+      
+      @at-root {
+        body.eng .tech-title {
+          font-size: em(48);
+        }
+      }
     }
   }
   
@@ -706,8 +712,8 @@
       margin: em(20) auto em(20) 0;
       
       @include mdq-min(tab) {
-        height: em(100);
-        margin: em(60) auto em(60) 0;
+        height: em(80);
+        margin: em(32) auto em(32) 0;
       }
     }
   }
@@ -778,6 +784,12 @@
       display: block;
       font-size: em(78);
       
+      @at-root {
+        body.eng .rnd-title {
+          font-size: em(72);
+        }
+      }
+      
       br {
         display: block;
       }
@@ -798,6 +810,13 @@
       color: #333;
       font-size: em(20);
       font-weight: 800;
+      
+      @at-root {
+        body.eng .rnd .address-box {
+          font-size: em(18);
+          line-height: 1.4;
+        }
+      }
     }
     
     .address {

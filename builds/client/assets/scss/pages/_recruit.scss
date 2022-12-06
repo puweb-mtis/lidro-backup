@@ -55,6 +55,7 @@
       @include mdq-min(xl) {
         .recruit-index.eng .recruit-index__title-box .title {
           width: 70%;
+          font-size: em(36);
         }
       }
     }
@@ -182,6 +183,12 @@
       position: absolute;
       top: em(40, 24);
       left: em(40, 24);
+      
+      @at-root {
+        body.eng .recruit-index__banner .title {
+          font-weight: 900;
+        }
+      }
     }
     
     .btn-link {
@@ -253,6 +260,14 @@
         bottom: em(34, 24);
         color: #fff;
         z-index: 1;
+        
+        @at-root {
+          body.eng .recruit-index .index-banner--2 .title {
+            font-size: em(22);
+            left: em(40, 22);
+            bottom: em(34, 22);
+          }
+        }
       }
     }
     
@@ -333,6 +348,12 @@
         font-weight: 900;
         letter-spacing: -1px;
         line-height: 1;
+        
+        @at-root {
+          body.eng .recruit-index [class^=index-swiper] .desc .title {
+            font-size: em(20);
+          }
+        }
       }
       
       .text {
@@ -362,7 +383,9 @@
         @at-root {
           @include mdq-min(tab) {
             .recruit-index [class^=index-swiper].eng .desc .text--2 {
-              padding-right: em(20, 24);
+              padding-right: em(20, 20);
+              font-size: em(20);
+              margin-top: em(4, 20);
             }
           }
         }

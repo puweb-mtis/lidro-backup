@@ -67,17 +67,30 @@
       
       @include mdq-min(tab) {
         margin-top: em(20);
+  
+        @at-root {
+          body.eng .location-title-box .address {
+            margin-top: em(36);
+          }
+        }
       }
     }
     
     .tel-box {
       display: flex;
+      font-size: em(12, 14);
       gap: em(20, 14);
       margin-top: em(8, 14);
       
       @include mdq-min(tab) {
         display: block;
         margin-top: em(46);
+        
+        @at-root {
+          body.eng .location-title-box .tel-box {
+            margin-top: em(24, 20);
+          }
+        }
       }
     }
     

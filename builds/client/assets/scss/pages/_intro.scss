@@ -252,6 +252,10 @@
   // eng
   &.eng {
     .profile-list {
+      &__title {
+        margin-bottom: em(24);
+      }
+      
       &__inner {
         flex-wrap: wrap;
         
@@ -264,7 +268,14 @@
         &__text {
           flex: 1 0 100%;
           width: 100%;
-          margin-top: em(8, 20);
+          font-size: em(18, 20);
+          margin-top: em(8, 18);
+        }
+        
+        &.columns-4 {
+          .profile-list__inner__text {
+            margin-top: 0;
+          }
         }
       }
     }
@@ -369,6 +380,12 @@
       
       @include mdq-min(lg) {
         font-size: em(78);
+        
+        @at-root {
+          body.eng .intro-location-title--line .title--lg {
+            font-size: em(72);
+          }
+        }
       }
     }
     
@@ -381,6 +398,12 @@
       
       @include mdq-min(tab) {
         height: em(40);
+        
+        @at-root {
+          .intro-location-title--line .line {
+            margin: em(8) 0 em(32);
+          }
+        }
       }
     }
     
@@ -468,6 +491,12 @@
       @include mdq-min(tab) {
         font-size: em(20);
         padding-right: em(20, 20);
+        
+        @at-root {
+          .intro-location-title--line .address-box {
+            font-size: em(18);
+          }
+        }
       }
     }
     

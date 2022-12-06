@@ -157,6 +157,12 @@
         font-size: em(24);
         padding-right: em(10, 24);
         margin-top: 0;
+        
+        @at-root {
+          body.eng .history-list__item .content {
+            font-size: em(20);
+          }
+        }
       }
     }
     

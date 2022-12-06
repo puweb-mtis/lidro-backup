@@ -41,6 +41,13 @@
     @include mdq-min(sm) {
       font-size: em(14);
       font-weight: 500;
+      
+      @at-root {
+        body.eng .ci-list__content {
+          font-size: em(15);
+          font-weight: 600;
+        }
+      }
     }
     
     .m-img {
@@ -60,6 +67,12 @@
       @include mdq-min(tab) {
         display: block;
         margin-top: em(78);
+        
+        @at-root {
+          body.eng .ci-list__content .pc-img {
+            margin-top: em(28);
+          }
+        }
       }
     }
     

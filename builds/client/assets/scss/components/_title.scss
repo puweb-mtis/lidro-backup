@@ -5,9 +5,16 @@
     
     @include mdq-min(tab) {
       margin-bottom: em(100);
+      
+      @at-root {
+        body.eng .page-title--normal {
+          margin-bottom: em(80);
+        }
+      }
     }
     
     .title {
+      color: #333;
       font-size: vw(32);
       font-weight: 900;
       letter-spacing: -1px;
@@ -22,6 +29,12 @@
       
       @include mdq-min(lg) {
         font-size: em(78);
+        
+        @at-root {
+          .page-title--normal .title {
+            font-size: em(72);
+          }
+        }
       }
     }
   }
@@ -110,6 +123,13 @@
   
       @include mdq-min(lg) {
         font-size: em(78);
+        
+        @at-root {
+          .page-title--line .title--lg {
+            font-size: em(72);
+            line-height: 1;
+          }
+        }
       }
     }
     
@@ -198,6 +218,12 @@
   
       @include mdq-min(lg) {
         font-size: em(48);
+  
+        @at-root {
+          body.eng .page-title--line .sub-title--lg {
+            font-size: em(32);
+          }
+        }
       }
     }
     

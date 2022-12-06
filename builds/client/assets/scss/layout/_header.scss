@@ -336,6 +336,46 @@
     }
   }
   
+  @keyframes menuBubble {
+    0% {
+      bottom: -10px;
+    }
+    
+    50% {
+      bottom: -6px;
+    }
+  
+    100% {
+      bottom: -10px;
+    }
+  }
+  
+  .menu-bubble {
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    animation: menuBubble 1s ease-in-out 0s infinite alternate both;
+    
+    &-text {
+      display: block;
+      width: 100%;
+      color: #fff;
+      position: absolute;
+      bottom: em(5, 10);
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: em(10);
+      font-weight: 900;
+    }
+    
+    svg {
+      display: block;
+    }
+  }
+  
   &.active {
     span {
       &:nth-child(1) {

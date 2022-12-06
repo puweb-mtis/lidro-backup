@@ -170,6 +170,7 @@
       
       &__title {
         flex: 0 0 em(80, 18);
+        
       }
       
       &__text {
@@ -263,6 +264,11 @@
     .address-box {
       .address {
         font-size: em(14);
+        line-height: 1.4;
+      }
+      
+      .address + .address {
+        margin-top: em(12, 14);
       }
     }
   
