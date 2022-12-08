@@ -1,0 +1,85 @@
+{ #common_lidro_header }
+
+<!-- 제품 헤더 영역 선언 -->
+<header class="prd-header">
+  <div class="container">
+    <div class="sub-nav">
+      <a href="/{ ? isset(_GET.lang) && _GET.lang == 'en' }?lang=en{ / }" class="logo">
+        <img src="/builds/client/assets/images/symbol.svg" alt="">
+      </a>
+      
+      <div class="nav-box">
+        <div class="nav-item">
+          <div class="nav-select">Rotation LiDAR</div>
+          <ul class="nav-list depth-1">
+            <li class="nav-list__item">
+              <a href="#IL510" class="link" data-nav-name="rotation">Rotation LiDAR</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#AL410" class="link" data-nav-name="spad">SPAD LiDAR</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#IL110CameraPlus" class="link" data-nav-name="flash">FLASH LiDAR</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <div class="nav-select">IL510</div>
+          <ul class="nav-list depth-2 d-none" data-nav-depth1="rotation">
+            <li class="nav-list__item">
+              <a href="#IL510" class="link">IL510</a>
+            </li>
+          </ul>
+  
+          <ul class="nav-list depth-2 d-none" data-nav-depth1="spad">
+            <li class="nav-list__item">
+              <a href="#AL410" class="link">AL410</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#IL410" class="link">IL410</a>
+            </li>
+          </ul>
+  
+          <ul class="nav-list depth-2 d-none" data-nav-depth1="flash">
+            <li class="nav-list__item">
+              <a href="#IL110CameraPlus" class="link">IL110 Camera Plus</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#IL110" class="link">IL110</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#AL110" class="link">AL10</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="util-box">
+      <div class="lang-box">
+        { ? isset(_GET.lang) && _GET.lang == 'en' }
+        <a href="/" class="">KO</a>
+        { : }
+        <a href="/?lang=en" class="">EN</a>
+        { / }
+        <!--<a href="javascript:alert('준비중입니다.');" class="">中語</a>-->
+      </div>
+      
+      <button type="button" class="btn btn-menu">
+        <span></span><span></span><span></span>
+        
+        { ? isset(_GET.lang) && _GET.lang == 'en' }
+        <div class="menu-bubble">
+          <svg width="44" height="30" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M44 30L0 30L1.74846e-06 10L17 10L22 1.71502e-05L27 10L44 10L44 30Z" fill="#111111"/>
+          </svg>
+          <div class="menu-bubble-text">MENU</div>
+        </div>
+        { / }
+      </button>
+    </div>
+  </div>
+</header>
+
+{ #partials_nav }
+<!-- //제품 헤더 영역 선언 끝-->

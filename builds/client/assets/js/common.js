@@ -94,42 +94,130 @@ function swiperEachProgressbar(swiper) {
 }
 
 const $header = document.querySelector('.header');
-const $menuOpenButton = document.querySelector('.header .btn-menu');
-const $menuCloseButton = document.querySelector('.nav .btn-menu');
+const $prdHeader = document.querySelector('.prd-header');
 const $nav = document.querySelector('.nav');
 const $navBg = document.querySelector('.nav-bg');
-const $headerNavSelects = $header.querySelectorAll('.nav-select');
+const $menuCloseButton = $nav.querySelector('.btn-menu');
+let $menuOpenButton, $headerNavSelects, $prdHeaderNavSelects;
 
-$headerNavSelects.forEach(($select, index, array) => {
-    $select.addEventListener('click', e => {
-        $select.classList.toggle('active');
-        
-        for (let i = 0; i < array.length; i++) {
-            if (i !== index) {
-                array[i].classList.remove('active');
+if ($header) {
+    $menuOpenButton = $header.querySelector('.btn-menu');
+    $headerNavSelects = $header.querySelectorAll('.nav-select');
+} else if ($prdHeader) {
+    $menuOpenButton = $prdHeader.querySelector('.btn-menu');
+    $prdHeaderNavSelects = $prdHeader.querySelectorAll('.nav-select');
+}
+
+if ($headerNavSelects) {
+    $headerNavSelects.forEach(($select, index, array) => {
+        $select.addEventListener('click', e => {
+            $select.classList.toggle('active');
+            
+            for (let i = 0; i < array.length; i++) {
+                if (i !== index) {
+                    array[i].classList.remove('active');
+                }
             }
+        });
+    });
+}
+
+if ($prdHeaderNavSelects) {
+    const prdHash = window.location.hash === '' ? '#IL510' : window.location.hash;
+    const $currDepth2Link = document.querySelector(`.nav-list.depth-2 [href="${prdHash}"]`);
+    const $currNav1Select = document.querySelector('.nav-list.depth-1').closest('.nav-item').querySelector('.nav-select');
+    const $currNav2Select = document.querySelector('.nav-list.depth-2').closest('.nav-item').querySelector('.nav-select');
+    const currentNavDepth1 = $currDepth2Link.closest('.nav-list').getAttribute('data-nav-depth1');
+    const $prdNavDepth1Links = document.querySelectorAll('.prd-header .nav-list.depth-1 .link');
+    const $prdNavDepth2Links = document.querySelectorAll('.prd-header .nav-list.depth-2 .link');
+    
+    
+    switch (currentNavDepth1) {
+        case 'rotation':
+            $currNav1Select.innerText = 'Rotation LiDAR';
+            break;
+        case 'spad':
+            $currNav1Select.innerText = 'SPAD LiDAR';
+            break;
+        case 'flash':
+            $currNav1Select.innerText = 'FLASH LiDAR';
+            break;
+    }
+    
+    $currNav2Select.innerText = prdHash.replace('#', '');
+    
+    document.querySelectorAll(`[data-nav-depth1]`).forEach($target => { $target.classList.add('d-none'); });
+    document.querySelector(`[data-nav-depth1="${currentNavDepth1}"]`).classList.remove('d-none');
+    
+    
+    $prdHeaderNavSelects.forEach(($select, index, array) => {
+        $select.addEventListener('click', e => {
+            $select.classList.toggle('active');
+            
+            for (let i = 0; i < array.length; i++) {
+                if (i !== index) {
+                    array[i].classList.remove('active');
+                }
+            }
+        });
+    });
+    
+    $prdNavDepth1Links.forEach($link => {
+        $link.addEventListener('click', e => {
+            const $select = $link.closest('.nav-item').querySelector('.nav-select');
+            const depth1Name = $link.innerText;
+            const depth1Type = $link.getAttribute('data-nav-name');
+            
+            $select.innerText = depth1Name;
+            document.querySelectorAll(`[data-nav-depth1]`).forEach($target => {
+                $target.classList.add('d-none');
+            });
+            document.querySelector(`[data-nav-depth1="${depth1Type}"]`).classList.remove('d-none');
+            
+            $select.classList.remove('active');
+        });
+    });
+    
+    $prdNavDepth2Links.forEach($link => {
+        $link.addEventListener('click', e => {
+            const $select = $link.closest('.nav-item').querySelector('.nav-select');
+            
+            $select.innerText = $link.innerText;
+            $select.classList.remove('active');
+        });
+    });
+}
+
+if ($header) {
+    window.addEventListener('scroll', e => {
+        if (window.scrollY > 0) {
+            $header.classList.add('scrolled');
+        } else {
+            $header.classList.remove('scrolled');
         }
     });
-});
-
-window.addEventListener('scroll', e => {
-    if (window.scrollY > 0) {
-        $header.classList.add('scrolled');
-    } else {
-        $header.classList.remove('scrolled');
-    }
-});
+}
 
 $menuOpenButton.addEventListener('click', e => {
     document.querySelector('html').classList.add('nav-open');
-    $header.classList.add('nav-open');
     $nav.classList.add('active');
+    
+    if ($header) {
+        $header.classList.add('nav-open');
+    } else {
+        $prdHeader.classList.add('nav-open');
+    }
 });
 
 $menuCloseButton.addEventListener('click', e => {
     document.querySelector('html').classList.remove('nav-open');
-    $header.classList.remove('nav-open');
     $nav.classList.remove('active');
+    
+    if ($header) {
+        $header.classList.remove('nav-open');
+    } else {
+        $prdHeader.classList.remove('nav-open');
+    }
 });
 
 /* 네비게이션 배경 클릭시 닫기 */
@@ -188,20 +276,20 @@ if (introLocationSlider && introLocationSlides.length > 0) {
             
             resolve();
         });
-    
+        
         promise.then(() => {
             introLocationSlides[swiper.realIndex].classList.add('active');
-    
+            
             for (let i = 0; i < letterWrappers.length; i++) {
                 const lettersWrapper = letterWrappers[i];
                 const letterArray = lettersWrapper.textContent.split(/\s/g);
-        
+                
                 lettersWrapper.innerHTML = '';
-        
+                
                 for (let j = 0; j < letterArray.length; j++) {
                     lettersWrapper.innerHTML += `<span class="letter">${letterArray[j]}</span>&nbsp;`;
                 }
-    
+                
                 anime.timeline({loop: false}).add({
                     targets: lettersWrapper.querySelectorAll('.letter'),
                     translateY: ["1.5em", 0],
@@ -454,6 +542,7 @@ if (recruitIndex) {
 
 
 document.addEventListener('DOMContentLoaded', e => {
+    if (!$header) return false;
     if (!document.querySelector('.header').classList.contains('header--main')) {
         const currentPathname = window.location.pathname;
         const currentDepth1 = currentPathname.split('/')[1];
@@ -484,7 +573,7 @@ document.addEventListener('DOMContentLoaded', e => {
             if (window.outerWidth < 1025) {
                 e.preventDefault();
                 e.stopPropagation();
-    
+                
                 for (let i = 0; i < headerNavDepth1Link.length; i++) {
                     headerNavDepth1Link[i].closest('.nav-list__item').classList.remove('active');
                 }

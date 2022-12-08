@@ -394,3 +394,117 @@
     }
   }
 }
+
+// Product Header
+.prd-header {
+  position: fixed;
+  top: em(40);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: calc(100% - 100px);
+  background: linear-gradient(180deg, rgba(#333, 0.6), transparent);
+  box-shadow: 0 em(10) em(20) 0 rgba(0, 0, 0, 0.25);
+  border-radius: em(10);
+  z-index: 2;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 em(30);
+    max-width: 100%;
+  }
+  
+  .sub-nav {
+    display: flex;
+    align-items: center;
+    gap: em(30);
+  
+    .nav-select {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: em(18);
+      font-weight: 800;
+      line-height: (24/18);
+      user-select: none;
+      cursor: pointer;
+    
+      &::after {
+        content: '';
+        display: block;
+        width: em(7, 18);
+        height: em(11, 18);
+        margin-left: em(20, 18);
+        background: {
+          image: url(/builds/client/assets/images/icons/nav_select_arrow.svg);
+          repeat: no-repeat;
+          position: center;
+          size: 100% auto;
+        };
+      }
+    
+      &.active {
+        &::after {
+          transform: rotate(180deg);
+        }
+      
+        & ~ .nav-list:not(.d-none) {
+          display: block;
+        }
+      }
+    }
+  
+    .nav-box {
+      display: none;
+      gap: em(40);
+    
+      @include mdq-min(tab) {
+        display: flex;
+      }
+    
+      .nav-item {
+        position: relative;
+        padding: em(28) 0;
+      }
+    
+      .nav-list {
+        position: absolute;
+        bottom: 0;
+        left: em(-28);
+        transform: translateY(100%);
+        width: em(232);
+        background-color: #222;
+        padding: em(35) em(28);
+        border: 1px solid #333;
+        display: none;
+      
+        &__item + .nav-list__item {
+          margin-top: em(30);
+        }
+      
+        &__item {
+          .link {
+            color: #ccc;
+            font-size: em(18);
+            font-weight: 800;
+          
+            &.active,
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .btn-menu span {
+    background-color: #fff;
+  }
+  
+  .lang-box a {
+    color: #fff;
+  }
+}
