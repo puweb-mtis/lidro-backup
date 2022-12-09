@@ -1,5 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
+.prd-header * {
+  cursor: none !important;
+}
+
+.cursor {
+  position: fixed;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  mix-blend-mode: difference;
+  -webkit-mix-blend-mode: difference;
+  will-change: transform;
+  pointer-events: none;
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+  cursor: none !important;
+  
+  .circle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #fff;
+    background: #fff;
+    display: block;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: translate3d(-50%,-50%,0);
+    transition: all .3s;
+    pointer-events: none;
+    box-sizing: border-box;
+    cursor: none !important;
+  }
+  
+  &.on .circle {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .prd-main {
   position: relative;
   display: block;
@@ -8,6 +50,10 @@
   font-family: 'Rubik', 'SUIT', sans-serif;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  
+  * {
+    cursor: none !important;
+  }
   
   & + .footer {
     margin-top: 0;
@@ -23,7 +69,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background-color: #1f1f1f;
+  background: linear-gradient(180deg, #222, #111);
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   //display: flex;
@@ -41,14 +87,26 @@
 
 .prd-wrap {
   display: flex;
+  align-items: center;
   width: 100%;
-  margin-left: em(-80);
-  margin-right: em(-80);
+  margin-left: em(-40);
+  margin-right: em(-40);
+  
+  @include mdq-min(xl) {
+    margin-left: em(-80);
+    margin-right: em(-80);
+  }
   
   .prd-title {
     flex: 1 1 auto;
-    padding-right: em(80);
-    padding-left: em(80);
+    width: 1%;
+    padding-right: em(40);
+    padding-left: em(40);
+    
+    @include mdq-min(xl) {
+      padding-right: em(80);
+      padding-left: em(80);
+    }
   }
   
   .prd-content {
@@ -60,12 +118,16 @@
 
 .prd-section-pagination {
   position: fixed;
-  bottom: em(100);
+  bottom: em(50);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  @media screen and (min-height:1080px) {
+    bottom: em(100);
+  }
   
   &-bullet {
     display: flex;
@@ -136,10 +198,14 @@
   
   .bg-text {
     color: rgba(#fff, 0.03);
-    font-size: em(200);
+    font-size: em(120);
     font-weight: 700;
     line-height: (180/200);
     margin-top: em(24, 200);
+    
+    @include mdq-min(xl) {
+      font-size: em(200);
+    }
   }
   
   .deco-text {
@@ -152,44 +218,73 @@
   
   .prd-thumb {
     display: block;
-    right: em(80);
+    right: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     opacity: 1;
     
-    //@at-root {
-    //  .prd-section .swiper .swiper-slide-active .prd-thumb {
-    //    transform: translateY(-50%);
-    //    opacity: 1;
-    //  }
-    //}
+    @include mdq-min(xl) {
+      right: em(80);
+    }
     
     &[src*="IL510"] {
       width: em(490);
+      max-width: 35%;
+      
+      @include mdq-min(xl) {
+        max-width: none;
+      }
     }
     
     &[src*="AL410"] {
       width: em(742);
+      max-width: 45%;
+  
+      @include mdq-min(xl) {
+        max-width: none;
+      }
     }
   
     &[src*="IL410"] {
       width: em(728);
+      max-width: 45%;
+      
+      @include mdq-min(xl) {
+        max-width: none;
+      }
     }
   
     &[src*="IL110_camera_plus"] {
       width: em(372);
       right: em(160);
+      max-width: 35%;
+  
+      @include mdq-min(xl) {
+        max-width: none;
+      }
     }
   
     &[src*="IL110"] {
       width: em(341);
-      right: em(160);
+      right: 0;
+      max-width: 35%;
+      
+      @include mdq-min(xl) {
+        right: em(160);
+        max-width: none;
+      }
     }
   
     &[src*="AL110"] {
       width: em(299);
-      right: em(200);
+      right: 0;
+      max-width: 35%;
+      
+      @include mdq-min(xl) {
+        right: em(200);
+        max-width: none;
+      }
     }
   }
 }
@@ -199,8 +294,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: em(24) 0;
     border-top: 1px solid rgba(#111, 0.3);
+    padding: em(16) 0;
+    
+    @media screen and (min-height: 1080px) {
+      padding: em(24) 0;
+    }
     
     &:last-child {
       border-bottom: 1px solid rgba(#111, 0.3);
