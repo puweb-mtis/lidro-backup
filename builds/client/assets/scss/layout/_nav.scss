@@ -10,7 +10,7 @@
   padding: em(40) em(50);
   transform: translateX(100%);
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     padding: em(60) em(100);
   }
   
@@ -68,7 +68,7 @@
         display: flex;
         align-items: flex-start;
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           display: block;
         }
         
@@ -102,7 +102,7 @@
               transition: all .2s ease-in-out;
               opacity: 0;
               
-              @include mdq-min(tab) {
+              @include mdq-min(lg) {
                 height: 4px;
                 margin-left: em(40, 36);
                 margin-right: em(40, 36);
@@ -135,7 +135,7 @@
           }
         }
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           &:hover .nav-list__item__inner {
             > .link {
               color: #fff;
@@ -158,7 +158,7 @@
         & + .nav-list__item {
           margin-top: em(30);
           
-          @include mdq-min(tab) {
+          @include mdq-min(lg) {
             margin-top: em(74);
           }
         }
@@ -166,7 +166,7 @@
     }
     
     &.depth-2 {
-      position: static;
+      position: absolute;
       top: 0;
       // left: em(246);
       right: 0;
@@ -176,7 +176,7 @@
       transform: translate(50%, 0);
       transition: all .2s ease-in-out;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         position: absolute;
         height: auto;
       }
@@ -206,7 +206,7 @@
       position: static;
       margin-top: em(140);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         position: absolute;
         bottom: em(82);
         left: em(100);
@@ -217,7 +217,7 @@
         & + .nav-list__item {
           margin-top: em(8);
           
-          @include mdq-min(tab) {
+          @include mdq-min(lg) {
             margin-top: em(24);
           }
         }

@@ -1,20 +1,20 @@
 .history {
   display: block;
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     display: flex;
     padding-bottom: em(240);
   }
   
   .history-title {
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       flex: 1 0 percentage(605/1400);
       max-width: percentage(605/1400);
     }
   }
   
   .history-content {
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       flex: 1 0 percentage(795/1400);
       max-width: percentage(795/1400);
     }
@@ -42,7 +42,7 @@
     }
   }
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -61,7 +61,7 @@
   position: relative;
   margin-top: em(68);
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     margin-top: 0;
   }
   
@@ -71,14 +71,14 @@
     padding-left: 50%;
     padding-bottom: em(84);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
       padding-left: em(46);
       padding-bottom: em(152);
     }
   
     &:last-child {
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         padding-bottom: 0;
       }
     
@@ -101,7 +101,7 @@
       transform: translateX(-50%);
       z-index: 2;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         left: 0;
         width: 1em;
         height: 1em;
@@ -119,7 +119,7 @@
       background-color: #333;
       z-index: 1;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         left: 0;
       }
     }
@@ -133,7 +133,7 @@
         font-size: em(22);
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(24);
         flex: 0 0 em(146, 24);
         width: em(146, 24);
@@ -153,7 +153,7 @@
         font-size: em(18);
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(24);
         padding-right: em(10, 24);
         margin-top: 0;
@@ -175,7 +175,7 @@
       text-align: center;
       transform: translateY(-30%);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         position: static;
         width: auto;
         transform: translateY(0);

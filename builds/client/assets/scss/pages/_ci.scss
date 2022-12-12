@@ -2,7 +2,7 @@
   &__item {
     margin-top: em(40);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       margin-top: 0;
     }
     
@@ -26,7 +26,7 @@
       font-size: em(24);
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       font-size: em(26);
       margin-bottom: em(20, 26);
     }
@@ -55,7 +55,7 @@
       margin-right: -30px;
       margin-bottom: em(40);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: none;
       }
     }
@@ -64,7 +64,7 @@
       display: none;
       margin-top: em(40);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: block;
         margin-top: em(78);
         

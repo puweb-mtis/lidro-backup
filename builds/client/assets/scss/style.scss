@@ -1,5 +1,10 @@
+@import "root";
+
 // functions
 @import "functions";
+
+// config
+@import "config/variables";
 
 // mixins
 @import "./mixins/breakpoints";
@@ -78,14 +83,9 @@
     display: flex;
     justify-content: center;
     
-    @include mdq-min(tab) {
-      display: block;
-      bottom: em(400);
-      padding-left: em(32);
-    }
-    
-    @include mdq-min(lg) {
+    @include mdq-min(laptop) {
       bottom: em(440);
+      justify-content: flex-start;
       padding-left: 0;
     }
   }
@@ -138,29 +138,28 @@
     justify-content: space-between;
     flex-direction: column;
     
-    @include mdq-min(sm) {
+    @include mdq-min(laptop) {
       display: block;
       text-align: left;
       bottom: em(126);
-    }
-    
-    @include mdq-min(lg) {
       padding-left: 0;
       padding-right: 0;
-      
-      @include mdq-min(lg) {
-        padding-left: 0;
-      }
     }
   }
   
   &__text {
+    text-align: center;
     order: 2;
     font-size: vw(12);
     font-weight: 700;
     margin-top: em(10, 12);
     
     @include mdq-min(sm) {
+      font-size: em(16);
+    }
+    
+    @include mdq-min(laptop) {
+      text-align: left;
       order: 1;
       font-size: em(22);
       margin-top: 0;
@@ -177,10 +176,10 @@
     letter-spacing: -2px;
     
     @include mdq-min(sm) {
-      font-size: em(28);
+      font-size: em(42);
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(laptop) {
       order: 2;
       font-size: em(78);
       text-align: left;
@@ -199,17 +198,13 @@
     bottom: em(144);
     left: 0;
     width: 100%;
-    max-width: 1100px;
     z-index: 2;
     text-align: right;
     padding-left: em(32);
     padding-right: em(32);
     
-    @include mdq-min(tab) {
+    @include mdq-min(laptop) {
       display: block;
-    }
-    
-    @include mdq-min(lg) {
       max-width: 1400px;
       left: 50%;
       transform: translateX(-50%);
@@ -265,7 +260,7 @@
       height: 2px;
       margin-left: auto;
       
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         width: percentage(550/1400);
         
         @at-root {
@@ -304,7 +299,7 @@
     size: cover;
   };
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     display: flex;
     align-items: center;
     width: 100%;
@@ -319,11 +314,11 @@
   }
   
   .container {
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       padding-left: em(70);
     }
     
-    @include mdq-min(lg) {
+    @include mdq-min(laptop) {
       padding-left: 0;
       padding-right: em(340);
     }
@@ -336,13 +331,17 @@
     letter-spacing: -2px;
     
     @include mdq-min(sm) {
-      font-size: em(52);
+      font-size: em(42);
       
       @at-root {
         body.eng .tech-title {
           font-size: em(48);
         }
       }
+    }
+    
+    @include mdq-min(lg) {
+      font-size: em(52);
     }
   }
   
@@ -352,7 +351,7 @@
     margin-left: -30px;
     margin-right: -30px;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       overflow: visible;
       margin-top: em(44);
       margin-left: 0;
@@ -381,7 +380,7 @@
     display: none;
     margin-top: em(40);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
     }
     
@@ -426,7 +425,7 @@
       display: none;
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       &--pc {
         display: block;
       }
@@ -445,7 +444,7 @@
     padding-right: em(40);
     padding-left: em(40);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       width: auto;
       bottom: em(60);
       left: em(60);
@@ -508,11 +507,11 @@
       margin-top: em(80);
       padding-left: em(40);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: flex;
       }
       
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         margin-top: em(195);
       }
     }
@@ -524,7 +523,7 @@
     justify-content: space-between;
     margin-top: em(40);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: none;
       margin-top: 0;
     }
@@ -541,7 +540,7 @@
   display: flex;
   align-items: center;
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     padding-left: em(40);
   }
   
@@ -552,7 +551,7 @@
     font-weight: 800;
     letter-spacing: -1px;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: block;
     }
   }
@@ -619,7 +618,7 @@
   background-color: #f2f2f2;
   width: 100%;
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     display: inline-flex;
     width: auto;
   }
@@ -634,7 +633,7 @@
     flex: 1 0 auto;
     text-align: center;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: inline-block;
       flex: 0 0 auto;
     }
@@ -653,7 +652,7 @@
     margin-top: em(40);
   }
   
-  @include mdq-min(lg) {
+  @include mdq-min(laptop) {
     margin-top: em(92);
   }
   
@@ -678,9 +677,9 @@
   padding-top: em(20);
   padding-bottom: em(120);
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     height: 100%;
     padding-top: 0;
     padding-bottom: 0;
@@ -702,8 +701,9 @@
     };
     z-index: 0;
   
-    @include mdq-min(tab) {
-      display: none;
+    @include mdq-min(lg) {
+      height: 100%;
+      background-image: url(/builds/client/assets/images/main/rnd_bg.png);
     }
   }
   
@@ -714,11 +714,11 @@
     justify-content: flex-end;
     z-index: 1;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
       flex: 1 0 50%;
       max-width: 50%;
-      padding-top: em(239);
+      // padding-top: em(239);
     }
     
     
@@ -729,7 +729,7 @@
       background-color: #333;
       margin: em(20) auto em(20) 0;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         height: em(80);
         margin: em(32) auto em(32) 0;
       }
@@ -760,7 +760,7 @@
     padding-left: 30px;
     padding-right: 30px;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       padding-right: em(136);
     }
     
@@ -772,7 +772,7 @@
   .swiper-pagination--bullet {
     display: none;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
       margin-top: em(32);
     }
@@ -790,15 +790,11 @@
     font-weight: 800;
     letter-spacing: -2px;
     
-    br {
-      display: none;
+    @include mdq-min(sm) {
+      font-size: em(52);
     }
     
-    @include mdq-min(md) {
-      font-size: em(36);
-    }
-    
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: block;
       font-size: em(78);
       
@@ -807,8 +803,12 @@
           font-size: em(72);
         }
       }
+    }
+  
+    br {
+      display: none;
       
-      br {
+      @include mdq-min(lg) {
         display: block;
       }
     }
@@ -825,12 +825,12 @@
         letter-spacing: 0;
       }
     }
-    
-    @include mdq-min(md) {
-      font-size: em(14);
+  
+    @include mdq-min(sm) {
+      font-size: em(21);
     }
   
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       color: #333;
       font-size: em(18);
       font-weight: 800;
@@ -844,7 +844,9 @@
     }
     
     .address {
-      @include mdq-min(tab) {
+      word-break: keep-all;
+      
+      @include mdq-min(lg) {
         margin-right: em(40);
         
         @at-root {
@@ -875,14 +877,13 @@
   &-swiper-box {
     margin-top: em(30);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       margin-top: 0;
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       flex: 1 0 50%;
       max-width: 50%;
-      background: url(../images/main/rnd_bg.png) no-repeat center/cover;
     }
   }
   
@@ -890,8 +891,8 @@
     position: relative;
     max-width: 100%;
     
-    @include mdq-min(tab) {
-      padding-top: em(200);
+    @include mdq-min(lg) {
+      // padding-top: em(200);
       margin-left: em(-148);
       width: em(880);
   
@@ -921,7 +922,7 @@
       padding-left: em(40);
       padding-right: em(40);
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: block;
         margin-top: 0;
         padding-left: 0;
@@ -934,7 +935,7 @@
         transform: none;
       }
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: block;
     
         .swiper-button--arrow-left,
@@ -943,7 +944,8 @@
         }
     
         .swiper-button--arrow-left {
-          top: em(320);
+          //top: em(320);
+          top: em(80);
           transform: translate(em(-62), -50%);
         }
     
@@ -958,7 +960,7 @@
     .rnd-top {
       margin-left: 0;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         width: em(800);
       }
       
@@ -992,7 +994,7 @@
       margin-top: em(-290);
       margin-right: 0;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: block;
       }
       
@@ -1000,7 +1002,7 @@
         position: relative;
         max-width: 100%;
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           width: em(450);
         }
         
@@ -1035,14 +1037,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 120%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: rgba(#fff, 0.8);
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     background-color: rgba(#fff, 0.4);
   }
   

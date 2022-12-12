@@ -5,7 +5,7 @@
   padding-bottom: em(12);
   overflow-x: auto;
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     display: block;
     margin-top: em(60);
     margin-left: em(-10);
@@ -22,7 +22,7 @@
     line-height: 1;
     white-space: nowrap;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       padding: em(10, 18);
     }
     
@@ -47,7 +47,7 @@
         font-size: em(14);
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(14);
       }
     }

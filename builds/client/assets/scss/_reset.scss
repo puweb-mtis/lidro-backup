@@ -23,9 +23,9 @@ body {
   font-family: 'SUIT', sans-serif;
   font-size: 16px;
   overflow-x: hidden;
-  color: #333;
+  color: var(--body-color);
   
-  @include mdq-min(lg) {
+  @include mdq-min(laptop) {
     font-size: 16px;
   }
 }

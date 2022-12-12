@@ -1,44 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
-.prd-header * {
-  cursor: none !important;
-}
-
-.cursor {
-  position: fixed;
-  width: 0;
-  height: 0;
-  top: 0;
-  left: 0;
-  z-index: 999999;
-  mix-blend-mode: difference;
-  -webkit-mix-blend-mode: difference;
-  will-change: transform;
-  pointer-events: none;
-  backface-visibility: visible;
-  -webkit-backface-visibility: visible;
-  cursor: none !important;
-  
-  .circle {
-    position: relative;
-    width: 24px;
-    height: 24px;
-    border: 2px solid #fff;
-    background: #fff;
-    display: block;
-    border-radius: 50%;
-    top: 0;
-    left: 0;
-    transform: translate3d(-50%,-50%,0);
-    transition: all .3s;
-    pointer-events: none;
-    box-sizing: border-box;
+@include mdq-min(lg) {
+  .prd-header * {
     cursor: none !important;
   }
   
-  &.on .circle {
-    width: 40px;
-    height: 40px;
+  .cursor {
+    position: fixed;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    mix-blend-mode: difference;
+    -webkit-mix-blend-mode: difference;
+    will-change: transform;
+    pointer-events: none;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    cursor: none !important;
+    
+    .circle {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #fff;
+      background: #fff;
+      display: block;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      transform: translate3d(-50%,-50%,0);
+      transition: all .3s;
+      pointer-events: none;
+      box-sizing: border-box;
+      cursor: none !important;
+    }
+    
+    &.on .circle {
+      width: 60px;
+      height: 60px;
+    }
   }
 }
 
@@ -51,8 +53,10 @@
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   
-  * {
-    cursor: none !important;
+  @include mdq-min(lg) {
+    * {
+      cursor: none !important;
+    }
   }
   
   & + .footer {
@@ -68,29 +72,40 @@
 .prd-section {
   position: relative;
   width: 100%;
-  height: 100vh;
-  background: linear-gradient(180deg, #222, #111);
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
+  background: linear-gradient(180deg, #111 0%, #222 50%, #111 100%);
+  padding: em(100) 0 !important;
+  
+  @include mdq-min(sm) {
+    padding: em(120) 0 !important;
+  }
+  
+  @include mdq-min(lg) {
+    height: 100vh;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
   
   .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     max-width: 1820px;
+    
+    @include mdq-min(lg) {
+      height: 100vh;
+    }
   }
 }
 
 .prd-wrap {
-  display: flex;
-  align-items: center;
   width: 100%;
-  margin-left: em(-40);
-  margin-right: em(-40);
+  
+  @include mdq-min(lg) {
+    display: flex;
+    align-items: center;
+    margin-left: em(-40);
+    margin-right: em(-40);
+  }
   
   @include mdq-min(xl) {
     margin-left: em(-80);
@@ -98,10 +113,56 @@
   }
   
   .prd-title {
-    flex: 1 1 auto;
-    width: 1%;
-    padding-right: em(40);
-    padding-left: em(40);
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      
+      .prd-title-box {
+        flex: 1 0 100%;
+        margin-bottom: em(20);
+      }
+      
+      .symbol {
+        flex: 0 0 em(28);
+        width: em(28);
+        order: 1;
+      }
+      
+      .title {
+        flex: 1 1 auto;
+        width: 100%;
+        order: 2;
+      }
+      
+      .sub-title {
+        flex: 1 0 50%;
+        max-width: 50%;
+        order: 3;
+        margin-top: 0;
+        line-height: 1.2;
+      }
+      
+      .deco-text {
+        flex: 1 0 50%;
+        max-width: 50%;
+        order: 4;
+        text-align: right;
+        margin-top: 0;
+        line-height: 1.2;
+      }
+      
+      .prd-thumb {
+        order: 5;
+      }
+    }
+    
+    @include mdq-min(lg) {
+      display: block;
+      flex: 1 1 auto;
+      width: 1%;
+      padding-right: em(40);
+      padding-left: em(40);
+    }
     
     @include mdq-min(xl) {
       padding-right: em(80);
@@ -110,9 +171,17 @@
   }
   
   .prd-content {
-    flex: 0 0 em(600);
-    padding-right: em(80);
-    padding-left: em(80);
+    @include mdq-min(lg) {
+      flex: 0 0 em(500);
+      padding-right: em(40);
+      padding-left: em(40);
+    }
+    
+    @include mdq-min(xl) {
+      flex: 0 0 em(600);
+      padding-right: em(80);
+      padding-left: em(80);
+    }
   }
 }
 
@@ -121,9 +190,13 @@
   bottom: em(50);
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+  
+  @include mdq-min(lg) {
+    display: flex;
+  }
   
   @media screen and (min-height:1080px) {
     bottom: em(100);
@@ -174,17 +247,26 @@
     position: relative;
     display: inline-block;
     color: #fff;
-    font-size: em(96);
+    font-size: em(76);
     font-weight: 500;
     line-height: 1;
     margin-top: em(20, 96);
     
+    @include mdq-min(sm) {
+      font-size: em(96);
+    }
+    
     .sup {
-      position: absolute;
-      top: 0;
-      right: 0;
+      display: block;
+      flex: 1 0 100%;
       font-size: em(24, 96);
-      transform: translateX(100%);
+      
+      @include mdq-min(md) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+      }
     }
   }
   
@@ -197,14 +279,20 @@
   }
   
   .bg-text {
+    display: none;
     color: rgba(#fff, 0.03);
     font-size: em(120);
     font-weight: 700;
     line-height: (180/200);
     margin-top: em(24, 200);
     
+    @include mdq-min(lg) {
+      display: block;
+    }
+    
     @include mdq-min(xl) {
       font-size: em(200);
+      padding-left: em(20, 200);
     }
   }
   
@@ -218,19 +306,30 @@
   
   .prd-thumb {
     display: block;
-    right: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     opacity: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: em(40);
+    
+    @include mdq-min(md) {
+      right: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-top: 9px;
+    }
     
     @include mdq-min(xl) {
       right: em(80);
     }
     
     &[src*="IL510"] {
-      width: em(490);
-      max-width: 35%;
+      max-width: 80%;
+      
+      @include mdq-min(md) {
+        width: em(490);
+        max-width: 40%;
+      }
       
       @include mdq-min(xl) {
         max-width: none;
@@ -238,8 +337,10 @@
     }
     
     &[src*="AL410"] {
-      width: em(742);
-      max-width: 45%;
+      @include mdq-min(md) {
+        width: em(742);
+        max-width: 55%;
+      }
   
       @include mdq-min(xl) {
         max-width: none;
@@ -247,8 +348,10 @@
     }
   
     &[src*="IL410"] {
-      width: em(728);
-      max-width: 45%;
+      @include mdq-min(md) {
+        width: em(728);
+        max-width: 55%;
+      }
       
       @include mdq-min(xl) {
         max-width: none;
@@ -256,9 +359,13 @@
     }
   
     &[src*="IL110_camera_plus"] {
-      width: em(372);
+      max-width: 70%;
       right: em(160);
-      max-width: 35%;
+      
+      @include mdq-min(md) {
+        width: em(372);
+        max-width: 35%;
+      }
   
       @include mdq-min(xl) {
         max-width: none;
@@ -266,9 +373,13 @@
     }
   
     &[src*="IL110"] {
-      width: em(341);
+      max-width: 70%;
       right: 0;
-      max-width: 35%;
+      
+      @include mdq-min(md) {
+        width: em(341);
+        max-width: 35%;
+      }
       
       @include mdq-min(xl) {
         right: em(160);
@@ -277,9 +388,13 @@
     }
   
     &[src*="AL110"] {
-      width: em(299);
+      max-width: 70%;
       right: 0;
-      max-width: 35%;
+      
+      @include mdq-min(md) {
+        width: em(299);
+        max-width: 40%;
+      }
       
       @include mdq-min(xl) {
         right: em(200);
@@ -290,6 +405,16 @@
 }
 
 .prd-spec {
+  margin-top: em(40);
+  
+  @include mdq-min(md) {
+    margin-top: em(120);
+  }
+  
+  @include mdq-min(lg) {
+    margin-top: 0;
+  }
+  
   &-item {
     display: flex;
     align-items: center;
@@ -345,3 +470,4 @@
     }
   }
 }
+

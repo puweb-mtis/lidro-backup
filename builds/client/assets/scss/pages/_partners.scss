@@ -5,7 +5,7 @@
     display: block;
     padding: em(40) 0;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       padding-top: em(66);
       padding-bottom: em(139);
       border-top: 2px solid #333;
@@ -29,7 +29,7 @@
       font-size: vw(24);
       font-weight: 800;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(40);
         
         @at-root {
@@ -52,7 +52,7 @@
         display: none;
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(20);
         margin-top: em(20, 20);
         
@@ -86,7 +86,7 @@
       max-width: 50%;
       padding: em(10);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         flex: 1 0 25%;
         max-width: 25%;
         padding: em(20);
@@ -96,7 +96,7 @@
         border: 1px solid #eee;
         @include image-cover(percentage(80/140));
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           border: 0;
           background-color: #f8f8f8;
         }
@@ -106,7 +106,7 @@
         text-align: center;
         padding: em(10) em(4);
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           padding: em(24) em(8);
         }
       }
@@ -117,7 +117,7 @@
         font-weight: 800;
         line-height: 1;
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           font-size: em(16);
           
           @at-root {

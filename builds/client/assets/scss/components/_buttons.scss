@@ -23,7 +23,7 @@
   };
   z-index: 2;
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     width: em(60);
     height: em(60);
     background-size: auto;
@@ -49,7 +49,7 @@
   }
   
   &.btn-top--main {
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: none !important;
     }
   }
@@ -82,7 +82,7 @@
     font-size: em(14);
   }
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     font-size: 1em;
     padding: em(18) em(34);
   }

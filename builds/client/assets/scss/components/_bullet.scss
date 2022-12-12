@@ -9,7 +9,7 @@
       font-size: em(18);
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       font-size: em(22);
     }
     

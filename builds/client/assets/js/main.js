@@ -1,3 +1,7 @@
+const fullpageInit = () => {
+    
+}
+
 function initFull() {
     let fullpagePrevIndex;
     $('#fullpage').fullpage({
@@ -30,7 +34,6 @@ function initFull() {
                         introSwiper.el.querySelector('.swiper-progressbar').classList.add('active');
                         break;
                     case 1:
-                        console.log('tech');
                         techSwiper.autoplay.start();
                         techSwiper.slideTo(0);
                         techSwiper.slides[0].querySelector('.swiper-progressbar').classList.add('active');

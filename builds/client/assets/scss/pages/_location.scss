@@ -3,7 +3,7 @@
     padding: em(50) 0;
     border-top: 2px solid #333;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
       padding-top: em(80);
       padding-bottom: em(90);
@@ -22,7 +22,7 @@
     line-height: (24/20);
     font-size: vw(14);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       font-size: em(20);
       padding-right: em(10, 20);
       
@@ -46,7 +46,7 @@
     .symbol {
       display: none;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -57,7 +57,7 @@
       font-size: vw(24);
       font-weight: 800;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(40);
       }
     }
@@ -65,7 +65,7 @@
     .address {
       margin-top: em(20, 14);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         margin-top: em(20);
   
         @at-root {
@@ -82,7 +82,7 @@
       gap: em(20, 14);
       margin-top: em(8, 14);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: block;
         margin-top: em(46);
         
@@ -98,12 +98,12 @@
       display: flex;
       gap: em(4, 14);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         gap: em(16, 20);
       }
       
       & + .tel {
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           margin-top: em(10, 20);
         }
       }
@@ -114,7 +114,7 @@
     position: relative;
     margin-top: em(28);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       flex: 0 0 percentage(900/1400);
       width: percentage(900/1400);
     }

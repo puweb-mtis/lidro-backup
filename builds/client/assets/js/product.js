@@ -14,7 +14,7 @@ const checkClickable = (target) => {
 }
 
 document.addEventListener('mousemove', e => {
-    $cursor.style.transform = 'translate3d('+e.pageX+'px, '+e.pageY+'px, 0)';
+    $cursor.style.transform = 'translate3d('+e.clientX+'px, '+e.clientY+'px, 0)';
     
     if ( checkClickable(e.target) ) {
         $cursor.classList.add('on');
@@ -37,7 +37,11 @@ const pageOptions = {
         const depth2ListName = $depth2List.getAttribute('data-nav-depth1')
         const $depth2Select = $depth2Link.closest('.nav-item').querySelector('.nav-select');
         
-        $depth2Select.innerText = hash.replace('#', '');
+        if ( hash === '#IL110CameraPlus' ) {
+            $depth2Select.innerText = 'IL110 Camera Plus';
+        } else {
+            $depth2Select.innerText = hash.replace('#', '');
+        }
         
         switch (depth2ListName) {
             case 'rotation':

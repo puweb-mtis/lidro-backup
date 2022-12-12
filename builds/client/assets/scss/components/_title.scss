@@ -3,7 +3,7 @@
   &--normal {
     margin-bottom: em(50);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       margin-bottom: em(100);
       
       @at-root {
@@ -23,11 +23,11 @@
         font-size: em(36);
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(60);
       }
       
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         font-size: em(78);
         
         @at-root {
@@ -57,7 +57,7 @@
       margin-bottom: em(32);
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       padding-top: em(120);
       padding-bottom: em(120);
       margin-bottom: em(68);
@@ -74,7 +74,7 @@
         font-size: em(64);
       }
   
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         font-size: em(78);
       }
     }
@@ -91,18 +91,18 @@
         font-size: em(28);
       }
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(40);
       }
   
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         font-size: em(48);
       }
       
       br {
         display: none;
         
-        @include mdq-min(lg) {
+        @include mdq-min(laptop) {
           display: block;
         }
       }
@@ -117,11 +117,11 @@
         font-size: em(28);
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(40);
       }
   
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         font-size: em(78);
         
         @at-root {
@@ -140,7 +140,7 @@
       margin: em(20) 0;
       background-color: #333;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         height: em(40);
       }
     }
@@ -156,7 +156,7 @@
         font-size: em(16);
       }
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         color: #333;
         font-size: em(20);
       }
@@ -164,7 +164,7 @@
       br {
         display: none;
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           display: block;
         }
       }
@@ -186,7 +186,7 @@
         font-size: em(12);
       }
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(20);
         margin-top: em(24, 20);
         
@@ -207,7 +207,7 @@
         display: none;
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         color: #333;
         font-size: em(40);
         
@@ -216,7 +216,7 @@
         }
       }
   
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         font-size: em(48);
   
         @at-root {
@@ -232,7 +232,7 @@
       font-weight: 900;
       line-height: (24/20);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(20);
       }
     }
@@ -280,7 +280,7 @@
         font-size: em(32);
       }
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(48);
         margin-top: em(40, 48);
       }
@@ -296,7 +296,7 @@
         font-size: em(24);
       }
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(36);
       }
     }

@@ -6,7 +6,7 @@
     size: 100% auto;
   };
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     background: {
       image: url(/builds/client/assets/images/promote/brochure_bg.png);
       repeat: no-repeat;
@@ -19,7 +19,7 @@
 .brochure {
   position: relative;
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     display: flex;
   }
   
@@ -37,7 +37,7 @@
       display: flex;
       justify-content: center;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         position: static;
         display: block;
         margin-top: em(80);
@@ -50,7 +50,7 @@
     margin-top: em(70);
     margin-left: -30px;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       flex: 1 0 percentage(1000/1400);
       max-width: percentage(1000/1400);
       margin-top: 0;

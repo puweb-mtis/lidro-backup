@@ -7,25 +7,27 @@ html.nav-open {
   
   // Main page
   &.home {
-  
+    .section {
+      overflow: hidden;
+    }
   }
   
   // Sub page
   &:not(.home) {
     padding-top: em(104);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       padding-top: em(144);
     }
   
     .section {
       padding: em(50) 0;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         padding: em(80) 0;
       }
       
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         padding: em(120) 0;
       }
     }
@@ -40,7 +42,7 @@ html.nav-open {
   padding-left: 30px;
   padding-right: 30px;
   
-  @include mdq-min(lg) {
+  @include mdq-min(laptop) {
     padding-left: em(20);
     padding-right: em(20);
   }
@@ -49,7 +51,7 @@ html.nav-open {
 .page-row {
   display: block;
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     display: flex;
   }
   
@@ -62,12 +64,12 @@ html.nav-open {
     }
   
     &.page-col--content {
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         flex: 1 0 percentage(1000/1400);
         max-width: percentage(1000/1400);
       }
       
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         flex: 1 0 percentage(810/1400);
         max-width: percentage(810/1400);}
     }
@@ -76,7 +78,7 @@ html.nav-open {
   &--2 {
     display: block;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
     }
     
@@ -84,7 +86,7 @@ html.nav-open {
       flex: 1 0 auto;
   
       &.page-col--title {
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           flex: 1 0 percentage(360/1400);
           max-width: percentage(360/1400);
           padding-right: em(10);
@@ -92,7 +94,7 @@ html.nav-open {
       }
       
       &.page-col--content {
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           flex: 1 0 percentage(1040/1400);
           max-width: percentage(1040/1400);
         }
@@ -101,7 +103,7 @@ html.nav-open {
   }
   
   &--3 {
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
     }
     
@@ -109,7 +111,7 @@ html.nav-open {
       flex: 1 0 auto;
       
       &.page-col--title {
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           flex: 1 0 percentage(500/1400);
           max-width: percentage(500/1400);
           padding-right: em(10);
@@ -117,7 +119,7 @@ html.nav-open {
       }
       
       &.page-col--content {
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           flex: 1 0 percentage(900/1400);
           max-width: percentage(900/1400);
         }
@@ -130,7 +132,7 @@ html.nav-open {
   img {
     display: block;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       width: 95%;
     }
   }

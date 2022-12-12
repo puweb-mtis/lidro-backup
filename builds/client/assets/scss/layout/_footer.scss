@@ -4,7 +4,7 @@
   padding-top: em(40);
   padding-bottom: em(40);
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     padding-top: em(70);
     padding-bottom: em(62);
   }
@@ -12,13 +12,13 @@
   &:not(.footer--main) {
     margin-top: em(80);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       margin-top: em(117);
     }
   }
   
   .container {
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
     }
   }
@@ -30,7 +30,7 @@
     top: em(92);
     left: 30px;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       position: static;
     }
     
@@ -46,14 +46,14 @@
   }
   
   .content {
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       flex: 1 1 auto;
       padding-left: em(80);
     }
   }
   
   .info-box {
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -69,20 +69,20 @@
       gap: em(8);
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       gap: em(16);
     }
     
     .link {
-      font-size: vw(13);
+      font-size: vw(11);
       font-weight: 900;
       color: #72747e;
       
       @include mdq-min(sm) {
-        font-size: em(13);
+        font-size: em(16);
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(18);
       }
     }
@@ -90,7 +90,7 @@
     .dot {
       width: 3px;
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         width: 4px;
       }
       
@@ -103,7 +103,7 @@
         border-radius: 100%;
         background-color: #72747e;
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           width: 4px;
           height: 4px;
         }
@@ -116,7 +116,7 @@
   }
   
   .copyright {
-    font-size: vw(13);
+    font-size: vw(11);
     font-weight: 900;
     color: #565863;
     position: absolute;
@@ -124,10 +124,10 @@
     bottom: em(40);
   
     @include mdq-min(sm) {
-      font-size: em(10);
+      font-size: em(16);
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       position: static;
       font-size: em(18);
       color: #72747e;
@@ -137,7 +137,7 @@
   .bottom-box {
     margin-top: em(76);
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: flex;
       align-items: center;
       margin-top: em(96);
@@ -154,7 +154,11 @@
       font-weight: 900;
       color: #565863;
       
-      @include mdq-min(tab) {
+      @include mdq-min(sm) {
+        font-size: em(16);
+      }
+      
+      @include mdq-min(lg) {
         display: flex;
         gap: em(20, 18);
         font-size: em(18);
@@ -163,7 +167,7 @@
       & + .address {
         margin-top: em(20);
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           margin-top: em(8, 18);
         }
       }
@@ -177,7 +181,7 @@
         word-break: keep-all;
         margin-top: em(10);
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           margin-top: 0;
           padding-left: em(16);
         }
@@ -188,7 +192,7 @@
         gap: em(20, 18);
         margin-top: 4px;
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           margin-top: 0;
         }
       }
@@ -199,18 +203,22 @@
     display: flex;
     gap: em(8);
     margin-top: em(20);
-    padding-bottom: em(80);
+    padding-bottom: em(40);
     
-    a {
-      width: em(20);
+    @include mdq-min(sm) {
+      padding-bottom: em(80);
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       gap: em(16);
       margin-top: 0;
       padding-bottom: 0;
+    }
+    
+    a {
+      width: em(28);
       
-      a {
+      @include mdq-min(lg) {
         width: em(36);
       }
     }
@@ -224,7 +232,7 @@
     .link-box {
       display: block;
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: flex;
       }
       
@@ -235,7 +243,7 @@
         & ~ .link {
           margin-top: 4px;
           
-          @include mdq-min(tab) {
+          @include mdq-min(lg) {
             margin-top: 0;
           }
         }
@@ -245,7 +253,7 @@
         display: none;
         width: 2px;
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           display: block;
         }
     
@@ -273,7 +281,7 @@
     }
   
     .bottom-box {
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         margin-top: em(40);
       }
     }
@@ -288,7 +296,7 @@
   z-index: 1;
   display: none;
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     display: block;
   }
   

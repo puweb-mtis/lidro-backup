@@ -6,7 +6,7 @@
     size: 100% auto;
   };
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     background: {
       image: url(/builds/client/assets/images/recruit/index_bg.png);
       repeat: no-repeat;
@@ -24,7 +24,7 @@
     size: 100% auto;
   };
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     background: {
       image: url(/builds/client/assets/images/recruit/board_bg.png);
       repeat: no-repeat;
@@ -40,7 +40,7 @@
   margin: 0 auto;
   
   &::after {
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       content: '';
       display: block;
       padding-bottom: percentage(1103/1344);
@@ -87,7 +87,7 @@
         };
       }
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: none;
       }
     }
@@ -111,12 +111,12 @@
         padding-bottom: percentage(594/245);
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: none;
       }
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       position: absolute;
       top: 0;
       left: 0;
@@ -139,7 +139,7 @@
         margin-top: em(20, 32);
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: em(48);
         margin-top: em(40, 48);
       }
@@ -166,7 +166,7 @@
       size: cover;
     };
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: block;
     }
     
@@ -208,7 +208,7 @@
   [class^="index-banner"] {
     display: none;
   
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: block;
     }
   }
@@ -315,7 +315,7 @@
     margin-left: -30px;
     margin-right: -30px;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       position: absolute;
       margin-right: 0;
       margin-left: 0;
@@ -365,7 +365,7 @@
         color: rgba(#fff, 0.7);
         
         @at-root {
-          @include mdq-min(tab) {
+          @include mdq-min(lg) {
             .recruit-index [class^=index-swiper].eng .desc .text {
               width: 60%;
             }
@@ -381,7 +381,7 @@
         margin-top: em(2, 24);
   
         @at-root {
-          @include mdq-min(tab) {
+          @include mdq-min(lg) {
             .recruit-index [class^=index-swiper].eng .desc .text--2 {
               padding-right: em(20, 20);
               font-size: em(20);
@@ -475,7 +475,7 @@
     &--1 {
       margin-top: em(160);
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         top: percentage(570/1103);
         left: 0;
         width: percentage(450/1344);
@@ -497,7 +497,7 @@
           font-size: em(32);
         }
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           display: none;
         }
       }
@@ -510,7 +510,7 @@
         .bg {
           @include image-cover(percentage(440/360));
           
-          @include mdq-min(tab) {
+          @include mdq-min(lg) {
             @include image-cover(percentage(350/450));
           }
         }
@@ -520,7 +520,7 @@
     &--2 {
       margin-top: em(200);
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         top: percentage(710/1103);
         left: percentage(450/1344);
         width: percentage(330/1344);
@@ -542,7 +542,7 @@
           font-size: em(32);
         }
     
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           display: none;
         }
       }
@@ -555,7 +555,7 @@
         .bg {
           @include image-cover(percentage(440/360));
           
-          @include mdq-min(tab) {
+          @include mdq-min(lg) {
             @include image-cover(percentage(380/330));
           }
         }
@@ -563,7 +563,7 @@
     }
   
     &--3 {
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         top: percentage(290/1103);
         left: percentage(780/1344);
         width: percentage(330/1344);
@@ -577,7 +577,7 @@
         .bg {
           @include image-cover(percentage(440/360));
           
-          @include mdq-min(tab) {
+          @include mdq-min(lg) {
             @include image-cover(percentage(450/330));
           }
         }
@@ -595,7 +595,7 @@
       size: cover;
     };
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: block;
     }
   }
@@ -674,14 +674,14 @@
     left: em(13);
     height: em(20);
   
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       display: block;
     }
   }
 }
 
 .recruit-board-title {
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     max-width: em(300);
   }
   
@@ -697,7 +697,7 @@
         font-size: 1em;
       }
       
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         font-size: 1em;
         margin-bottom: 0;
       }
@@ -712,7 +712,7 @@
   border-bottom: 2px solid #333;
   margin-top: em(40);
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     margin-top: 0;
   }
 }
@@ -720,7 +720,7 @@
 .recruit-board-summary {
   margin-top: em(50);
   
-  @include mdq-min(tab) {
+  @include mdq-min(lg) {
     margin-top: em(70);
   }
   

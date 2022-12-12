@@ -399,7 +399,7 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                #333 !default;
 $body-text-align:           null !default;
 
 // Links
@@ -429,13 +429,15 @@ $paragraph-margin-bottom:   1rem !default;
 
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
-  xs: 0,
+  min: 0,
+  xs: 360px,
   sm: 576px,
   md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
-  xxxl: 1864px
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1366px,
+  laptop: 1440px,
+  max: 1864px
 ) !default;
 // scss-docs-end grid-breakpoints
 

@@ -15,7 +15,7 @@
     justify-content: space-between;
     transition: padding-top .5s ease-in-out, padding-bottom .5s ease-in-out;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       padding: em(32) em(80);
     }
   }
@@ -93,7 +93,7 @@
       display: none;
       gap: em(40);
   
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: flex;
       }
       
@@ -138,7 +138,7 @@
     .container {
       padding: em(40) 30px;
       
-      @include mdq-min(lg) {
+      @include mdq-min(laptop) {
         padding: em(60) em(80) 0;
       }
     }
@@ -147,7 +147,7 @@
       .img {
         background-image: url(/builds/client/assets/images/logo_w.svg);
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           background-image: url(/builds/client/assets/images/logo.svg);
         }
       }
@@ -157,7 +157,7 @@
       a {
         color: #fff;
         
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           color: #333;
         }
       }
@@ -167,7 +167,7 @@
       span {
         background-color: #fff;
   
-        @include mdq-min(tab) {
+        @include mdq-min(lg) {
           background-color: #333;
         }
       }
@@ -200,7 +200,7 @@
       }
     }
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       &.header--white {
         .logo {
           .img {
@@ -232,7 +232,7 @@
   &:not(.header--main) {
     background-color: #fff;
     
-    @include mdq-min(tab) {
+    @include mdq-min(lg) {
       border-bottom: 1px solid #f0f0f0;
     }
 
@@ -243,7 +243,7 @@
         padding: em(20) 30px;
         max-width: 1400px;
       
-        @include mdq-min(lg) {
+        @include mdq-min(laptop) {
           padding: 0 em(20);
         }
       }
@@ -398,22 +398,35 @@
 // Product Header
 .prd-header {
   position: fixed;
-  top: em(40);
+  top: em(20);
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: calc(100% - 100px);
+  max-width: calc(100% - 40px);
   background: linear-gradient(180deg, rgba(#333, 0.6), transparent);
   box-shadow: 0 em(10) em(20) 0 rgba(0, 0, 0, 0.25);
   border-radius: em(10);
   z-index: 2;
   
+  @include mdq-min(laptop) {
+    top: em(40);
+    max-width: calc(100% - 100px);
+  }
+  
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 em(30);
     max-width: 100%;
+    padding: em(12) em(16);
+    
+    @include mdq-min(md) {
+      padding: em(24) em(30);
+    }
+    
+    @include mdq-min(laptop) {
+      padding: 0 em(30);
+    }
   }
   
   .sub-nav {
@@ -422,11 +435,12 @@
     gap: em(30);
   
     .nav-select {
+      font-family: 'Rubik', 'SUIT', sans-serif;
       display: flex;
       align-items: center;
       color: #fff;
       font-size: em(18);
-      font-weight: 800;
+      font-weight: 500;
       line-height: (24/18);
       user-select: none;
       cursor: pointer;
@@ -462,7 +476,7 @@
       display: none;
       gap: em(40);
     
-      @include mdq-min(tab) {
+      @include mdq-min(lg) {
         display: flex;
       }
     

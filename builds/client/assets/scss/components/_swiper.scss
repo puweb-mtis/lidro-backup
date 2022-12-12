@@ -226,7 +226,7 @@
       size: 100% auto;
     };
     
-    @include mdq-min(tab){
+    @include mdq-min(lg){
       width: em(102);
       height: em(42);
     }
