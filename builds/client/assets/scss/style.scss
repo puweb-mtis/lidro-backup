@@ -558,6 +558,9 @@
 }
 
 .promo-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   overflow: hidden;
   border-radius: em(30);
   box-shadow: 10px 10px 30px rgba(#000, 0.05);
@@ -565,6 +568,7 @@
   .promo-thumb {
     position: relative;
     overflow: hidden;
+    flex: 0 0 auto;
     
     &::after {
       content: '';
@@ -587,7 +591,12 @@
   }
   
   .promo-desc {
-    padding: em(24) em(25);
+    flex: 1 1 auto;
+    padding: em(16);
+    
+    @include mdq-min(sm) {
+      padding: em(24) em(25);
+    }
     
     &__cate {
       color: #f09e22;
@@ -597,16 +606,32 @@
     
     &__title {
       color: #333;
-      font-size: em(20);
+      font-size: vw(14);
       font-weight: 800;
       margin-top: em(9, 20);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      line-height: 1.2em;
+      max-height: 3.6em;
+      
+      
+      @include mdq-min(sm) {
+        font-size: em(20);
+      }
     }
     
     &__date {
       color: #ccc;
       font-size: em(12);
       font-weight: 700;
-      margin-top: em(25, 12);
+      margin-top: em(12, 12);
+      
+      @include mdq-min(sm) {
+        margin-top: em(25, 12);
+      }
     }
   }
 }

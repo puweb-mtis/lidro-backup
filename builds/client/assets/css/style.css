@@ -5317,7 +5317,7 @@ html.nav-open {
 .board-list__link .title {
   display: block;
   color: #000;
-  font-size: 4.4444444444vw;
+  font-size: 3.8888888889vw;
   font-weight: 600;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -5325,7 +5325,7 @@ html.nav-open {
 }
 @media screen and (min-width: 576.2px) {
   .board-list__link .title {
-    font-size: 1em;
+    font-size: 1.125em;
   }
 }
 @media screen and (min-width: 1024.2px) {
@@ -5434,8 +5434,20 @@ html.nav-open {
 
 .board-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5em;
+  gap: 0.75em;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1.25em;
+}
+@media screen and (min-width: 768.2px) {
+  .board-gallery {
+    gap: 2.5em;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1024.2px) {
+  .board-gallery {
+    margin-top: 0;
+  }
 }
 .board-gallery__item .promo-box {
   transition: transform 0.2s ease-in-out;
@@ -9840,6 +9852,9 @@ body.eng .recruit-index [class^=index-swiper] .desc .title {
 }
 
 .promo-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   overflow: hidden;
   border-radius: 1.875em;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05);
@@ -9847,6 +9862,7 @@ body.eng .recruit-index [class^=index-swiper] .desc .title {
 .promo-box .promo-thumb {
   position: relative;
   overflow: hidden;
+  flex: 0 0 auto;
 }
 .promo-box .promo-thumb::after {
   content: "";
@@ -9866,7 +9882,13 @@ body.eng .recruit-index [class^=index-swiper] .desc .title {
   max-height: none;
 }
 .promo-box .promo-desc {
-  padding: 1.5em 1.5625em;
+  flex: 1 1 auto;
+  padding: 1em;
+}
+@media screen and (min-width: 576.2px) {
+  .promo-box .promo-desc {
+    padding: 1.5em 1.5625em;
+  }
 }
 .promo-box .promo-desc__cate {
   color: #f09e22;
@@ -9875,15 +9897,32 @@ body.eng .recruit-index [class^=index-swiper] .desc .title {
 }
 .promo-box .promo-desc__title {
   color: #333;
-  font-size: 1.25em;
+  font-size: 3.8888888889vw;
   font-weight: 800;
   margin-top: 0.45em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 1.2em;
+  max-height: 3.6em;
+}
+@media screen and (min-width: 576.2px) {
+  .promo-box .promo-desc__title {
+    font-size: 1.25em;
+  }
 }
 .promo-box .promo-desc__date {
   color: #ccc;
   font-size: 0.75em;
   font-weight: 700;
-  margin-top: 2.0833333333em;
+  margin-top: 1em;
+}
+@media screen and (min-width: 576.2px) {
+  .promo-box .promo-desc__date {
+    margin-top: 2.0833333333em;
+  }
 }
 
 .tab-header {

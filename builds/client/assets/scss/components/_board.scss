@@ -24,14 +24,14 @@
     .title {
       display: block;
       color: #000;
-      font-size: vw(16);
+      font-size: vw(14);
       font-weight: 600;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
       
       @include mdq-min(sm) {
-        font-size: em(16);
+        font-size: em(18);
       }
       
       @include mdq-min(lg) {
@@ -148,8 +148,18 @@
 
 .board-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: em(40);
+  gap: em(12);
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: em(20);
+  
+  @include mdq-min(md) {
+    gap: em(40);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @include mdq-min(lg) {
+    margin-top: 0;
+  }
   
   &__item {
     .promo-box {
